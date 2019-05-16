@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess
+namespace ObjectGettersSetters
 {
-    public class DA
+    public class Person
     {
     }
 }

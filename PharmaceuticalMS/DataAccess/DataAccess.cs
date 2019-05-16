@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectGettersSetters
+namespace DataAccess
 {
-    public class Staff
+    public class DataAccess
     {
     }
 }
