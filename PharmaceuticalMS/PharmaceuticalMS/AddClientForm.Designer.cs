@@ -1,6 +1,6 @@
 ﻿namespace PharmaceuticalMS
 {
-    partial class LoginForm
+    partial class AddClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblAddClient = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnLogin
+            // lblAddClient
             // 
-            this.btnLogin.Location = new System.Drawing.Point(365, 176);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.lblAddClient.AutoSize = true;
+            this.lblAddClient.Location = new System.Drawing.Point(49, 38);
+            this.lblAddClient.Name = "lblAddClient";
+            this.lblAddClient.Size = new System.Drawing.Size(55, 13);
+            this.lblAddClient.TabIndex = 0;
+            this.lblAddClient.Text = "Add Client";
             // 
-            // LoginForm
+            // AddClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 336);
-            this.Controls.Add(this.btnLogin);
-            this.Name = "LoginForm";
-            this.Text = "PharmaceuticalMS";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblAddClient);
+            this.Name = "AddClientForm";
+            this.Text = "Add Client";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label lblAddClient;
     }
 }
-

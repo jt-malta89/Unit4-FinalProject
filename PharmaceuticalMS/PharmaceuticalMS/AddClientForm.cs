@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace PharmaceuticalMS
 {
-    public partial class LoginForm : Form
+    public partial class AddClientForm : Form
     {
-        public LoginForm()
+        public AddClientForm()
         {
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            MainForm myMainForm = new MainForm();
-            myMainForm.Show();
-            this.Hide();
         }
     }
 }
