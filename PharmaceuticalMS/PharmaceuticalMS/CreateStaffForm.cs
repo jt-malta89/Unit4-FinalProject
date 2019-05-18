@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PharmaceuticalMS
 {
-    public partial class AddStaffForm : Form
+    public partial class CreateStaffForm : Form
     {
-        public AddStaffForm()
+        public CreateStaffForm()
         {
             InitializeComponent();
         }

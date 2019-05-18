@@ -1,6 +1,6 @@
 ﻿namespace PharmaceuticalMS
 {
-    partial class AddClientForm
+    partial class CreateStaffForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAddClient = new System.Windows.Forms.Label();
+            this.lblCreateStaff = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblAddClient
+            // lblCreateStaff
             // 
-            this.lblAddClient.AutoSize = true;
-            this.lblAddClient.Location = new System.Drawing.Point(49, 38);
-            this.lblAddClient.Name = "lblAddClient";
-            this.lblAddClient.Size = new System.Drawing.Size(55, 13);
-            this.lblAddClient.TabIndex = 0;
-            this.lblAddClient.Text = "Add Client";
+            this.lblCreateStaff.AutoSize = true;
+            this.lblCreateStaff.Location = new System.Drawing.Point(48, 39);
+            this.lblCreateStaff.Name = "lblCreateStaff";
+            this.lblCreateStaff.Size = new System.Drawing.Size(63, 13);
+            this.lblCreateStaff.TabIndex = 0;
+            this.lblCreateStaff.Text = "Create Staff";
+            this.lblCreateStaff.Click += new System.EventHandler(this.label1_Click);
             // 
-            // AddClientForm
+            // CreateStaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblAddClient);
-            this.Name = "AddClientForm";
-            this.Text = "Add Client";
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.lblCreateStaff);
+            this.Name = "CreateStaffForm";
+            this.Text = "Create Staff";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -55,6 +56,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblAddClient;
+        private System.Windows.Forms.Label lblCreateStaff;
     }
 }

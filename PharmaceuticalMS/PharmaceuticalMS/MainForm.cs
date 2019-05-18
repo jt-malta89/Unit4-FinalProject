@@ -17,42 +17,46 @@ namespace PharmaceuticalMS
             InitializeComponent();
         }
 
-        AddStaffForm asf;
+        CreateStaffForm sf;
         private void tsmiAddStaff_Click(object sender, EventArgs e)
         {
-            if (asf == null)
+            if (sf == null)
             {
-                asf = new AddStaffForm();
-                asf.MdiParent = this;
-                asf.FormClosed += new FormClosedEventHandler(asf_FormClosed);
-                asf.WindowState = FormWindowState.Maximized;
-                asf.Show();
+                sf = new CreateStaffForm();
+                sf.MdiParent = this;
+                sf.FormClosed += new FormClosedEventHandler(sf_FormClosed);
+                //asf.WindowState = FormWindowState.Maximized;
+                sf.Show();
             }
             else
-                asf.Activate();
+                sf.Activate();
         }
-        void asf_FormClosed(object sender, FormClosedEventArgs e)
+        void sf_FormClosed(object sender, FormClosedEventArgs e)
         {
-            asf = null;
+            sf = null;
         }
 
-        AddClientForm acf;
+        CreateClientForm cf;
         private void tsmiAddClient_Click(object sender, EventArgs e)
         {
-            if (acf == null)
+            if (cf == null)
             {
-                acf = new AddClientForm();
-                acf.MdiParent = this;
-                acf.FormClosed += new FormClosedEventHandler(asf_FormClosed);
-                acf.WindowState = FormWindowState.Maximized;
-                acf.Show();
+                cf = new CreateClientForm();
+                cf.MdiParent = this;
+                cf.FormClosed += new FormClosedEventHandler(cf_FormClosed);
+                cf.Show();
             }
             else
-                acf.Activate();
+                cf.Activate();
         }
-        void acf_FormClosed(object sender, FormClosedEventArgs e)
+        void cf_FormClosed(object sender, FormClosedEventArgs e)
         {
-            acf = null;
+            cf = null;
+        }
+
+        private void createStoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
