@@ -112,5 +112,11 @@
     <Folder Include="ProductsForms\" />
     <Folder Include="SalesForms\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectGettersSetters\ObjectGettersSetters.csproj">
+      <Project>{63bbe4f4-e702-441e-b492-085aa51a0909}</Project>
+      <Name>ObjectGettersSetters</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

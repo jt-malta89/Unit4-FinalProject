@@ -77,6 +77,8 @@
             this.tsmiModifyLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPurchaseOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCreatePurchaseOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +136,8 @@
             // 
             // tsmiSales
             // 
+            this.tsmiSales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPurchaseOrder});
             this.tsmiSales.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.tsmiSales.Name = "tsmiSales";
             this.tsmiSales.Size = new System.Drawing.Size(52, 22);
@@ -300,14 +304,14 @@
             // tsmiCreateStores
             // 
             this.tsmiCreateStores.Name = "tsmiCreateStores";
-            this.tsmiCreateStores.Size = new System.Drawing.Size(157, 22);
+            this.tsmiCreateStores.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateStores.Text = "Create Store";
             this.tsmiCreateStores.Click += new System.EventHandler(this.createStoresToolStripMenuItem_Click);
             // 
             // tsmiModifyStores
             // 
             this.tsmiModifyStores.Name = "tsmiModifyStores";
-            this.tsmiModifyStores.Size = new System.Drawing.Size(157, 22);
+            this.tsmiModifyStores.Size = new System.Drawing.Size(180, 22);
             this.tsmiModifyStores.Text = "Modify Store";
             // 
             // tsmiVehicles
@@ -322,13 +326,13 @@
             // tsmiCreateVehicles
             // 
             this.tsmiCreateVehicles.Name = "tsmiCreateVehicles";
-            this.tsmiCreateVehicles.Size = new System.Drawing.Size(170, 22);
+            this.tsmiCreateVehicles.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateVehicles.Text = "Create Vehicle";
             // 
             // tsmiModifyVehicles
             // 
             this.tsmiModifyVehicles.Name = "tsmiModifyVehicles";
-            this.tsmiModifyVehicles.Size = new System.Drawing.Size(170, 22);
+            this.tsmiModifyVehicles.Size = new System.Drawing.Size(180, 22);
             this.tsmiModifyVehicles.Text = "Modify Vehicle";
             // 
             // tsmiStreet
@@ -343,13 +347,13 @@
             // tsmiCreateStreet
             // 
             this.tsmiCreateStreet.Name = "tsmiCreateStreet";
-            this.tsmiCreateStreet.Size = new System.Drawing.Size(162, 22);
+            this.tsmiCreateStreet.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateStreet.Text = "Create Street";
             // 
             // tsmiModifyStreet
             // 
             this.tsmiModifyStreet.Name = "tsmiModifyStreet";
-            this.tsmiModifyStreet.Size = new System.Drawing.Size(162, 22);
+            this.tsmiModifyStreet.Size = new System.Drawing.Size(180, 22);
             this.tsmiModifyStreet.Text = "Modify Street";
             // 
             // tsmiLocality
@@ -364,13 +368,13 @@
             // tsmiCreateLocality
             // 
             this.tsmiCreateLocality.Name = "tsmiCreateLocality";
-            this.tsmiCreateLocality.Size = new System.Drawing.Size(171, 22);
+            this.tsmiCreateLocality.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateLocality.Text = "Create Locality";
             // 
             // tsmiModifyLocality
             // 
             this.tsmiModifyLocality.Name = "tsmiModifyLocality";
-            this.tsmiModifyLocality.Size = new System.Drawing.Size(171, 22);
+            this.tsmiModifyLocality.Size = new System.Drawing.Size(180, 22);
             this.tsmiModifyLocality.Text = "Modify Locality";
             // 
             // tsmiPostCode
@@ -406,13 +410,13 @@
             // tsmiCreateJobTitle
             // 
             this.tsmiCreateJobTitle.Name = "tsmiCreateJobTitle";
-            this.tsmiCreateJobTitle.Size = new System.Drawing.Size(176, 22);
+            this.tsmiCreateJobTitle.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateJobTitle.Text = "Create Job Title";
             // 
             // tsmiModifyJobTitle
             // 
             this.tsmiModifyJobTitle.Name = "tsmiModifyJobTitle";
-            this.tsmiModifyJobTitle.Size = new System.Drawing.Size(176, 22);
+            this.tsmiModifyJobTitle.Size = new System.Drawing.Size(180, 22);
             this.tsmiModifyJobTitle.Text = "Modify Job Title";
             // 
             // tsmiLogin
@@ -427,13 +431,13 @@
             // tsmiCreateLogin
             // 
             this.tsmiCreateLogin.Name = "tsmiCreateLogin";
-            this.tsmiCreateLogin.Size = new System.Drawing.Size(157, 22);
+            this.tsmiCreateLogin.Size = new System.Drawing.Size(180, 22);
             this.tsmiCreateLogin.Text = "Create Login";
             // 
             // tsmiModifyLogin
             // 
             this.tsmiModifyLogin.Name = "tsmiModifyLogin";
-            this.tsmiModifyLogin.Size = new System.Drawing.Size(157, 22);
+            this.tsmiModifyLogin.Size = new System.Drawing.Size(180, 22);
             this.tsmiModifyLogin.Text = "Modify Login";
             // 
             // tsmiLogout
@@ -448,6 +452,20 @@
             this.tsmiClose.Size = new System.Drawing.Size(180, 22);
             this.tsmiClose.Text = "Close";
             // 
+            // tsmiPurchaseOrder
+            // 
+            this.tsmiPurchaseOrder.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCreatePurchaseOrder});
+            this.tsmiPurchaseOrder.Name = "tsmiPurchaseOrder";
+            this.tsmiPurchaseOrder.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPurchaseOrder.Text = "Purchase Order";
+            // 
+            // tsmiCreatePurchaseOrder
+            // 
+            this.tsmiCreatePurchaseOrder.Name = "tsmiCreatePurchaseOrder";
+            this.tsmiCreatePurchaseOrder.Size = new System.Drawing.Size(215, 22);
+            this.tsmiCreatePurchaseOrder.Text = "Create Purchase Order";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -457,7 +475,7 @@
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "PharmaceuticalMS";
             this.menuStrip1.ResumeLayout(false);
@@ -518,5 +536,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiModifyClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteClient;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPurchaseOrder;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCreatePurchaseOrder;
     }
 }
