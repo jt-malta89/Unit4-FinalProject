@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PharmaceuticalMS
 {
-    public partial class CreateStaffForm : Form
+    public partial class ClientForm : Form
     {
-        public CreateStaffForm()
+        public ClientForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

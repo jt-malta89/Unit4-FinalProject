@@ -17,15 +17,14 @@ namespace PharmaceuticalMS
             InitializeComponent();
         }
 
-        CreateStaffForm sf;
-        private void tsmiAddStaff_Click(object sender, EventArgs e)
+        StaffForm sf;
+        private void btnStaff_Click(object sender, EventArgs e)
         {
             if (sf == null)
             {
-                sf = new CreateStaffForm();
+                sf = new StaffForm();
                 sf.MdiParent = this;
                 sf.FormClosed += new FormClosedEventHandler(sf_FormClosed);
-                //asf.WindowState = FormWindowState.Maximized;
                 sf.Show();
             }
             else
@@ -36,12 +35,12 @@ namespace PharmaceuticalMS
             sf = null;
         }
 
-        CreateClientForm cf;
-        private void tsmiAddClient_Click(object sender, EventArgs e)
+        ClientForm cf;
+        private void btnClients_Click(object sender, EventArgs e)
         {
             if (cf == null)
             {
-                cf = new CreateClientForm();
+                cf = new ClientForm();
                 cf.MdiParent = this;
                 cf.FormClosed += new FormClosedEventHandler(cf_FormClosed);
                 cf.Show();
@@ -54,9 +53,11 @@ namespace PharmaceuticalMS
             cf = null;
         }
 
-        private void createStoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnLogoff_Click(object sender, EventArgs e)
         {
-
+            LoginForm myLoginForm = new LoginForm();
+            myLoginForm.Show();
+            this.Hide();
         }
     }
 }
