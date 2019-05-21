@@ -35,12 +35,12 @@ namespace PharmaceuticalMS
             sf = null;
         }
 
-        ClientForm cf;
+        ClientsForm cf;
         private void btnClients_Click(object sender, EventArgs e)
         {
             if (cf == null)
             {
-                cf = new ClientForm();
+                cf = new ClientsForm();
                 cf.MdiParent = this;
                 cf.FormClosed += new FormClosedEventHandler(cf_FormClosed);
                 cf.Show();
@@ -58,6 +58,78 @@ namespace PharmaceuticalMS
             LoginForm myLoginForm = new LoginForm();
             myLoginForm.Show();
             this.Hide();
+        }
+
+        OrdersForm of;
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            if (of == null)
+            {
+                of = new OrdersForm();
+                of.MdiParent = this;
+                of.FormClosed += new FormClosedEventHandler(of_FormClosed);
+                of.Show();
+            }
+            else
+                of.Activate();
+        }
+        void of_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            of = null;
+        }
+
+        ProductForm pf;
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            if (pf == null)
+            {
+                pf = new ProductForm();
+                pf.MdiParent = this;
+                pf.FormClosed += new FormClosedEventHandler(pf_FormClosed);
+                pf.Show();
+            }
+            else
+                pf.Activate();
+        }
+        void pf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pf = null;
+        }
+
+        SalesForm slf;
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            if (slf == null)
+            {
+                slf = new SalesForm();
+                slf.MdiParent = this;
+                slf.FormClosed += new FormClosedEventHandler(slf_FormClosed);
+                slf.Show();
+            }
+            else
+                sf.Activate();
+        }
+        void slf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            slf = null;
+        }
+
+        OptionsForm opf;
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            if (opf == null)
+            {
+                opf = new OptionsForm();
+                opf.MdiParent = this;
+                opf.FormClosed += new FormClosedEventHandler(opf_FormClosed);
+                opf.Show();
+            }
+            else
+                sf.Activate();
+        }
+        void opf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            opf = null;
         }
     }
 }

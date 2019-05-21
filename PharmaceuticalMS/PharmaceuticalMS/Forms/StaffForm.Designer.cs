@@ -34,16 +34,15 @@
             // 
             // lblStaff
             // 
-            this.lblStaff.AutoSize = true;
             this.lblStaff.BackColor = System.Drawing.Color.BurlyWood;
             this.lblStaff.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblStaff.Location = new System.Drawing.Point(550, 10);
+            this.lblStaff.Location = new System.Drawing.Point(-200, 0);
             this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(118, 59);
+            this.lblStaff.Size = new System.Drawing.Size(1600, 60);
             this.lblStaff.TabIndex = 0;
             this.lblStaff.Text = "Staff";
-            this.lblStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStaff.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // StaffForm
             // 
@@ -58,7 +57,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
