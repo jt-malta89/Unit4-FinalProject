@@ -37,7 +37,6 @@
             this.picLoginScreen = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblPharmaceuticalMS = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLoginScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +68,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(289, 70);
+            this.txtUsername.Location = new System.Drawing.Point(322, 70);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(150, 26);
             this.txtUsername.TabIndex = 2;
@@ -78,7 +77,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(211, 70);
+            this.lblUsername.Location = new System.Drawing.Point(244, 70);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(72, 18);
             this.lblUsername.TabIndex = 3;
@@ -97,16 +96,16 @@
             // 
             this.picLoginScreen.ErrorImage = null;
             this.picLoginScreen.Image = ((System.Drawing.Image)(resources.GetObject("picLoginScreen.Image")));
-            this.picLoginScreen.Location = new System.Drawing.Point(41, 47);
+            this.picLoginScreen.Location = new System.Drawing.Point(0, 0);
             this.picLoginScreen.Name = "picLoginScreen";
-            this.picLoginScreen.Size = new System.Drawing.Size(128, 128);
+            this.picLoginScreen.Size = new System.Drawing.Size(250, 250);
             this.picLoginScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLoginScreen.TabIndex = 5;
             this.picLoginScreen.TabStop = false;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(289, 123);
+            this.txtPassword.Location = new System.Drawing.Point(322, 123);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(150, 26);
             this.txtPassword.TabIndex = 6;
@@ -116,22 +115,11 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(211, 126);
+            this.lblPassword.Location = new System.Drawing.Point(244, 126);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(67, 18);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "Password";
-            // 
-            // lblPharmaceuticalMS
-            // 
-            this.lblPharmaceuticalMS.AutoSize = true;
-            this.lblPharmaceuticalMS.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPharmaceuticalMS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPharmaceuticalMS.Location = new System.Drawing.Point(12, 9);
-            this.lblPharmaceuticalMS.Name = "lblPharmaceuticalMS";
-            this.lblPharmaceuticalMS.Size = new System.Drawing.Size(157, 23);
-            this.lblPharmaceuticalMS.TabIndex = 14;
-            this.lblPharmaceuticalMS.Text = "PharmaceuticalMS";
             // 
             // LoginForm
             // 
@@ -139,12 +127,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(484, 261);
-            this.Controls.Add(this.lblPharmaceuticalMS);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.picLoginScreen);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
@@ -170,7 +157,6 @@
         private System.Windows.Forms.PictureBox picLoginScreen;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblPharmaceuticalMS;
     }
 }
 

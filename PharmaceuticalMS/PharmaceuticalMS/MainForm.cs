@@ -107,7 +107,7 @@ namespace PharmaceuticalMS
                 slf.Show();
             }
             else
-                sf.Activate();
+                slf.Activate();
         }
         void slf_FormClosed(object sender, FormClosedEventArgs e)
         {

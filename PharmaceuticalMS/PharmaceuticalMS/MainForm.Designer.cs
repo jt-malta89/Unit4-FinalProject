@@ -37,7 +37,8 @@
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnLogoff = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
-            this.lblPharmaceuticalMS = new System.Windows.Forms.Label();
+            this.picLoginScreen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoginScreen)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -57,7 +58,7 @@
             this.btnOrders.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnOrders.Image")));
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.Location = new System.Drawing.Point(13, 45);
+            this.btnOrders.Location = new System.Drawing.Point(12, 169);
             this.btnOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(180, 50);
@@ -72,7 +73,7 @@
             this.btnProducts.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(13, 103);
+            this.btnProducts.Location = new System.Drawing.Point(12, 227);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(180, 50);
@@ -87,12 +88,12 @@
             this.btnSales.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
             this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.Location = new System.Drawing.Point(13, 161);
+            this.btnSales.Location = new System.Drawing.Point(12, 285);
             this.btnSales.Margin = new System.Windows.Forms.Padding(4);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(180, 50);
             this.btnSales.TabIndex = 5;
-            this.btnSales.Text = "Sales";
+            this.btnSales.Text = "Point Of Sale";
             this.btnSales.UseVisualStyleBackColor = false;
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
@@ -102,7 +103,7 @@
             this.btnClients.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClients.Image = ((System.Drawing.Image)(resources.GetObject("btnClients.Image")));
             this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClients.Location = new System.Drawing.Point(13, 219);
+            this.btnClients.Location = new System.Drawing.Point(12, 343);
             this.btnClients.Margin = new System.Windows.Forms.Padding(4);
             this.btnClients.Name = "btnClients";
             this.btnClients.Size = new System.Drawing.Size(180, 50);
@@ -117,7 +118,7 @@
             this.btnStaff.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnStaff.Image")));
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaff.Location = new System.Drawing.Point(13, 277);
+            this.btnStaff.Location = new System.Drawing.Point(12, 401);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(180, 50);
@@ -132,7 +133,7 @@
             this.btnLogoff.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogoff.Image = ((System.Drawing.Image)(resources.GetObject("btnLogoff.Image")));
             this.btnLogoff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogoff.Location = new System.Drawing.Point(13, 393);
+            this.btnLogoff.Location = new System.Drawing.Point(12, 517);
             this.btnLogoff.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogoff.Name = "btnLogoff";
             this.btnLogoff.Size = new System.Drawing.Size(180, 50);
@@ -147,7 +148,7 @@
             this.btnOptions.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOptions.Image")));
             this.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOptions.Location = new System.Drawing.Point(13, 335);
+            this.btnOptions.Location = new System.Drawing.Point(12, 459);
             this.btnOptions.Margin = new System.Windows.Forms.Padding(4);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(180, 50);
@@ -156,16 +157,17 @@
             this.btnOptions.UseVisualStyleBackColor = false;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
-            // lblPharmaceuticalMS
+            // picLoginScreen
             // 
-            this.lblPharmaceuticalMS.AutoSize = true;
-            this.lblPharmaceuticalMS.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPharmaceuticalMS.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPharmaceuticalMS.Location = new System.Drawing.Point(9, 9);
-            this.lblPharmaceuticalMS.Name = "lblPharmaceuticalMS";
-            this.lblPharmaceuticalMS.Size = new System.Drawing.Size(157, 23);
-            this.lblPharmaceuticalMS.TabIndex = 13;
-            this.lblPharmaceuticalMS.Text = "PharmaceuticalMS";
+            this.picLoginScreen.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.picLoginScreen.ErrorImage = null;
+            this.picLoginScreen.Image = ((System.Drawing.Image)(resources.GetObject("picLoginScreen.Image")));
+            this.picLoginScreen.Location = new System.Drawing.Point(25, 12);
+            this.picLoginScreen.Name = "picLoginScreen";
+            this.picLoginScreen.Size = new System.Drawing.Size(150, 150);
+            this.picLoginScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLoginScreen.TabIndex = 15;
+            this.picLoginScreen.TabStop = false;
             // 
             // MainForm
             // 
@@ -173,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1584, 861);
-            this.Controls.Add(this.lblPharmaceuticalMS);
+            this.Controls.Add(this.picLoginScreen);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnLogoff);
             this.Controls.Add(this.btnStaff);
@@ -188,8 +190,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.picLoginScreen)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -203,6 +205,6 @@
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnLogoff;
         private System.Windows.Forms.Button btnOptions;
-        private System.Windows.Forms.Label lblPharmaceuticalMS;
+        private System.Windows.Forms.PictureBox picLoginScreen;
     }
 }
