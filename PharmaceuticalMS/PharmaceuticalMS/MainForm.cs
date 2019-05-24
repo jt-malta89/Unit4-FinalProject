@@ -35,24 +35,6 @@ namespace PharmaceuticalMS
             sf = null;
         }
 
-        ClientsForm cf;
-        private void btnClients_Click(object sender, EventArgs e)
-        {
-            if (cf == null)
-            {
-                cf = new ClientsForm();
-                cf.MdiParent = this;
-                cf.FormClosed += new FormClosedEventHandler(cf_FormClosed);
-                cf.Show();
-            }
-            else
-                cf.Activate();
-        }
-        void cf_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            cf = null;
-        }
-
         private void btnLogoff_Click(object sender, EventArgs e)
         {
             LoginForm myLoginForm = new LoginForm();

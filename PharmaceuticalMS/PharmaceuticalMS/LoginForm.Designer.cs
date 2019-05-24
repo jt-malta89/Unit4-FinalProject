@@ -65,6 +65,7 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtUsername
             // 
@@ -79,9 +80,9 @@
             this.lblUsername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(244, 70);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(72, 18);
+            this.lblUsername.Size = new System.Drawing.Size(76, 18);
             this.lblUsername.TabIndex = 3;
-            this.lblUsername.Text = "Username";
+            this.lblUsername.Text = "Username:";
             // 
             // label2
             // 
@@ -117,9 +118,9 @@
             this.lblPassword.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(244, 126);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(67, 18);
+            this.lblPassword.Size = new System.Drawing.Size(71, 18);
             this.lblPassword.TabIndex = 7;
-            this.lblPassword.Text = "Password";
+            this.lblPassword.Text = "Password:";
             // 
             // LoginForm
             // 

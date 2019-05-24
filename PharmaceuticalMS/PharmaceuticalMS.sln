@@ -5,12 +5,6 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaceuticalMS", "PharmaceuticalMS\PharmaceuticalMS.csproj", "{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationLogic", "ApplicationLogic\ApplicationLogic.csproj", "{A40C39AC-912F-4A48-94C7-C6AA1B035398}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{AC3D1F80-298B-4CFE-BCFF-770EE33E7342}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectGettersSetters", "ObjectGettersSetters\ObjectGettersSetters.csproj", "{63BBE4F4-E702-441E-B492-085AA51A0909}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,18 +15,6 @@ Global
 		{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A40C39AC-912F-4A48-94C7-C6AA1B035398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A40C39AC-912F-4A48-94C7-C6AA1B035398}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A40C39AC-912F-4A48-94C7-C6AA1B035398}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A40C39AC-912F-4A48-94C7-C6AA1B035398}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC3D1F80-298B-4CFE-BCFF-770EE33E7342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC3D1F80-298B-4CFE-BCFF-770EE33E7342}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC3D1F80-298B-4CFE-BCFF-770EE33E7342}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC3D1F80-298B-4CFE-BCFF-770EE33E7342}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63BBE4F4-E702-441E-B492-085AA51A0909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63BBE4F4-E702-441E-B492-085AA51A0909}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63BBE4F4-E702-441E-B492-085AA51A0909}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63BBE4F4-E702-441E-B492-085AA51A0909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
