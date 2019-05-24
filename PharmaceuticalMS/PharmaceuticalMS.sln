@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaceuticalMS", "PharmaceuticalMS\PharmaceuticalMS.csproj", "{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{748BC924-3700-4CC1-8FFC-F6C092C79697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{16ABFA7A-A8BF-4782-A1F6-A76381091650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{748BC924-3700-4CC1-8FFC-F6C092C79697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748BC924-3700-4CC1-8FFC-F6C092C79697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748BC924-3700-4CC1-8FFC-F6C092C79697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748BC924-3700-4CC1-8FFC-F6C092C79697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16ABFA7A-A8BF-4782-A1F6-A76381091650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16ABFA7A-A8BF-4782-A1F6-A76381091650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16ABFA7A-A8BF-4782-A1F6-A76381091650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16ABFA7A-A8BF-4782-A1F6-A76381091650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
