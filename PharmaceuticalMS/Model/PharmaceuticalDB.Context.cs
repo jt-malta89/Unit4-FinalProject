@@ -26,5 +26,6 @@ namespace Model
         }
     
         public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<Staff> Staffs { get; set; }
     }
 }
