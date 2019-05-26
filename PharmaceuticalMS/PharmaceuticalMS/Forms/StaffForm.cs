@@ -19,16 +19,18 @@ namespace PharmaceuticalMS
         public StaffForm()
         {
             InitializeComponent();
+            Load += new EventHandler(StaffForm_Load);
         }
 
         private void StaffForm_Load(object sender, EventArgs e)
         {
-            staffBindingSource.DataSource=StaffServices.GetAll();
+            staffBindingSource.DataSource = StaffServices.GetAll();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            StaffServices.Insert(staffBindingSource.Current as Staff);
+            staffBindingSource.DataSource = StaffServices.GetAll();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -38,7 +40,8 @@ namespace PharmaceuticalMS
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            StaffServices.Update(staffBindingSource.Current as Staff);
+            staffBindingSource.DataSource = StaffServices.GetAll();
         }
     }
 }

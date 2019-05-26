@@ -47,7 +47,7 @@
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Margin = new System.Windows.Forms.Padding(4);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(200, 861);
+            this.splitter1.Size = new System.Drawing.Size(200, 761);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1264, 761);
             this.Controls.Add(this.picLoginScreen);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnLogoff);

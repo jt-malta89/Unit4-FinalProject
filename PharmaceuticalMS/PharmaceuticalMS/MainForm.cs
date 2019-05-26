@@ -107,7 +107,7 @@ namespace PharmaceuticalMS
                 opf.Show();
             }
             else
-                sf.Activate();
+                opf.Activate();
         }
         void opf_FormClosed(object sender, FormClosedEventArgs e)
         {
