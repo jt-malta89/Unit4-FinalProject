@@ -45,6 +45,8 @@ namespace PharmaceuticalMS
         OrdersForm of;
         private void btnOrders_Click(object sender, EventArgs e)
         {
+            //This is a comment to show git branching
+
             if (of == null)
             {
                 of = new OrdersForm();
