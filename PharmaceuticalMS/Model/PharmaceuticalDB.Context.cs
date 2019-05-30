@@ -25,7 +25,19 @@ namespace Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<JobTitle> JobTitles { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<OderItem> OderItems { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Pharmacy> Pharmacies { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<SalesItem> SalesItems { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<Store> Stores { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
     }
 }

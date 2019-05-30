@@ -113,5 +113,23 @@ namespace PharmaceuticalMS
         {
             opf = null;
         }
+
+        VehiclesForm vf;
+        private void btnVehicles_Click(object sender, EventArgs e)
+        {
+            if (vf == null)
+            {
+                vf = new VehiclesForm();
+                vf.MdiParent = this;
+                vf.FormClosed += new FormClosedEventHandler(vf_FormClosed);
+                vf.Show();
+            }
+            else
+                vf.Activate();
+        }
+        void vf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            vf = null;
+        }
     }
 }

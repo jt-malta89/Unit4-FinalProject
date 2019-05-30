@@ -14,9 +14,18 @@ namespace Model
     
     public partial class Login
     {
-        public string LoginID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Login()
+        {
+            this.Staffs = new HashSet<Staff>();
+        }
+    
+        public int LoginID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Type { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Staff> Staffs { get; set; }
     }
 }

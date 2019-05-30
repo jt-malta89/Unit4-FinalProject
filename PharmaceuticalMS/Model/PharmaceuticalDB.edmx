@@ -5,74 +5,835 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="PharmaceuticalDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="IDCard" />
+          </Key>
+          <Property Name="IDCard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactNumber" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="BarcodeID" />
+          </Key>
+          <Property Name="BarcodeID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ItemDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NotifThre" Type="int" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="StoreID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobTitle">
+          <Key>
+            <PropertyRef Name="JobTitleID" />
+          </Key>
+          <Property Name="JobTitleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="LoginID" />
           </Key>
-          <Property Name="LoginID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="OderItems">
+          <Key>
+            <PropertyRef Name="OrderItemsID" />
+          </Key>
+          <Property Name="OrderItemsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BarcodeID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="PharmacieID" Type="int" Nullable="false" />
+          <Property Name="IDCard" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pharmacies">
+          <Key>
+            <PropertyRef Name="PharmacieID" />
+          </Key>
+          <Property Name="PharmacieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="SalesID" />
+          </Key>
+          <Property Name="SalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="StaffIDCard" Type="varchar" MaxLength="50" />
+          <Property Name="ClientIDCard" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SalesItems">
+          <Key>
+            <PropertyRef Name="SalesItemID" />
+          </Key>
+          <Property Name="SalesItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BarcodeID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SalesID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+        </EntityType>
         <EntityType Name="Staff">
           <Key>
-            <PropertyRef Name="StaffID" />
+            <PropertyRef Name="IDCard" />
           </Key>
-          <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCard" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactNo" Type="int" />
+          <Property Name="Salary" Type="float" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="JobTitleID" Type="int" Nullable="false" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="LoginID" Type="int" />
         </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Vehicles">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumberPlate" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MakeModel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+          <Property Name="FuelType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Items_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Stores">
+          <End Role="Stores" Type="Self.Stores" Multiplicity="1" />
+          <End Role="Items" Type="Self.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stores">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OderItems_Items">
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="OderItems" Type="Self.OderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="BarcodeID" />
+            </Principal>
+            <Dependent Role="OderItems">
+              <PropertyRef Name="BarcodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OderItems_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OderItems" Type="Self.OderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OderItems">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Pharmacies">
+          <End Role="Pharmacies" Type="Self.Pharmacies" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pharmacies">
+              <PropertyRef Name="PharmacieID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="PharmacieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Staff">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="IDCard" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="IDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="IDCard" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ClientIDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesItems_Sales">
+          <End Role="Sales" Type="Self.Sales" Multiplicity="1" />
+          <End Role="SalesItems" Type="Self.SalesItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sales">
+              <PropertyRef Name="SalesID" />
+            </Principal>
+            <Dependent Role="SalesItems">
+              <PropertyRef Name="SalesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_JobTitle">
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="JobTitleID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="JobTitleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Login">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="LoginID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="LoginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Vehicles">
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicles">
+              <PropertyRef Name="VehicleID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="VehicleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="PharmaceuticalDBModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobTitle" EntityType="Self.JobTitle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OderItems" EntityType="Self.OderItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pharmacies" EntityType="Self.Pharmacies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesItems" EntityType="Self.SalesItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Items_Category" Association="Self.FK_Items_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Stores" Association="Self.FK_Items_Stores">
+            <End Role="Stores" EntitySet="Stores" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OderItems_Items" Association="Self.FK_OderItems_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="OderItems" EntitySet="OderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OderItems_Orders" Association="Self.FK_OderItems_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OderItems" EntitySet="OderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Pharmacies" Association="Self.FK_Orders_Pharmacies">
+            <End Role="Pharmacies" EntitySet="Pharmacies" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Staff" Association="Self.FK_Orders_Staff">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Clients" Association="Self.FK_Sales_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesItems_Sales" Association="Self.FK_SalesItems_Sales">
+            <End Role="Sales" EntitySet="Sales" />
+            <End Role="SalesItems" EntitySet="SalesItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_JobTitle" Association="Self.FK_Staff_JobTitle">
+            <End Role="JobTitle" EntitySet="JobTitle" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Login" Association="Self.FK_Staff_Login">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Vehicles" Association="Self.FK_Staff_Vehicles">
+            <End Role="Vehicles" EntitySet="Vehicles" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PharmaceuticalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PharmaceuticalDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="PharmaceuticalDBModel.Category" />
+          <EntitySet Name="Clients" EntityType="PharmaceuticalDBModel.Client" />
+          <EntitySet Name="Items" EntityType="PharmaceuticalDBModel.Item" />
+          <EntitySet Name="JobTitles" EntityType="PharmaceuticalDBModel.JobTitle" />
+          <EntitySet Name="Logins" EntityType="PharmaceuticalDBModel.Login" />
+          <EntitySet Name="OderItems" EntityType="PharmaceuticalDBModel.OderItem" />
+          <EntitySet Name="Orders" EntityType="PharmaceuticalDBModel.Order" />
+          <EntitySet Name="Pharmacies" EntityType="PharmaceuticalDBModel.Pharmacy" />
+          <EntitySet Name="Sales" EntityType="PharmaceuticalDBModel.Sale" />
+          <EntitySet Name="SalesItems" EntityType="PharmaceuticalDBModel.SalesItem" />
+          <EntitySet Name="Staffs" EntityType="PharmaceuticalDBModel.Staff" />
+          <EntitySet Name="Stores" EntityType="PharmaceuticalDBModel.Store" />
+          <EntitySet Name="sysdiagrams" EntityType="PharmaceuticalDBModel.sysdiagram" />
+          <EntitySet Name="Vehicles" EntityType="PharmaceuticalDBModel.Vehicle" />
+          <AssociationSet Name="FK_Items_Category" Association="PharmaceuticalDBModel.FK_Items_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Clients" Association="PharmaceuticalDBModel.FK_Sales_Clients">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Sale" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Items_Stores" Association="PharmaceuticalDBModel.FK_Items_Stores">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OderItems_Items" Association="PharmaceuticalDBModel.FK_OderItems_Items">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="OderItem" EntitySet="OderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_JobTitle" Association="PharmaceuticalDBModel.FK_Staff_JobTitle">
+            <End Role="JobTitle" EntitySet="JobTitles" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Login" Association="PharmaceuticalDBModel.FK_Staff_Login">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OderItems_Orders" Association="PharmaceuticalDBModel.FK_OderItems_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OderItem" EntitySet="OderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Pharmacies" Association="PharmaceuticalDBModel.FK_Orders_Pharmacies">
+            <End Role="Pharmacy" EntitySet="Pharmacies" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Staff" Association="PharmaceuticalDBModel.FK_Orders_Staff">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesItems_Sales" Association="PharmaceuticalDBModel.FK_SalesItems_Sales">
+            <End Role="Sale" EntitySet="Sales" />
+            <End Role="SalesItem" EntitySet="SalesItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Vehicles" Association="PharmaceuticalDBModel.FK_Staff_Vehicles">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Items" Relationship="PharmaceuticalDBModel.FK_Items_Category" FromRole="Category" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="IDCard" />
+          </Key>
+          <Property Name="IDCard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sales" Relationship="PharmaceuticalDBModel.FK_Sales_Clients" FromRole="Client" ToRole="Sale" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="BarcodeID" />
+          </Key>
+          <Property Name="BarcodeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NotifThre" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="StoreID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="PharmaceuticalDBModel.FK_Items_Category" FromRole="Item" ToRole="Category" />
+          <NavigationProperty Name="Store" Relationship="PharmaceuticalDBModel.FK_Items_Stores" FromRole="Item" ToRole="Store" />
+          <NavigationProperty Name="OderItems" Relationship="PharmaceuticalDBModel.FK_OderItems_Items" FromRole="Item" ToRole="OderItem" />
+        </EntityType>
+        <EntityType Name="JobTitle">
+          <Key>
+            <PropertyRef Name="JobTitleID" />
+          </Key>
+          <Property Name="JobTitleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Staffs" Relationship="PharmaceuticalDBModel.FK_Staff_JobTitle" FromRole="JobTitle" ToRole="Staff" />
+        </EntityType>
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="LoginID" />
           </Key>
-          <Property Name="LoginID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Staffs" Relationship="PharmaceuticalDBModel.FK_Staff_Login" FromRole="Login" ToRole="Staff" />
         </EntityType>
-        <EntityContainer Name="PharmaceuticalDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Logins" EntityType="Self.Login" />
-          <EntitySet Name="Staffs" EntityType="PharmaceuticalDBModel.Staff" />
-        </EntityContainer>
+        <EntityType Name="OderItem">
+          <Key>
+            <PropertyRef Name="OrderItemsID" />
+          </Key>
+          <Property Name="OrderItemsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BarcodeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="PharmaceuticalDBModel.FK_OderItems_Items" FromRole="OderItem" ToRole="Item" />
+          <NavigationProperty Name="Order" Relationship="PharmaceuticalDBModel.FK_OderItems_Orders" FromRole="OderItem" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PharmacieID" Type="Int32" Nullable="false" />
+          <Property Name="IDCard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OderItems" Relationship="PharmaceuticalDBModel.FK_OderItems_Orders" FromRole="Order" ToRole="OderItem" />
+          <NavigationProperty Name="Pharmacy" Relationship="PharmaceuticalDBModel.FK_Orders_Pharmacies" FromRole="Order" ToRole="Pharmacy" />
+          <NavigationProperty Name="Staff" Relationship="PharmaceuticalDBModel.FK_Orders_Staff" FromRole="Order" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Pharmacy">
+          <Key>
+            <PropertyRef Name="PharmacieID" />
+          </Key>
+          <Property Name="PharmacieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="PharmaceuticalDBModel.FK_Orders_Pharmacies" FromRole="Pharmacy" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SalesID" />
+          </Key>
+          <Property Name="SalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="StaffIDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientIDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Client" Relationship="PharmaceuticalDBModel.FK_Sales_Clients" FromRole="Sale" ToRole="Client" />
+          <NavigationProperty Name="SalesItems" Relationship="PharmaceuticalDBModel.FK_SalesItems_Sales" FromRole="Sale" ToRole="SalesItem" />
+        </EntityType>
+        <EntityType Name="SalesItem">
+          <Key>
+            <PropertyRef Name="SalesItemID" />
+          </Key>
+          <Property Name="SalesItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BarcodeID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Sale" Relationship="PharmaceuticalDBModel.FK_SalesItems_Sales" FromRole="SalesItem" ToRole="Sale" />
+        </EntityType>
         <EntityType Name="Staff">
           <Key>
-            <PropertyRef Name="StaffID" />
+            <PropertyRef Name="IDCard" />
           </Key>
-          <Property Name="StaffID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="Int32" />
+          <Property Name="Salary" Type="Double" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobTitleID" Type="Int32" Nullable="false" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="LoginID" Type="Int32" />
+          <NavigationProperty Name="JobTitle" Relationship="PharmaceuticalDBModel.FK_Staff_JobTitle" FromRole="Staff" ToRole="JobTitle" />
+          <NavigationProperty Name="Login" Relationship="PharmaceuticalDBModel.FK_Staff_Login" FromRole="Staff" ToRole="Login" />
+          <NavigationProperty Name="Orders" Relationship="PharmaceuticalDBModel.FK_Orders_Staff" FromRole="Staff" ToRole="Order" />
+          <NavigationProperty Name="Vehicle" Relationship="PharmaceuticalDBModel.FK_Staff_Vehicles" FromRole="Staff" ToRole="Vehicle" />
         </EntityType>
-      </Schema>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="StoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Items" Relationship="PharmaceuticalDBModel.FK_Items_Stores" FromRole="Store" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumberPlate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MakeModel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FuelType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Staffs" Relationship="PharmaceuticalDBModel.FK_Staff_Vehicles" FromRole="Vehicle" ToRole="Staff" />
+        </EntityType>
+        <Association Name="FK_Items_Category">
+          <End Type="PharmaceuticalDBModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Clients">
+          <End Type="PharmaceuticalDBModel.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="PharmaceuticalDBModel.Sale" Role="Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDCard" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="ClientIDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Items_Stores">
+          <End Type="PharmaceuticalDBModel.Store" Role="Store" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OderItems_Items">
+          <End Type="PharmaceuticalDBModel.Item" Role="Item" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.OderItem" Role="OderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="BarcodeID" />
+            </Principal>
+            <Dependent Role="OderItem">
+              <PropertyRef Name="BarcodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_JobTitle">
+          <End Type="PharmaceuticalDBModel.JobTitle" Role="JobTitle" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.Staff" Role="Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="JobTitleID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="JobTitleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Login">
+          <End Type="PharmaceuticalDBModel.Login" Role="Login" Multiplicity="0..1" />
+          <End Type="PharmaceuticalDBModel.Staff" Role="Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="LoginID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="LoginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OderItems_Orders">
+          <End Type="PharmaceuticalDBModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.OderItem" Role="OderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OderItem">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Pharmacies">
+          <End Type="PharmaceuticalDBModel.Pharmacy" Role="Pharmacy" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pharmacy">
+              <PropertyRef Name="PharmacieID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PharmacieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Staff">
+          <End Type="PharmaceuticalDBModel.Staff" Role="Staff" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="IDCard" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IDCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesItems_Sales">
+          <End Type="PharmaceuticalDBModel.Sale" Role="Sale" Multiplicity="1" />
+          <End Type="PharmaceuticalDBModel.SalesItem" Role="SalesItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="SalesID" />
+            </Principal>
+            <Dependent Role="SalesItem">
+              <PropertyRef Name="SalesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Vehicles">
+          <End Type="PharmaceuticalDBModel.Vehicle" Role="Vehicle" Multiplicity="0..1" />
+          <End Type="PharmaceuticalDBModel.Staff" Role="Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="VehicleID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="VehicleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PharmaceuticalDBModelStoreContainer" CdmEntityContainer="PharmaceuticalDBEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Category1" ColumnName="Category" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NotifThre" ColumnName="NotifThre" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="BarcodeID" ColumnName="BarcodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobTitles">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.JobTitle">
+              <MappingFragment StoreEntitySet="JobTitle">
+                <ScalarProperty Name="JobTitle1" ColumnName="JobTitle" />
+                <ScalarProperty Name="JobTitleID" ColumnName="JobTitleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Logins">
             <EntityTypeMapping TypeName="PharmaceuticalDBModel.Login">
               <MappingFragment StoreEntitySet="Login">
-                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OderItems">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.OderItem">
+              <MappingFragment StoreEntitySet="OderItems">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="BarcodeID" ColumnName="BarcodeID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderItemsID" ColumnName="OrderItemsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="PharmacieID" ColumnName="PharmacieID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pharmacies">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Pharmacy">
+              <MappingFragment StoreEntitySet="Pharmacies">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PharmacieID" ColumnName="PharmacieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Sale">
+              <MappingFragment StoreEntitySet="Sales">
+                <ScalarProperty Name="ClientIDCard" ColumnName="ClientIDCard" />
+                <ScalarProperty Name="StaffIDCard" ColumnName="StaffIDCard" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesItems">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.SalesItem">
+              <MappingFragment StoreEntitySet="SalesItems">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SalesID" ColumnName="SalesID" />
+                <ScalarProperty Name="BarcodeID" ColumnName="BarcodeID" />
+                <ScalarProperty Name="SalesItemID" ColumnName="SalesItemID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Staffs">
             <EntityTypeMapping TypeName="PharmaceuticalDBModel.Staff">
               <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="JobTitleID" ColumnName="JobTitleID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="PharmaceuticalDBModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicles">
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="MakeModel" ColumnName="MakeModel" />
+                <ScalarProperty Name="NumberPlate" ColumnName="NumberPlate" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

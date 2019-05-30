@@ -50,7 +50,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobTitle.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OderItem.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
       <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
     </Compile>
     <Compile Include="PharmaceuticalDB.Context.cs">
@@ -68,8 +86,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PharmaceuticalDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pharmacy.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesItem.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Staff.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
       <DependentUpon>PharmaceuticalDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>

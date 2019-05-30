@@ -35,7 +35,11 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if(MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                StaffServices.Delete(staffBindingSource.Current as Staff);
+                staffBindingSource.RemoveCurrent();
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

@@ -12,28 +12,26 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Staff
+    public partial class Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Staff()
+        public Item()
         {
-            this.Orders = new HashSet<Order>();
+            this.OderItems = new HashSet<OderItem>();
         }
     
-        public string IDCard { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public Nullable<int> ContactNo { get; set; }
-        public Nullable<double> Salary { get; set; }
-        public string Address { get; set; }
-        public int JobTitleID { get; set; }
-        public Nullable<int> VehicleID { get; set; }
-        public Nullable<int> LoginID { get; set; }
+        public string BarcodeID { get; set; }
+        public string ItemName { get; set; }
+        public string ItemDescription { get; set; }
+        public int NotifThre { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+        public int StoreID { get; set; }
+        public int CategoryID { get; set; }
     
-        public virtual JobTitle JobTitle { get; set; }
-        public virtual Login Login { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual Store Store { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual Vehicle Vehicle { get; set; }
+        public virtual ICollection<OderItem> OderItems { get; set; }
     }
 }
