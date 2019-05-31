@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnLogoff = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -55,7 +58,7 @@
             this.btnOrders.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnOrders.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.Location = new System.Drawing.Point(13, 103);
+            this.btnOrders.Location = new System.Drawing.Point(13, 113);
             this.btnOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(180, 50);
@@ -68,7 +71,7 @@
             this.btnProducts.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnProducts.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(13, 393);
+            this.btnProducts.Location = new System.Drawing.Point(10, 345);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(180, 50);
@@ -81,7 +84,7 @@
             this.btnSales.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSales.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.Location = new System.Drawing.Point(13, 277);
+            this.btnSales.Location = new System.Drawing.Point(10, 229);
             this.btnSales.Margin = new System.Windows.Forms.Padding(4);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(180, 50);
@@ -93,13 +96,12 @@
             // 
             this.btnLogoff.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLogoff.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogoff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogoff.Image = ((System.Drawing.Image)(resources.GetObject("btnLogoff.Image")));
             this.btnLogoff.Location = new System.Drawing.Point(135, 693);
             this.btnLogoff.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogoff.Name = "btnLogoff";
             this.btnLogoff.Size = new System.Drawing.Size(55, 55);
             this.btnLogoff.TabIndex = 9;
-            this.btnLogoff.Text = "Logoff";
             this.btnLogoff.UseVisualStyleBackColor = false;
             this.btnLogoff.Click += new System.EventHandler(this.btnLogoff_Click);
             // 
@@ -108,7 +110,7 @@
             this.btnOptions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnOptions.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOptions.Location = new System.Drawing.Point(11, 161);
+            this.btnOptions.Location = new System.Drawing.Point(13, 171);
             this.btnOptions.Margin = new System.Windows.Forms.Padding(4);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(180, 50);
@@ -116,25 +118,12 @@
             this.btnOptions.Text = "Manage Order";
             this.btnOptions.UseVisualStyleBackColor = false;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(12, 219);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 50);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Print Order";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(13, 451);
+            this.button6.Location = new System.Drawing.Point(10, 403);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(180, 50);
@@ -147,7 +136,7 @@
             this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(13, 335);
+            this.button7.Location = new System.Drawing.Point(10, 287);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(180, 50);
@@ -155,16 +144,41 @@
             this.button7.Text = "Sales";
             this.button7.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(72, 693);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 55);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pLogo
+            // 
+            this.pLogo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pLogo.Image = ((System.Drawing.Image)(resources.GetObject("pLogo.Image")));
+            this.pLogo.Location = new System.Drawing.Point(36, 4);
+            this.pLogo.Name = "pLogo";
+            this.pLogo.Size = new System.Drawing.Size(130, 130);
+            this.pLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pLogo.TabIndex = 31;
+            this.pLogo.TabStop = false;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1264, 761);
+            this.Controls.Add(this.btnOrders);
+            this.Controls.Add(this.pLogo);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnLogoff);
             this.Controls.Add(this.btnSales);
@@ -175,6 +189,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.pLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,8 +202,9 @@
         private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Button btnLogoff;
         private System.Windows.Forms.Button btnOptions;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pLogo;
     }
 }
