@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F20AB674-ADE3-4A88-9AF7-4FE9E0358679}</ProjectGuid>
+    <ProjectGuid>{3A243066-321D-496F-B14E-D459E6D605DA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PharmaceuticalMS</RootNamespace>
     <AssemblyName>PharmaceuticalMS</AssemblyName>
@@ -33,19 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.Messaging" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,76 +46,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\VehiclesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VehiclesForm.Designer.cs">
-      <DependentUpon>VehiclesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\OptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OptionsForm.Designer.cs">
-      <DependentUpon>OptionsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PoSForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PoSForm.Designer.cs">
-      <DependentUpon>PoSForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProductsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProductsForm.Designer.cs">
-      <DependentUpon>ProductsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\OrdersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OrdersForm.Designer.cs">
-      <DependentUpon>OrdersForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\StaffForm.cs">
+    <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StaffForm.Designer.cs">
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffForm.Designer.cs">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\VehiclesForm.resx">
+    <Compile Include="VehiclesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehiclesForm.Designer.cs">
       <DependentUpon>VehiclesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OptionsForm.resx">
-      <DependentUpon>OptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PoSForm.resx">
-      <DependentUpon>PoSForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductsForm.resx">
-      <DependentUpon>ProductsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OrdersForm.resx">
-      <DependentUpon>OrdersForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,15 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\StaffForm.resx">
-      <DependentUpon>StaffForm.cs</DependentUpon>
+    <EmbeddedResource Include="VehiclesForm.resx">
+      <DependentUpon>VehiclesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\Model.JobTitle.datasource" />
-    <None Include="Properties\DataSources\Model.Locality.datasource" />
-    <None Include="Properties\DataSources\Model.Login.datasource" />
-    <None Include="Properties\DataSources\Model.Staff.datasource" />
-    <None Include="Properties\DataSources\Model.Vehicle.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,20 +113,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ApplicationLogic\ApplicationLogic.csproj">
-      <Project>{5b78be02-879d-4d17-9fe2-087805cee767}</Project>
-      <Name>ApplicationLogic</Name>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{b88ed770-5891-4c3b-b6a1-3ba97727d15d}</Project>
+      <Name>BAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{16abfa7a-a8bf-4782-a1f6-a76381091650}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\BEL\BEL.csproj">
+      <Project>{7c7e7f04-f68e-4b24-baee-372ea63acc98}</Project>
+      <Name>BEL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{748bc924-3700-4cc1-8ffc-f6c092c79697}</Project>
-      <Name>Model</Name>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{fd7c44ac-ed38-4a7b-ac24-1e948f8502c2}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
