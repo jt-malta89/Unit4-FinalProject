@@ -38,14 +38,6 @@ namespace PharmaceuticalMS
             func(Controls);
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = opr.viewCreateLogin(info);
-            dgvLoginAccount.DataSource = dt;
-            dgvLoginAccount.Columns[0].Visible = false;
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             info.Username = txtUsername.Text;
@@ -89,6 +81,14 @@ namespace PharmaceuticalMS
                 txtPassword.Text = dgvRow.Cells[2].Value.ToString();
                 txtAccessType.Text = dgvRow.Cells[3].Value.ToString();
             }
+        }
+
+        private void CreateLoginForm_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = opr.viewCreateLogin(info);
+            dgvLoginAccount.DataSource = dt;
+            dgvLoginAccount.Columns[0].Visible = false;
         }
     }
 }

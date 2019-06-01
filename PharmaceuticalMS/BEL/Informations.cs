@@ -22,6 +22,28 @@ namespace BEL
         public string Category { get; set; }
         public int JobTitleID { get; set; }
         public string JobTitle { get; set; }
-         
+        public string IDCard { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public int ContactNumber { get; set; }
+        public string Email { get; set; }
+        public string BarcodeID { get; set; }
+        public string ItenName { get; set; }
+        public string ItemDescription { get; set; }
+        public int NotifThre { get; set; }
+        public int Price { get; set; }
+        public int Quantity { get; set;}
+        public int StoreID { get; set; }
+        public string Address { get; set; }
+        public string ContactNo { get; set; }
+        public int Salary { get; set; }
+        public int SalesItemID { get; set; }
+        public int SalesID { get; set; }
+        public int Date { get; set; }
+        public string StaffIDCard { get; set; }
+        public string ClientIDCard { get; set; }
+        public int PharmacieID { get; set; }
+        public int OrderID { get; set; }
+        public int OrderItems { get; set; }
     }
 }

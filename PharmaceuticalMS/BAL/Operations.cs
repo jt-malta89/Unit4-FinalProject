@@ -24,6 +24,14 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
+        public DataTable viewStaff(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Staff";
+            return db.ExeReader(cmd);
+        }
+
         public int deleteVeh(Informations info)
         {
             SqlCommand cmd = new SqlCommand();

@@ -38,11 +38,6 @@ namespace PharmaceuticalMS
             func(Controls);
         }
 
-        private void VehiclesForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             info.NumberPlate = txtNumberPlate.Text;
@@ -59,14 +54,6 @@ namespace PharmaceuticalMS
                 this.StripStatusVehicles.Text = "Vehicle Data Saved";
                 ClearTextBoxes();
             }
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = opr.viewvehicles(info);
-            dgvVehicles.DataSource = dt;
-            dgvVehicles.Columns[0].Visible = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -97,6 +84,14 @@ namespace PharmaceuticalMS
                 txtVehicleType.Text = dgvRow.Cells[3].Value.ToString();
                 txtFuelType.Text = dgvRow.Cells[4].Value.ToString();
             }
+        }
+
+        private void VehiclesForm_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = opr.viewvehicles(info);
+            dgvVehicles.DataSource = dt;
+            dgvVehicles.Columns[0].Visible = false;
         }
     }
 }

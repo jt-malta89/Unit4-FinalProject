@@ -33,7 +33,6 @@
             this.lblJobTitle = new System.Windows.Forms.Label();
             this.txtJobTitle = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StripStatusVehicles = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvJobTitle = new System.Windows.Forms.DataGridView();
@@ -56,7 +55,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(161, 216);
+            this.btnAdd.Location = new System.Drawing.Point(155, 216);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 30);
             this.btnAdd.TabIndex = 5;
@@ -86,25 +85,13 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(237, 216);
+            this.btnDelete.Location = new System.Drawing.Point(231, 216);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnLoad.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(85, 216);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(70, 30);
-            this.btnLoad.TabIndex = 4;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // statusStrip1
             // 
@@ -141,7 +128,6 @@
             this.Controls.Add(this.lblJobTitle);
             this.Controls.Add(this.txtJobTitle);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblAddVehicles);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,6 +137,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.JobTitleForm_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).EndInit();
@@ -166,7 +153,6 @@
         private System.Windows.Forms.Label lblJobTitle;
         private System.Windows.Forms.TextBox txtJobTitle;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StripStatusVehicles;
         private System.Windows.Forms.DataGridView dgvJobTitle;

@@ -70,6 +70,7 @@
             this.btnOrders.TabIndex = 2;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnProducts
             // 
@@ -84,6 +85,7 @@
             this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnPointOfSale
             // 
@@ -98,6 +100,7 @@
             this.btnPointOfSale.TabIndex = 5;
             this.btnPointOfSale.Text = "Point Of Sale";
             this.btnPointOfSale.UseVisualStyleBackColor = false;
+            this.btnPointOfSale.Click += new System.EventHandler(this.btnPointOfSale_Click);
             // 
             // btnStaff
             // 
@@ -140,6 +143,7 @@
             this.btnClients.TabIndex = 11;
             this.btnClients.Text = "Clients";
             this.btnClients.UseVisualStyleBackColor = false;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnCategory
             // 
@@ -204,8 +208,9 @@
             this.btnStore.Name = "btnStore";
             this.btnStore.Size = new System.Drawing.Size(180, 50);
             this.btnStore.TabIndex = 25;
-            this.btnStore.Text = "Store";
+            this.btnStore.Text = "Store/Pharmacy";
             this.btnStore.UseVisualStyleBackColor = false;
+            this.btnStore.Click += new System.EventHandler(this.btnStore_Click);
             // 
             // btnVehiclesForm
             // 

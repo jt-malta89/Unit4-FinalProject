@@ -38,14 +38,6 @@ namespace PharmaceuticalMS
             func(Controls);
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = opr.viewCategory(info);
-            dgvCategory.DataSource = dt;
-            dgvCategory.Columns[0].Visible = false;
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             info.Category = txtCategory.Text;
@@ -83,6 +75,14 @@ namespace PharmaceuticalMS
                 DataGridViewRow dgvRow = dgvCategory.Rows[e.RowIndex];
                 txtCategory.Text = dgvRow.Cells[1].Value.ToString();
             }
+        }
+
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = opr.viewCategory(info);
+            dgvCategory.DataSource = dt;
+            dgvCategory.Columns[0].Visible = false;
         }
     }
 }
