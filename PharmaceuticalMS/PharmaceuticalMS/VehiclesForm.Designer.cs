@@ -36,7 +36,6 @@
             this.txtNumberPlate = new System.Windows.Forms.TextBox();
             this.txtMakeModel = new System.Windows.Forms.TextBox();
             this.lblFuelType = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtVehicleType = new System.Windows.Forms.TextBox();
             this.txtFuelType = new System.Windows.Forms.TextBox();
@@ -63,10 +62,10 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(85, 216);
+            this.btnAdd.Location = new System.Drawing.Point(161, 216);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 30);
-            this.btnAdd.TabIndex = 1;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -107,7 +106,7 @@
             this.txtNumberPlate.Location = new System.Drawing.Point(161, 76);
             this.txtNumberPlate.Name = "txtNumberPlate";
             this.txtNumberPlate.Size = new System.Drawing.Size(140, 23);
-            this.txtNumberPlate.TabIndex = 6;
+            this.txtNumberPlate.TabIndex = 0;
             // 
             // txtMakeModel
             // 
@@ -115,7 +114,7 @@
             this.txtMakeModel.Location = new System.Drawing.Point(161, 105);
             this.txtMakeModel.Name = "txtMakeModel";
             this.txtMakeModel.Size = new System.Drawing.Size(140, 23);
-            this.txtMakeModel.TabIndex = 7;
+            this.txtMakeModel.TabIndex = 1;
             // 
             // lblFuelType
             // 
@@ -127,18 +126,6 @@
             this.lblFuelType.TabIndex = 12;
             this.lblFuelType.Text = "Fuel Type";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(161, 216);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(70, 30);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -146,7 +133,7 @@
             this.btnDelete.Location = new System.Drawing.Point(237, 216);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -157,7 +144,7 @@
             this.txtVehicleType.Location = new System.Drawing.Point(161, 134);
             this.txtVehicleType.Name = "txtVehicleType";
             this.txtVehicleType.Size = new System.Drawing.Size(140, 23);
-            this.txtVehicleType.TabIndex = 7;
+            this.txtVehicleType.TabIndex = 2;
             // 
             // txtFuelType
             // 
@@ -165,16 +152,16 @@
             this.txtFuelType.Location = new System.Drawing.Point(161, 163);
             this.txtFuelType.Name = "txtFuelType";
             this.txtFuelType.Size = new System.Drawing.Size(140, 23);
-            this.txtFuelType.TabIndex = 7;
+            this.txtFuelType.TabIndex = 3;
             // 
             // btnLoad
             // 
             this.btnLoad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLoad.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(8, 216);
+            this.btnLoad.Location = new System.Drawing.Point(85, 216);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(70, 30);
-            this.btnLoad.TabIndex = 1;
+            this.btnLoad.TabIndex = 4;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
@@ -199,8 +186,9 @@
             this.dgvVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehicles.Location = new System.Drawing.Point(332, 58);
             this.dgvVehicles.Name = "dgvVehicles";
-            this.dgvVehicles.Size = new System.Drawing.Size(240, 150);
+            this.dgvVehicles.Size = new System.Drawing.Size(240, 177);
             this.dgvVehicles.TabIndex = 14;
+            this.dgvVehicles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehicles_CellClick);
             // 
             // VehiclesForm
             // 
@@ -218,7 +206,6 @@
             this.Controls.Add(this.txtFuelType);
             this.Controls.Add(this.txtVehicleType);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtMakeModel);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnAdd);
@@ -248,7 +235,6 @@
         private System.Windows.Forms.TextBox txtNumberPlate;
         private System.Windows.Forms.TextBox txtMakeModel;
         private System.Windows.Forms.Label lblFuelType;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtVehicleType;
         private System.Windows.Forms.TextBox txtFuelType;

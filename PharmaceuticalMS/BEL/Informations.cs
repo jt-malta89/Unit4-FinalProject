@@ -18,5 +18,10 @@ namespace BEL
         public string MakeModel { get; set; }
         public string VehicleType { get; set; }
         public string FuelType { get; set; }
+        public int CategoryID { get; set; }
+        public string Category { get; set; }
+        public int JobTitleID { get; set; }
+        public string JobTitle { get; set; }
+         
     }
 }

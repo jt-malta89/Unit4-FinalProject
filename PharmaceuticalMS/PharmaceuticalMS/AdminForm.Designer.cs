@@ -32,16 +32,15 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
+            this.btnPointOfSale = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnLogoff = new System.Windows.Forms.Button();
-            this.btnOptions = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnClients = new System.Windows.Forms.Button();
+            this.btnCategory = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnCreateLogin = new System.Windows.Forms.Button();
+            this.btnJobTitle = new System.Windows.Forms.Button();
+            this.btnStore = new System.Windows.Forms.Button();
             this.btnVehiclesForm = new System.Windows.Forms.Button();
             this.pLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pLogo)).BeginInit();
@@ -78,7 +77,7 @@
             this.btnProducts.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(15, 345);
+            this.btnProducts.Location = new System.Drawing.Point(13, 229);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(180, 50);
@@ -86,18 +85,19 @@
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
             // 
-            // btnSales
+            // btnPointOfSale
             // 
-            this.btnSales.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSales.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.Location = new System.Drawing.Point(13, 229);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(180, 50);
-            this.btnSales.TabIndex = 5;
-            this.btnSales.Text = "Point Of Sale";
-            this.btnSales.UseVisualStyleBackColor = false;
+            this.btnPointOfSale.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPointOfSale.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPointOfSale.Image = ((System.Drawing.Image)(resources.GetObject("btnPointOfSale.Image")));
+            this.btnPointOfSale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPointOfSale.Location = new System.Drawing.Point(13, 171);
+            this.btnPointOfSale.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPointOfSale.Name = "btnPointOfSale";
+            this.btnPointOfSale.Size = new System.Drawing.Size(180, 50);
+            this.btnPointOfSale.TabIndex = 5;
+            this.btnPointOfSale.Text = "Point Of Sale";
+            this.btnPointOfSale.UseVisualStyleBackColor = false;
             // 
             // btnStaff
             // 
@@ -105,13 +105,14 @@
             this.btnStaff.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnStaff.Image")));
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaff.Location = new System.Drawing.Point(15, 461);
+            this.btnStaff.Location = new System.Drawing.Point(13, 287);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(4);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(180, 50);
             this.btnStaff.TabIndex = 7;
             this.btnStaff.Text = "Staff";
             this.btnStaff.UseVisualStyleBackColor = false;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnLogoff
             // 
@@ -126,109 +127,96 @@
             this.btnLogoff.UseVisualStyleBackColor = false;
             this.btnLogoff.Click += new System.EventHandler(this.btnLogoff_Click);
             // 
-            // btnOptions
+            // btnClients
             // 
-            this.btnOptions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnOptions.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOptions.Location = new System.Drawing.Point(13, 171);
-            this.btnOptions.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(180, 50);
-            this.btnOptions.TabIndex = 11;
-            this.btnOptions.Text = "Manage Order";
-            this.btnOptions.UseVisualStyleBackColor = false;
+            this.btnClients.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnClients.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClients.Image = ((System.Drawing.Image)(resources.GetObject("btnClients.Image")));
+            this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClients.Location = new System.Drawing.Point(13, 345);
+            this.btnClients.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClients.Name = "btnClients";
+            this.btnClients.Size = new System.Drawing.Size(180, 50);
+            this.btnClients.TabIndex = 11;
+            this.btnClients.Text = "Clients";
+            this.btnClients.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnCategory
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(11, 693);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 55);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Category";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCategory.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCategory.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
+            this.btnCategory.Location = new System.Drawing.Point(11, 693);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(55, 55);
+            this.btnCategory.TabIndex = 17;
+            this.btnCategory.UseVisualStyleBackColor = false;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
-            // button2
+            // btnPrint
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(72, 693);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 55);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Print";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnPrint.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.Location = new System.Drawing.Point(72, 693);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(55, 55);
+            this.btnPrint.TabIndex = 18;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // button3
+            // btnCreateLogin
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(72, 630);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 55);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Login account";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCreateLogin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCreateLogin.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateLogin.Image")));
+            this.btnCreateLogin.Location = new System.Drawing.Point(72, 630);
+            this.btnCreateLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateLogin.Name = "btnCreateLogin";
+            this.btnCreateLogin.Size = new System.Drawing.Size(55, 55);
+            this.btnCreateLogin.TabIndex = 19;
+            this.btnCreateLogin.UseVisualStyleBackColor = false;
+            this.btnCreateLogin.Click += new System.EventHandler(this.btnCreateLogin_Click);
             // 
-            // button4
+            // btnJobTitle
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(10, 630);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 55);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Job Title";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnJobTitle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnJobTitle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJobTitle.Image = ((System.Drawing.Image)(resources.GetObject("btnJobTitle.Image")));
+            this.btnJobTitle.Location = new System.Drawing.Point(10, 630);
+            this.btnJobTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnJobTitle.Name = "btnJobTitle";
+            this.btnJobTitle.Size = new System.Drawing.Size(55, 55);
+            this.btnJobTitle.TabIndex = 20;
+            this.btnJobTitle.UseVisualStyleBackColor = false;
+            this.btnJobTitle.Click += new System.EventHandler(this.btnJobTitle_Click);
             // 
-            // button6
+            // btnStore
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(15, 403);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(180, 50);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Store";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(13, 287);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(180, 50);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "Sales";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnStore.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnStore.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStore.Image")));
+            this.btnStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStore.Location = new System.Drawing.Point(13, 403);
+            this.btnStore.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStore.Name = "btnStore";
+            this.btnStore.Size = new System.Drawing.Size(180, 50);
+            this.btnStore.TabIndex = 25;
+            this.btnStore.Text = "Store";
+            this.btnStore.UseVisualStyleBackColor = false;
             // 
             // btnVehiclesForm
             // 
             this.btnVehiclesForm.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnVehiclesForm.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehiclesForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVehiclesForm.Image = ((System.Drawing.Image)(resources.GetObject("btnVehiclesForm.Image")));
             this.btnVehiclesForm.Location = new System.Drawing.Point(135, 630);
             this.btnVehiclesForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnVehiclesForm.Name = "btnVehiclesForm";
             this.btnVehiclesForm.Size = new System.Drawing.Size(55, 55);
             this.btnVehiclesForm.TabIndex = 28;
-            this.btnVehiclesForm.Text = "Vehicle";
             this.btnVehiclesForm.UseVisualStyleBackColor = false;
             this.btnVehiclesForm.Click += new System.EventHandler(this.btnVehiclesForm_Click);
             // 
@@ -252,16 +240,15 @@
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.pLogo);
             this.Controls.Add(this.btnVehiclesForm);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnOptions);
+            this.Controls.Add(this.btnStore);
+            this.Controls.Add(this.btnJobTitle);
+            this.Controls.Add(this.btnCreateLogin);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnCategory);
+            this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnLogoff);
             this.Controls.Add(this.btnStaff);
-            this.Controls.Add(this.btnSales);
+            this.Controls.Add(this.btnPointOfSale);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.splitter1);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,16 +267,15 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnProducts;
-        private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Button btnPointOfSale;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnLogoff;
-        private System.Windows.Forms.Button btnOptions;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnClients;
+        private System.Windows.Forms.Button btnCategory;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnCreateLogin;
+        private System.Windows.Forms.Button btnJobTitle;
+        private System.Windows.Forms.Button btnStore;
         private System.Windows.Forms.Button btnVehiclesForm;
         private System.Windows.Forms.PictureBox pLogo;
     }

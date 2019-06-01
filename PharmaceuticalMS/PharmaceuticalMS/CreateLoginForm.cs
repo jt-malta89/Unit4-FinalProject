@@ -12,12 +12,12 @@ using BEL;
 
 namespace PharmaceuticalMS
 {
-    public partial class JobTitleForm : Form
+    public partial class CreateLoginForm : Form
     {
         public Informations info = new Informations();
         public Operations opr = new Operations();
 
-        public JobTitleForm()
+        public CreateLoginForm()
         {
             InitializeComponent();
         }
@@ -41,47 +41,53 @@ namespace PharmaceuticalMS
         private void btnLoad_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = opr.viewJobTitle(info);
-            dgvJobTitle.DataSource = dt;
-            dgvJobTitle.Columns[0].Visible = false;
+            dt = opr.viewCreateLogin(info);
+            dgvLoginAccount.DataSource = dt;
+            dgvLoginAccount.Columns[0].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            info.JobTitle = txtJobTitle.Text;
-            int rows = opr.insertJobTitle(info);
+            info.Username = txtUsername.Text;
+            info.Password = txtPassword.Text;
+            info.Type = txtAccessType.Text;
+            int rows = opr.insertLog(info);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewJobTitle(info);
-                dgvJobTitle.DataSource = dt;
-                dgvJobTitle.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Job Title Saved";
+                dt = opr.viewCreateLogin(info);
+                dgvLoginAccount.DataSource = dt;
+                dgvLoginAccount.Columns[0].Visible = false;
+                this.StripStatusVehicles.Text = "Login Account Saved";
                 ClearTextBoxes();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            info.JobTitle = txtJobTitle.Text;
-            int rows = opr.deleteJobTitle(info);
+            info.Username = txtUsername.Text;
+            info.Password = txtPassword.Text;
+            info.Type = txtAccessType.Text;
+            int rows = opr.deleteLog(info);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewJobTitle(info);
-                dgvJobTitle.DataSource = dt;
-                dgvJobTitle.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Job Title Deleted";
+                dt = opr.viewCreateLogin(info);
+                dgvLoginAccount.DataSource = dt;
+                dgvLoginAccount.Columns[0].Visible = false;
+                this.StripStatusVehicles.Text = "Login Account Deleted";
                 ClearTextBoxes();
             }
         }
 
-        private void dgvJobTitle_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvLoginAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                DataGridViewRow dgvRow = dgvJobTitle.Rows[e.RowIndex];
-                txtJobTitle.Text = dgvRow.Cells[1].Value.ToString();
+                DataGridViewRow dgvRow = dgvLoginAccount.Rows[e.RowIndex];
+                txtUsername.Text = dgvRow.Cells[1].Value.ToString();
+                txtPassword.Text = dgvRow.Cells[2].Value.ToString();
+                txtAccessType.Text = dgvRow.Cells[3].Value.ToString();
             }
         }
     }

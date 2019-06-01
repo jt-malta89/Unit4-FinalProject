@@ -52,6 +52,12 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateLoginForm.Designer.cs">
+      <DependentUpon>CreateLoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobTitleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +96,23 @@
     <Compile Include="VehiclesForm.Designer.cs">
       <DependentUpon>VehiclesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateLoginForm.resx">
+      <DependentUpon>CreateLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobTitleForm.resx">
+      <DependentUpon>JobTitleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffForm.resx">
+      <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
