@@ -37,7 +37,6 @@
             this.btnLogoff = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnCreateLogin = new System.Windows.Forms.Button();
             this.btnJobTitle = new System.Windows.Forms.Button();
             this.btnStore = new System.Windows.Forms.Button();
@@ -158,19 +157,6 @@
             this.btnCategory.UseVisualStyleBackColor = false;
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnPrint.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(72, 693);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(55, 55);
-            this.btnPrint.TabIndex = 18;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // btnCreateLogin
             // 
             this.btnCreateLogin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -217,7 +203,7 @@
             this.btnVehiclesForm.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnVehiclesForm.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehiclesForm.Image = ((System.Drawing.Image)(resources.GetObject("btnVehiclesForm.Image")));
-            this.btnVehiclesForm.Location = new System.Drawing.Point(135, 630);
+            this.btnVehiclesForm.Location = new System.Drawing.Point(72, 693);
             this.btnVehiclesForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnVehiclesForm.Name = "btnVehiclesForm";
             this.btnVehiclesForm.Size = new System.Drawing.Size(55, 55);
@@ -248,7 +234,6 @@
             this.Controls.Add(this.btnStore);
             this.Controls.Add(this.btnJobTitle);
             this.Controls.Add(this.btnCreateLogin);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnLogoff);
@@ -277,7 +262,6 @@
         private System.Windows.Forms.Button btnLogoff;
         private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button btnCategory;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnCreateLogin;
         private System.Windows.Forms.Button btnJobTitle;
         private System.Windows.Forms.Button btnStore;

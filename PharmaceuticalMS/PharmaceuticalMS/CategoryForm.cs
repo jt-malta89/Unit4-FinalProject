@@ -84,5 +84,10 @@ namespace PharmaceuticalMS
             dgvCategory.DataSource = dt;
             dgvCategory.Columns[0].Visible = false;
         }
+
+        private void txtCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
     }
 }

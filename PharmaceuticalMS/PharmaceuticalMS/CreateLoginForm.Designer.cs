@@ -84,6 +84,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(140, 23);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // btnDelete
             // 
@@ -136,6 +137,7 @@
             this.txtAccessType.Name = "txtAccessType";
             this.txtAccessType.Size = new System.Drawing.Size(140, 23);
             this.txtAccessType.TabIndex = 16;
+            this.txtAccessType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccessType_KeyPress);
             // 
             // lblPassword
             // 

@@ -14,6 +14,7 @@ namespace DAL
             }
             return con;
         }
+
         public int ExeNonQuery(SqlCommand cmd)
         {
             cmd.Connection = getcon();
@@ -37,7 +38,6 @@ namespace DAL
             cmd.Connection = getcon();
             SqlDataReader sdr;
             DataTable dt = new DataTable();
-
             sdr = cmd.ExecuteReader();
             dt.Load(sdr);
             con.Close();

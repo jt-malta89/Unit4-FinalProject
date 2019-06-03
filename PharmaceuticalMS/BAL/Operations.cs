@@ -24,6 +24,14 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
+        public DataTable SearchStaff(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Staff where IDCard='"+info.IDCard+"'";
+            return db.ExeReader(cmd);
+        }
+
         public DataTable viewStaff(Informations info)
         {
             SqlCommand cmd = new SqlCommand();
@@ -32,11 +40,43 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
+        public int insertClient(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Clients VALUES ('" + info.IDCard + "','" + info.Name + "','" + info.Surname + "','" + info.ContactNo + "','" + info.Address + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
         public int deleteVeh(Informations info)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "DELETE FROM Vehicles WHERE NumberPlate='"+info.NumberPlate+"'";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public DataTable viewClient(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Clients";
+            return db.ExeReader(cmd);
+        }
+
+        public DataTable SearchClient(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Clients where IDCard='" + info.IDCard + "'";
+            return db.ExeReader(cmd);
+        }
+
+        public int editClient(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE Clients SET IDCard='" + info.IDCard + "', Name='" + info.Name + "', Surname='" + info.Surname + "', ContactNo='" + info.ContactNo + "',  Address='" + info.Address + "' WHERE IDCard='" + info.IDCard + "';";
             return db.ExeNonQuery(cmd);
         }
 
@@ -48,12 +88,44 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
+        public int insertStaff(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Staff VALUES ('" + info.IDCard + "','" + info.Name + "','" + info.Surname + "','" + info.ContactNo + "','" + info.Salary + "','" + info.Address + "','" + info.JobTitleID + "','" + info.VehicleID + "','" + info.LoginID + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int deleteClient(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Clients WHERE IDCard='" + info.IDCard + "'";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int deleteStaff(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Staff WHERE IDCard='" + info.IDCard + "'";
+            return db.ExeNonQuery(cmd);
+        }
+
         public DataTable viewCategory(Informations info)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Category";
             return db.ExeReader(cmd);
+        }
+
+        public int editStaff(Informations info)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE Staff SET IDCard='" + info.IDCard + "', Name='" + info.Name + "', Surname='" + info.Surname + "', ContactNo='" + info.ContactNo + "', Salary='" + info.Salary + "', Address='" + info.Address + "',JobTitleID='" + info.JobTitleID + "',VehicleID='" + info.VehicleID + "',LoginID='" + info.LoginID + "' WHERE IDCard='" + info.IDCard + "';";
+            return db.ExeNonQuery(cmd);
         }
 
         public int insertJobTitle(Informations info)

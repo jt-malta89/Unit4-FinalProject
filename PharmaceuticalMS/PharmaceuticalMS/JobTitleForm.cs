@@ -84,5 +84,10 @@ namespace PharmaceuticalMS
             dgvJobTitle.DataSource = dt;
             dgvJobTitle.Columns[0].Visible = false;
         }
+
+        private void txtJobTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
     }
 }

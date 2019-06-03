@@ -53,5 +53,10 @@ namespace PharmaceuticalMS
                 MessageBox.Show("Invalid Username or Password");
             }
         }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
     }
 }

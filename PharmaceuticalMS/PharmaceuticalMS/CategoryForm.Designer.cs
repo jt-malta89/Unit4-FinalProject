@@ -80,6 +80,7 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(140, 23);
             this.txtCategory.TabIndex = 0;
+            this.txtCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCategory_KeyPress);
             // 
             // btnDelete
             // 

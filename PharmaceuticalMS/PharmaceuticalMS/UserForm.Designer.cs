@@ -35,8 +35,6 @@
             this.btnPointOfSale = new System.Windows.Forms.Button();
             this.btnLogoff = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
-            this.btnStore = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pLogo)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +63,7 @@
             this.btnOrders.TabIndex = 2;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnProducts
             // 
@@ -79,6 +78,7 @@
             this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnPointOfSale
             // 
@@ -93,6 +93,7 @@
             this.btnPointOfSale.TabIndex = 5;
             this.btnPointOfSale.Text = "Point Of Sale";
             this.btnPointOfSale.UseVisualStyleBackColor = false;
+            this.btnPointOfSale.Click += new System.EventHandler(this.btnPointOfSale_Click);
             // 
             // btnLogoff
             // 
@@ -120,32 +121,7 @@
             this.btnClients.TabIndex = 11;
             this.btnClients.Text = "Clients";
             this.btnClients.UseVisualStyleBackColor = false;
-            // 
-            // btnStore
-            // 
-            this.btnStore.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnStore.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStore.Image")));
-            this.btnStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStore.Location = new System.Drawing.Point(10, 345);
-            this.btnStore.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStore.Name = "btnStore";
-            this.btnStore.Size = new System.Drawing.Size(180, 50);
-            this.btnStore.TabIndex = 25;
-            this.btnStore.Text = "Store";
-            this.btnStore.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(72, 693);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 55);
-            this.button1.TabIndex = 28;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // pLogo
             // 
@@ -166,14 +142,13 @@
             this.ClientSize = new System.Drawing.Size(1264, 761);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.pLogo);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnStore);
             this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnLogoff);
             this.Controls.Add(this.btnPointOfSale);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.splitter1);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserForm";
@@ -191,8 +166,6 @@
         private System.Windows.Forms.Button btnPointOfSale;
         private System.Windows.Forms.Button btnLogoff;
         private System.Windows.Forms.Button btnClients;
-        private System.Windows.Forms.Button btnStore;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pLogo;
     }
 }

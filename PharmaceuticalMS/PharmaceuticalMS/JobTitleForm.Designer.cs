@@ -80,6 +80,7 @@
             this.txtJobTitle.Name = "txtJobTitle";
             this.txtJobTitle.Size = new System.Drawing.Size(140, 23);
             this.txtJobTitle.TabIndex = 0;
+            this.txtJobTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJobTitle_KeyPress);
             // 
             // btnDelete
             // 

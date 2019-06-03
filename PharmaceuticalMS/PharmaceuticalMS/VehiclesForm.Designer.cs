@@ -114,6 +114,7 @@
             this.txtMakeModel.Name = "txtMakeModel";
             this.txtMakeModel.Size = new System.Drawing.Size(140, 23);
             this.txtMakeModel.TabIndex = 1;
+            this.txtMakeModel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMakeModel_KeyPress);
             // 
             // lblFuelType
             // 
@@ -144,6 +145,7 @@
             this.txtVehicleType.Name = "txtVehicleType";
             this.txtVehicleType.Size = new System.Drawing.Size(140, 23);
             this.txtVehicleType.TabIndex = 2;
+            this.txtVehicleType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVehicleType_KeyPress);
             // 
             // txtFuelType
             // 
@@ -152,6 +154,7 @@
             this.txtFuelType.Name = "txtFuelType";
             this.txtFuelType.Size = new System.Drawing.Size(140, 23);
             this.txtFuelType.TabIndex = 3;
+            this.txtFuelType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuelType_KeyPress);
             // 
             // statusStrip1
             // 
