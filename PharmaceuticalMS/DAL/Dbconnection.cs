@@ -38,6 +38,7 @@ namespace DAL
             cmd.Connection = getcon();
             SqlDataReader sdr;
             DataTable dt = new DataTable();
+           
             sdr = cmd.ExecuteReader();
             dt.Load(sdr);
             con.Close();

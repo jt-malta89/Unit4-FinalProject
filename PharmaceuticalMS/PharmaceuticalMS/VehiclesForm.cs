@@ -14,7 +14,7 @@ namespace PharmaceuticalMS
 {
     public partial class VehiclesForm : Form
     {
-        public Informations info = new Informations();
+        public Staff Staff = new Staff();
         public Operations opr = new Operations();
        
         public VehiclesForm()
@@ -40,15 +40,15 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            info.NumberPlate = txtNumberPlate.Text;
-            info.MakeModel = txtMakeModel.Text;
-            info.VehicleType = txtVehicleType.Text;
-            info.FuelType = txtFuelType.Text;
-            int rows = opr.insertVeh(info);
+            Staff.NumberPlate = txtNumberPlate.Text;
+            Staff.MakeModel = txtMakeModel.Text;
+            Staff.VehicleType = txtVehicleType.Text;
+            Staff.FuelType = txtFuelType.Text;
+            int rows = opr.insertVeh(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewvehicles(info);
+                dt = opr.getvehicles();
                 dgvVehicles.DataSource = dt;
                 dgvVehicles.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Vehicle Data Saved";
@@ -58,15 +58,15 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            info.NumberPlate = txtNumberPlate.Text;
-            info.MakeModel = txtMakeModel.Text;
-            info.VehicleType = txtVehicleType.Text;
-            info.FuelType = txtFuelType.Text;
-            int rows = opr.deleteVeh(info);
+            Staff.NumberPlate = txtNumberPlate.Text;
+            Staff.MakeModel = txtMakeModel.Text;
+            Staff.VehicleType = txtVehicleType.Text;
+            Staff.FuelType = txtFuelType.Text;
+            int rows = opr.deleteVeh(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewvehicles(info);
+                dt = opr.getvehicles();
                 dgvVehicles.DataSource = dt;
                 dgvVehicles.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Vehicle Data Deleted";
@@ -89,7 +89,7 @@ namespace PharmaceuticalMS
         private void VehiclesForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = opr.viewvehicles(info);
+            dt = opr.getvehicles();
             dgvVehicles.DataSource = dt;
             dgvVehicles.Columns[0].Visible = false;
         }

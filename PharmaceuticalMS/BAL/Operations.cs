@@ -14,29 +14,38 @@ namespace BAL
     public class Operations
     {
         public Dbconnection db = new Dbconnection();
-        public Informations info = new Informations();
+        //public Informations info = new Informations();
+        public Staff Staff = new Staff();
 
-        public int insertVeh(Informations info)
+        public int insertVeh(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Vehicles VALUES ('"+info.NumberPlate+ "','" + info.MakeModel + "','" + info.VehicleType + "','" + info.FuelType + "')";
+            cmd.CommandText = "INSERT INTO Vehicles VALUES ('"+ Staff.NumberPlate+ "','" + Staff.MakeModel + "','" + Staff.VehicleType + "','" + Staff.FuelType + "')";
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable SearchStaff(Informations info)
+        public DataTable SearchStaff(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Staff where IDCard='"+info.IDCard+"'";
+            cmd.CommandText = "select * from Staff where IDCard='"+Staff.IDCard+"'";
             return db.ExeReader(cmd);
         }
 
-        public DataTable viewStaff(Informations info)
+        public DataTable viewStaff()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Staff";
+            return db.ExeReader(cmd);
+        }
+
+        public DataTable getItems()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Items";
             return db.ExeReader(cmd);
         }
 
@@ -48,11 +57,11 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public int deleteVeh(Informations info)
+        public int deleteVeh(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Vehicles WHERE NumberPlate='"+info.NumberPlate+"'";
+            cmd.CommandText = "DELETE FROM Vehicles WHERE NumberPlate='"+ Staff.NumberPlate+"'";
             return db.ExeNonQuery(cmd);
         }
 
@@ -80,19 +89,19 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable viewJobTitle(Informations info)
+        public DataTable getJobTitle()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from JobTitle";
+            cmd.CommandText = "SELECT * FROM JobTitle";
             return db.ExeReader(cmd);
         }
 
-        public int insertStaff(Informations info)
+        public int insertStaff(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Staff VALUES ('" + info.IDCard + "','" + info.Name + "','" + info.Surname + "','" + info.ContactNo + "','" + info.Salary + "','" + info.Address + "','" + info.JobTitleID + "','" + info.VehicleID + "','" + info.LoginID + "')";
+            cmd.CommandText = "INSERT INTO Staff VALUES ('" + Staff.IDCard + "','" + Staff.Name + "','" + Staff.Surname + "','" + Staff.ContactNo + "','" + Staff.Salary + "','" + Staff.Address + "','" + Staff.JobTitleID + "','" + Staff.VehicleID + "','" + Staff.LoginID + "')";
             return db.ExeNonQuery(cmd);
         }
 
@@ -104,11 +113,11 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public int deleteStaff(Informations info)
+        public int deleteStaff(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Staff WHERE IDCard='" + info.IDCard + "'";
+            cmd.CommandText = "DELETE FROM Staff WHERE IDCard='" + Staff.IDCard + "'";
             return db.ExeNonQuery(cmd);
         }
 
@@ -120,27 +129,27 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public int editStaff(Informations info)
+        public int editStaff(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "UPDATE Staff SET IDCard='" + info.IDCard + "', Name='" + info.Name + "', Surname='" + info.Surname + "', ContactNo='" + info.ContactNo + "', Salary='" + info.Salary + "', Address='" + info.Address + "',JobTitleID='" + info.JobTitleID + "',VehicleID='" + info.VehicleID + "',LoginID='" + info.LoginID + "' WHERE IDCard='" + info.IDCard + "';";
+            cmd.CommandText = "UPDATE Staff SET IDCard='" + Staff.IDCard + "', Name='" + Staff.Name + "', Surname='" + Staff.Surname + "', ContactNo='" + Staff.ContactNo + "', Salary='" + Staff.Salary + "', Address='" + Staff.Address + "',JobTitleID='" + Staff.JobTitleID + "',VehicleID='" + Staff.VehicleID + "',LoginID='" + Staff.LoginID + "' WHERE IDCard='" + Staff.IDCard + "';";
             return db.ExeNonQuery(cmd);
         }
 
-        public int insertJobTitle(Informations info)
+        public int insertJobTitle(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO JobTitle VALUES ('" + info.JobTitle + "')";
+            cmd.CommandText = "INSERT INTO JobTitle VALUES ('" + Staff.JobTitle + "')";
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable viewvehicles(Informations info)
+        public DataTable getvehicles()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Vehicles";
+            cmd.CommandText = "SELECT * FROM Vehicles";
             return db.ExeReader(cmd);
         }
 
@@ -152,27 +161,27 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public int deleteJobTitle(Informations info)
+        public int deleteJobTitle(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM JobTitle WHERE JobTitle='" + info.JobTitle + "'";
+            cmd.CommandText = "DELETE FROM JobTitle WHERE JobTitle='" + Staff.JobTitle + "'";
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable viewCreateLogin(Informations info)
+        public DataTable getLogin()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Login";
+            cmd.CommandText = "SELECT * FROM Login";
             return db.ExeReader(cmd);
         }
 
-        public int insertLog(Informations info)
+        public int insertLog(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Login VALUES ('" + info.Username + "','" + info.Password + "','" + info.Type + "')";
+            cmd.CommandText = "INSERT INTO Login VALUES ('" + Staff.Username + "','" + Staff.Password + "','" + Staff.Type + "')";
             return db.ExeNonQuery(cmd);
         }
 
@@ -192,11 +201,11 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public int deleteLog(Informations info)
+        public int deleteLog(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Login WHERE Username='" + info.Username + "'";
+            cmd.CommandText = "DELETE FROM Login WHERE Username='" + Staff.Username + "'";
             return db.ExeNonQuery(cmd);
         }
     }

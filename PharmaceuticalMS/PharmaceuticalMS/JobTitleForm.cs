@@ -14,7 +14,7 @@ namespace PharmaceuticalMS
 {
     public partial class JobTitleForm : Form
     {
-        public Informations info = new Informations();
+        public Staff Staff = new Staff();
         public Operations opr = new Operations();
 
         public JobTitleForm()
@@ -40,12 +40,12 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            info.JobTitle = txtJobTitle.Text;
-            int rows = opr.insertJobTitle(info);
+            Staff.JobTitle = txtJobTitle.Text;
+            int rows = opr.insertJobTitle(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewJobTitle(info);
+                dt = opr.getJobTitle();
                 dgvJobTitle.DataSource = dt;
                 dgvJobTitle.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Job Title Saved";
@@ -55,12 +55,12 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            info.JobTitle = txtJobTitle.Text;
-            int rows = opr.deleteJobTitle(info);
+            Staff.JobTitle = txtJobTitle.Text;
+            int rows = opr.deleteJobTitle(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewJobTitle(info);
+                dt = opr.getJobTitle();
                 dgvJobTitle.DataSource = dt;
                 dgvJobTitle.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Job Title Deleted";
@@ -80,7 +80,7 @@ namespace PharmaceuticalMS
         private void JobTitleForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = opr.viewJobTitle(info);
+            dt = opr.getJobTitle();
             dgvJobTitle.DataSource = dt;
             dgvJobTitle.Columns[0].Visible = false;
         }

@@ -208,5 +208,10 @@ namespace PharmaceuticalMS
         {
             spf = null;
         }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -14,8 +15,10 @@ namespace PharmaceuticalMS
 {
     public partial class StaffForm : Form
     {
-        public Informations info = new Informations();
+
+        private ArrayList orderProductsList = new ArrayList();
         public Operations opr = new Operations();
+        public Staff Staff = new Staff();
 
         public StaffForm()
         {
@@ -25,7 +28,6 @@ namespace PharmaceuticalMS
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
-
             func = (controls) =>
             {
                 foreach (Control control in controls)
@@ -34,37 +36,34 @@ namespace PharmaceuticalMS
                     else
                         func(control.Controls);
             };
-
             func(Controls);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            info.IDCard = txtSearch.Text;
+            Staff.IDCard = Convert.ToInt32(txtSearch.Text);
             DataTable dt = new DataTable();
-            dt = opr.SearchStaff(info);
+            dt = opr.SearchStaff(Staff);
             dgvStaff.DataSource = dt;
-            //dgvStaff.Columns[0].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            info.IDCard = txtIDCard.Text;
-            info.Name = txtName.Text;
-            info.Surname = txtSurname.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.Salary = txtSalary.Text;
-            info.Address = txtAddress.Text;
-            info.JobTitleID = txtJobTitleID.Text;
-            info.VehicleID = txtVehicleID.Text;
-            info.LoginID = txtLoginAccountID.Text;
-            int rows = opr.insertStaff(info);
+            Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
+            Staff.Name = txtName.Text;
+            Staff.Surname = txtSurname.Text;
+            Staff.ContactNo = Convert.ToInt32(txtContactNo.Text);
+            Staff.Salary = Convert.ToInt32(txtSalary.Text);
+            Staff.Address = txtAddress.Text;
+            Staff.JobTitleID = Convert.ToInt32(txtJobTitleID.Text);
+            Staff.VehicleID = Convert.ToInt32(txtVehicleID.Text);
+            Staff.LoginID = Convert.ToInt32(txtLoginAccountID.Text);
+            int rows = opr.insertStaff(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewStaff(info);
+                dt = opr.viewStaff();
                 dgvStaff.DataSource = dt;
-                //dgvStaff.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Staff Data Saved";
                 ClearTextBoxes();
             }
@@ -72,22 +71,21 @@ namespace PharmaceuticalMS
 
         private void lblEdit_Click(object sender, EventArgs e)
         {
-            info.IDCard = txtIDCard.Text;
-            info.Name = txtName.Text;
-            info.Surname = txtSurname.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.Salary = txtSalary.Text;
-            info.Address = txtAddress.Text;
-            info.JobTitleID = txtJobTitleID.Text;
-            info.VehicleID = txtVehicleID.Text;
-            info.LoginID = txtLoginAccountID.Text;
-            int rows = opr.editStaff(info);
+            Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
+            Staff.Name = txtName.Text;
+            Staff.Surname = txtSurname.Text;
+            Staff.ContactNo = Convert.ToInt32(txtContactNo.Text);
+            Staff.Salary = Convert.ToInt32(txtSalary.Text);
+            Staff.Address = txtAddress.Text;
+            Staff.JobTitleID = Convert.ToInt32(txtJobTitleID.Text);
+            Staff.VehicleID = Convert.ToInt32(txtVehicleID.Text);
+            Staff.LoginID = Convert.ToInt32(txtLoginAccountID.Text);
+            int rows = opr.editStaff(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewStaff(info);
+                dt = opr.viewStaff();
                 dgvStaff.DataSource = dt;
-                //dgvStaff.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Staff Data Changed";
                 ClearTextBoxes();
             }
@@ -95,22 +93,21 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            info.IDCard = txtIDCard.Text;
-            info.Name = txtName.Text;
-            info.Surname = txtSurname.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.Salary = txtSalary.Text;
-            info.Address = txtAddress.Text;
-            info.JobTitleID = txtJobTitleID.Text;
-            info.VehicleID = txtVehicleID.Text;
-            info.LoginID = txtLoginAccountID.Text;
-            int rows = opr.deleteStaff(info);
+            Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
+            Staff.Name = txtName.Text;
+            Staff.Surname = txtSurname.Text;
+            Staff.ContactNo = Convert.ToInt32(txtContactNo.Text);
+            Staff.Salary = Convert.ToInt32(txtSalary.Text);
+            Staff.Address = txtAddress.Text;
+            Staff.JobTitleID = Convert.ToInt32(txtJobTitleID.Text);
+            Staff.VehicleID = Convert.ToInt32(txtVehicleID.Text);
+            Staff.LoginID = Convert.ToInt32(txtLoginAccountID.Text);
+            int rows = opr.deleteStaff(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewStaff(info);
+                dt = opr.viewStaff();
                 dgvStaff.DataSource = dt;
-                //dgvStaff.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Staff Data Deleted";
                 ClearTextBoxes();
             }
@@ -119,23 +116,17 @@ namespace PharmaceuticalMS
         private void StaffForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = opr.viewStaff(info);
+            dt = opr.viewStaff();
             dgvStaff.DataSource = dt;
-            //dgvStaff.Columns[0].Visible = false;
-            DataTable dt1 = new DataTable();
-            dt1 = opr.viewJobTitle(info);
-            dgvJobTitle.DataSource = dt1;
-            DataTable dt2 = new DataTable();
-            dt2 = opr.viewvehicles(info);
-            dgvVehicle.DataSource = dt2;
-            dgvVehicle.Columns[2].Visible = false;
-            dgvVehicle.Columns[3].Visible = false;
-            dgvVehicle.Columns[4].Visible = false;
-            DataTable dt3 = new DataTable();
-            dt3 = opr.viewCreateLogin(info);
-            dgvLoginAccount.DataSource = dt3;
-            dgvLoginAccount.Columns[2].Visible = false;
-            dgvLoginAccount.Columns[3].Visible = false;
+            cbJobTitle.Items.Clear();
+            this.cbJobTitle.DataSource = new Operations().getJobTitle();
+            this.cbJobTitle.DisplayMember = "JobTitle";
+            this.cbVehicle.DataSource = new Operations().getvehicles();
+            this.cbVehicle.DisplayMember = "NumberPlate";
+            this.cbVehicle.Refresh();
+            this.cbLoginAccount.DataSource = new Operations().getLogin();
+            this.cbLoginAccount.DisplayMember = "Username";
+            this.cbLoginAccount.Refresh();
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -241,6 +232,24 @@ namespace PharmaceuticalMS
                 MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
+        }
+
+        private void cbJobTitle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView drv = (DataRowView)this.cbJobTitle.SelectedItem;
+            txtJobTitleID.Text = drv["JobTitleID"].ToString();
+        }
+
+        private void cbVehicle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView drv = (DataRowView)this.cbVehicle.SelectedItem;
+            txtVehicleID.Text = drv["VehicleID"].ToString();
+        }
+
+        private void cbLoginAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView drv = (DataRowView)this.cbLoginAccount.SelectedItem;
+            txtLoginAccountID.Text = drv["LoginID"].ToString();
         }
     }
 }

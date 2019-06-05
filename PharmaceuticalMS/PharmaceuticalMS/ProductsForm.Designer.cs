@@ -14,34 +14,39 @@
         private void InitializeComponent()
         {
             this.lblProducts = new System.Windows.Forms.Label();
-            this.lblVehicle = new System.Windows.Forms.Label();
-            this.lblJobTitle = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblContactNo = new System.Windows.Forms.Label();
-            this.lblSurname = new System.Windows.Forms.Label();
-            this.lblIDCard = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtSurname = new System.Windows.Forms.TextBox();
-            this.txtIDCard = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblCategor = new System.Windows.Forms.Label();
+            this.lblQuantityNotification = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblBarcode = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StripStatusVehicles = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblLoginAccount = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lblStor = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblEdit = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.txtQuantityNotification = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.txtStore = new System.Windows.Forms.TextBox();
+            this.dgvStore = new System.Windows.Forms.DataGridView();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblStore = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProducts
@@ -56,99 +61,99 @@
             this.lblProducts.Text = "Products";
             this.lblProducts.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblVehicle
+            // lblCategor
             // 
-            this.lblVehicle.AutoSize = true;
-            this.lblVehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicle.Location = new System.Drawing.Point(20, 403);
-            this.lblVehicle.Name = "lblVehicle";
-            this.lblVehicle.Size = new System.Drawing.Size(57, 19);
-            this.lblVehicle.TabIndex = 8;
-            this.lblVehicle.Text = "Vehicle";
+            this.lblCategor.AutoSize = true;
+            this.lblCategor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategor.Location = new System.Drawing.Point(10, 346);
+            this.lblCategor.Name = "lblCategor";
+            this.lblCategor.Size = new System.Drawing.Size(70, 19);
+            this.lblCategor.TabIndex = 8;
+            this.lblCategor.Text = "Category";
             // 
-            // lblJobTitle
+            // lblQuantityNotification
             // 
-            this.lblJobTitle.AutoSize = true;
-            this.lblJobTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobTitle.Location = new System.Drawing.Point(20, 374);
-            this.lblJobTitle.Name = "lblJobTitle";
-            this.lblJobTitle.Size = new System.Drawing.Size(66, 19);
-            this.lblJobTitle.TabIndex = 9;
-            this.lblJobTitle.Text = "Job Title";
+            this.lblQuantityNotification.AutoSize = true;
+            this.lblQuantityNotification.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantityNotification.Location = new System.Drawing.Point(8, 317);
+            this.lblQuantityNotification.Name = "lblQuantityNotification";
+            this.lblQuantityNotification.Size = new System.Drawing.Size(153, 19);
+            this.lblQuantityNotification.TabIndex = 9;
+            this.lblQuantityNotification.Text = "Quantity Notification";
             // 
-            // lblAddress
+            // lblQuantity
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(23, 284);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(63, 19);
-            this.lblAddress.TabIndex = 10;
-            this.lblAddress.Text = "Address";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(10, 284);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(69, 19);
+            this.lblQuantity.TabIndex = 10;
+            this.lblQuantity.Text = "Quantity";
             // 
-            // lblContactNo
+            // lblPrice
             // 
-            this.lblContactNo.AutoSize = true;
-            this.lblContactNo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(23, 259);
-            this.lblContactNo.Name = "lblContactNo";
-            this.lblContactNo.Size = new System.Drawing.Size(86, 19);
-            this.lblContactNo.TabIndex = 11;
-            this.lblContactNo.Text = "Contact No";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(10, 255);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(43, 19);
+            this.lblPrice.TabIndex = 11;
+            this.lblPrice.Text = "Price";
             // 
-            // lblSurname
+            // lblDescription
             // 
-            this.lblSurname.AutoSize = true;
-            this.lblSurname.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(23, 230);
-            this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(70, 19);
-            this.lblSurname.TabIndex = 12;
-            this.lblSurname.Text = "Surname";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(10, 169);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(86, 19);
+            this.lblDescription.TabIndex = 12;
+            this.lblDescription.Text = "Description";
             // 
-            // lblIDCard
+            // lblBarcode
             // 
-            this.lblIDCard.AutoSize = true;
-            this.lblIDCard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDCard.Location = new System.Drawing.Point(23, 172);
-            this.lblIDCard.Name = "lblIDCard";
-            this.lblIDCard.Size = new System.Drawing.Size(58, 19);
-            this.lblIDCard.TabIndex = 13;
-            this.lblIDCard.Text = "ID Card";
+            this.lblBarcode.AutoSize = true;
+            this.lblBarcode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBarcode.Location = new System.Drawing.Point(10, 111);
+            this.lblBarcode.Name = "lblBarcode";
+            this.lblBarcode.Size = new System.Drawing.Size(65, 19);
+            this.lblBarcode.TabIndex = 13;
+            this.lblBarcode.Text = "Barcode";
             // 
-            // lblName
+            // lblTitle
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(23, 201);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(49, 19);
-            this.lblName.TabIndex = 14;
-            this.lblName.Text = "Name";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(10, 140);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(39, 19);
+            this.lblTitle.TabIndex = 14;
+            this.lblTitle.Text = "Title";
             // 
-            // txtSurname
+            // txtPrice
             // 
-            this.txtSurname.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(157, 226);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(130, 23);
-            this.txtSurname.TabIndex = 2;
+            this.txtPrice.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(167, 255);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(130, 23);
+            this.txtPrice.TabIndex = 2;
             // 
-            // txtIDCard
+            // txtBarcode
             // 
-            this.txtIDCard.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDCard.Location = new System.Drawing.Point(157, 168);
-            this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(130, 23);
-            this.txtIDCard.TabIndex = 0;
+            this.txtBarcode.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarcode.Location = new System.Drawing.Point(168, 111);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(130, 23);
+            this.txtBarcode.TabIndex = 0;
             // 
-            // txtName
+            // txtTitle
             // 
-            this.txtName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(156, 197);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(130, 23);
-            this.txtName.TabIndex = 1;
+            this.txtTitle.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(167, 140);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(130, 23);
+            this.txtTitle.TabIndex = 1;
             // 
             // btnLoad
             // 
@@ -165,9 +170,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StripStatusVehicles});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 575);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 569);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(974, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -180,102 +185,67 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(826, 539);
+            this.btnDelete.Location = new System.Drawing.Point(817, 536);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(674, 539);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 30);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Load";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(750, 539);
+            this.btnAdd.Location = new System.Drawing.Point(741, 536);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 30);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // dgvStaff
+            // dgvProducts
             // 
-            this.dgvStaff.AllowUserToAddRows = false;
-            this.dgvStaff.AllowUserToDeleteRows = false;
-            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(333, 111);
-            this.dgvStaff.Name = "dgvStaff";
-            this.dgvStaff.ReadOnly = true;
-            this.dgvStaff.Size = new System.Drawing.Size(639, 422);
-            this.dgvStaff.TabIndex = 19;
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Location = new System.Drawing.Point(307, 92);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.Size = new System.Drawing.Size(659, 225);
+            this.dgvProducts.TabIndex = 19;
             // 
-            // textBox1
+            // txtQuantity
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(158, 255);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 23);
-            this.textBox1.TabIndex = 3;
+            this.txtQuantity.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(167, 284);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(130, 23);
+            this.txtQuantity.TabIndex = 3;
             // 
-            // lblLoginAccount
+            // lblStor
             // 
-            this.lblLoginAccount.AutoSize = true;
-            this.lblLoginAccount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginAccount.Location = new System.Drawing.Point(20, 432);
-            this.lblLoginAccount.Name = "lblLoginAccount";
-            this.lblLoginAccount.Size = new System.Drawing.Size(107, 19);
-            this.lblLoginAccount.TabIndex = 21;
-            this.lblLoginAccount.Text = "Login Account";
+            this.lblStor.AutoSize = true;
+            this.lblStor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStor.Location = new System.Drawing.Point(10, 375);
+            this.lblStor.Name = "lblStor";
+            this.lblStor.Size = new System.Drawing.Size(46, 19);
+            this.lblStor.TabIndex = 21;
+            this.lblStor.Text = "Store";
             // 
-            // textBox2
+            // txtDescription
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(158, 284);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 80);
-            this.textBox2.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(158, 370);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 23);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 399);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 23);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(158, 428);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(130, 23);
-            this.comboBox3.TabIndex = 7;
+            this.txtDescription.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(167, 169);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(130, 80);
+            this.txtDescription.TabIndex = 4;
             // 
             // lblEdit
             // 
             this.lblEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lblEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdit.Location = new System.Drawing.Point(902, 539);
+            this.lblEdit.Location = new System.Drawing.Point(893, 536);
             this.lblEdit.Name = "lblEdit";
             this.lblEdit.Size = new System.Drawing.Size(70, 30);
             this.lblEdit.TabIndex = 11;
@@ -285,7 +255,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(750, 80);
+            this.txtSearch.Location = new System.Drawing.Point(744, 63);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(221, 23);
             this.txtSearch.TabIndex = 12;
@@ -294,42 +264,111 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(686, 84);
+            this.lblSearch.Location = new System.Drawing.Point(602, 67);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(55, 19);
+            this.lblSearch.Size = new System.Drawing.Size(136, 19);
             this.lblSearch.TabIndex = 22;
-            this.lblSearch.Text = "Search";
+            this.lblSearch.Text = "Search by Barcode";
+            // 
+            // txtQuantityNotification
+            // 
+            this.txtQuantityNotification.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantityNotification.Location = new System.Drawing.Point(167, 313);
+            this.txtQuantityNotification.Name = "txtQuantityNotification";
+            this.txtQuantityNotification.Size = new System.Drawing.Size(130, 23);
+            this.txtQuantityNotification.TabIndex = 23;
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.Location = new System.Drawing.Point(167, 342);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(130, 23);
+            this.txtCategory.TabIndex = 24;
+            // 
+            // txtStore
+            // 
+            this.txtStore.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStore.Location = new System.Drawing.Point(167, 371);
+            this.txtStore.Name = "txtStore";
+            this.txtStore.Size = new System.Drawing.Size(130, 23);
+            this.txtStore.TabIndex = 25;
+            // 
+            // dgvStore
+            // 
+            this.dgvStore.AllowUserToAddRows = false;
+            this.dgvStore.AllowUserToDeleteRows = false;
+            this.dgvStore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStore.Location = new System.Drawing.Point(529, 361);
+            this.dgvStore.Name = "dgvStore";
+            this.dgvStore.ReadOnly = true;
+            this.dgvStore.Size = new System.Drawing.Size(220, 155);
+            this.dgvStore.TabIndex = 26;
+            // 
+            // dgvCategory
+            // 
+            this.dgvCategory.AllowUserToAddRows = false;
+            this.dgvCategory.AllowUserToDeleteRows = false;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Location = new System.Drawing.Point(303, 361);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
+            this.dgvCategory.Size = new System.Drawing.Size(220, 155);
+            this.dgvCategory.TabIndex = 27;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(303, 339);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(70, 19);
+            this.lblCategory.TabIndex = 28;
+            this.lblCategory.Text = "Category";
+            // 
+            // lblStore
+            // 
+            this.lblStore.AutoSize = true;
+            this.lblStore.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStore.Location = new System.Drawing.Point(525, 339);
+            this.lblStore.Name = "lblStore";
+            this.lblStore.Size = new System.Drawing.Size(46, 19);
+            this.lblStore.TabIndex = 29;
+            this.lblStore.Text = "Store";
             // 
             // ProductsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(984, 597);
+            this.ClientSize = new System.Drawing.Size(974, 591);
+            this.Controls.Add(this.lblStore);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.dgvCategory);
+            this.Controls.Add(this.dgvStore);
+            this.Controls.Add(this.txtStore);
+            this.Controls.Add(this.txtCategory);
+            this.Controls.Add(this.txtQuantityNotification);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblEdit);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lblLoginAccount);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dgvStaff);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lblStor);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lblVehicle);
-            this.Controls.Add(this.lblJobTitle);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblContactNo);
-            this.Controls.Add(this.lblSurname);
-            this.Controls.Add(this.lblIDCard);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.txtIDCard);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblCategor);
+            this.Controls.Add(this.lblQuantityNotification);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.lblBarcode);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtBarcode);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblProducts);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -337,38 +376,43 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         private System.Windows.Forms.Label lblProducts;
-        private System.Windows.Forms.Label lblVehicle;
-        private System.Windows.Forms.Label lblJobTitle;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblContactNo;
-        private System.Windows.Forms.Label lblSurname;
-        private System.Windows.Forms.Label lblIDCard;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.TextBox txtIDCard;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblCategor;
+        private System.Windows.Forms.Label lblQuantityNotification;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblBarcode;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StripStatusVehicles;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvStaff;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblLoginAccount;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lblStor;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button lblEdit;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox txtQuantityNotification;
+        private System.Windows.Forms.TextBox txtCategory;
+        private System.Windows.Forms.TextBox txtStore;
+        private System.Windows.Forms.DataGridView dgvStore;
+        private System.Windows.Forms.DataGridView dgvCategory;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Label lblStore;
     }
 }

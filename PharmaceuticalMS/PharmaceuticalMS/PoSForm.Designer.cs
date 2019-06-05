@@ -33,13 +33,7 @@
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblLoginAccount = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.lblEdit = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +54,7 @@
             // 
             this.lblVehicle.AutoSize = true;
             this.lblVehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicle.Location = new System.Drawing.Point(20, 403);
+            this.lblVehicle.Location = new System.Drawing.Point(65, 321);
             this.lblVehicle.Name = "lblVehicle";
             this.lblVehicle.Size = new System.Drawing.Size(57, 19);
             this.lblVehicle.TabIndex = 8;
@@ -70,7 +64,7 @@
             // 
             this.lblJobTitle.AutoSize = true;
             this.lblJobTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobTitle.Location = new System.Drawing.Point(20, 374);
+            this.lblJobTitle.Location = new System.Drawing.Point(65, 292);
             this.lblJobTitle.Name = "lblJobTitle";
             this.lblJobTitle.Size = new System.Drawing.Size(66, 19);
             this.lblJobTitle.TabIndex = 9;
@@ -80,7 +74,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(23, 284);
+            this.lblAddress.Location = new System.Drawing.Point(68, 202);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(63, 19);
             this.lblAddress.TabIndex = 10;
@@ -90,7 +84,7 @@
             // 
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(23, 259);
+            this.lblContactNo.Location = new System.Drawing.Point(68, 177);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(86, 19);
             this.lblContactNo.TabIndex = 11;
@@ -100,7 +94,7 @@
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(23, 230);
+            this.lblSurname.Location = new System.Drawing.Point(68, 148);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(70, 19);
             this.lblSurname.TabIndex = 12;
@@ -110,7 +104,7 @@
             // 
             this.lblIDCard.AutoSize = true;
             this.lblIDCard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDCard.Location = new System.Drawing.Point(23, 172);
+            this.lblIDCard.Location = new System.Drawing.Point(436, 84);
             this.lblIDCard.Name = "lblIDCard";
             this.lblIDCard.Size = new System.Drawing.Size(58, 19);
             this.lblIDCard.TabIndex = 13;
@@ -120,7 +114,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(23, 201);
+            this.lblName.Location = new System.Drawing.Point(68, 119);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 19);
             this.lblName.TabIndex = 14;
@@ -129,7 +123,7 @@
             // txtSurname
             // 
             this.txtSurname.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(157, 226);
+            this.txtSurname.Location = new System.Drawing.Point(202, 144);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(130, 23);
             this.txtSurname.TabIndex = 2;
@@ -137,7 +131,7 @@
             // txtIDCard
             // 
             this.txtIDCard.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDCard.Location = new System.Drawing.Point(157, 168);
+            this.txtIDCard.Location = new System.Drawing.Point(202, 86);
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(130, 23);
             this.txtIDCard.TabIndex = 0;
@@ -145,7 +139,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(156, 197);
+            this.txtName.Location = new System.Drawing.Point(201, 115);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(130, 23);
             this.txtName.TabIndex = 1;
@@ -214,16 +208,16 @@
             this.dgvStaff.AllowUserToAddRows = false;
             this.dgvStaff.AllowUserToDeleteRows = false;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(333, 111);
+            this.dgvStaff.Location = new System.Drawing.Point(440, 106);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
-            this.dgvStaff.Size = new System.Drawing.Size(639, 422);
+            this.dgvStaff.Size = new System.Drawing.Size(521, 274);
             this.dgvStaff.TabIndex = 19;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(158, 255);
+            this.textBox1.Location = new System.Drawing.Point(203, 173);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 23);
             this.textBox1.TabIndex = 3;
@@ -232,44 +226,11 @@
             // 
             this.lblLoginAccount.AutoSize = true;
             this.lblLoginAccount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginAccount.Location = new System.Drawing.Point(20, 432);
+            this.lblLoginAccount.Location = new System.Drawing.Point(65, 350);
             this.lblLoginAccount.Name = "lblLoginAccount";
             this.lblLoginAccount.Size = new System.Drawing.Size(107, 19);
             this.lblLoginAccount.TabIndex = 21;
             this.lblLoginAccount.Text = "Login Account";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(158, 284);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 80);
-            this.textBox2.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(158, 370);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 23);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 399);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 23);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(158, 428);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(130, 23);
-            this.comboBox3.TabIndex = 7;
             // 
             // lblEdit
             // 
@@ -282,37 +243,13 @@
             this.lblEdit.Text = "Edit";
             this.lblEdit.UseVisualStyleBackColor = false;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(750, 80);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(221, 23);
-            this.txtSearch.TabIndex = 12;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(686, 84);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(55, 19);
-            this.lblSearch.TabIndex = 22;
-            this.lblSearch.Text = "Search";
-            // 
             // PoSForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(984, 597);
-            this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblEdit);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.lblLoginAccount);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvStaff);
@@ -363,12 +300,6 @@
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblLoginAccount;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button lblEdit;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label lblSearch;
     }
 }

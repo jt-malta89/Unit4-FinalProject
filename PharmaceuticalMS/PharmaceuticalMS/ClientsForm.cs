@@ -14,7 +14,7 @@ namespace PharmaceuticalMS
 {
     public partial class ClientsForm : Form
     {
-        public Informations info = new Informations();
+        //public Informations info = new Informations();
         public Operations opr = new Operations();
 
         public ClientsForm()
@@ -40,6 +40,8 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            Informations info = new Informations();
+
             info.IDCard = txtIDCard.Text;
             info.Name = txtName.Text;
             info.Surname = txtSurname.Text;
@@ -58,6 +60,8 @@ namespace PharmaceuticalMS
 
         private void lblEdit_Click(object sender, EventArgs e)
         {
+            Informations info = new Informations();
+
             info.IDCard = txtIDCard.Text;
             info.Name = txtName.Text;
             info.Surname = txtSurname.Text;
@@ -77,6 +81,8 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Informations info = new Informations();
+
             info.IDCard = txtIDCard.Text;
             info.Name = txtName.Text;
             info.Surname = txtSurname.Text;
@@ -95,6 +101,8 @@ namespace PharmaceuticalMS
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            Informations info = new Informations();
+
             info.IDCard = txtSearch.Text;
             DataTable dt = new DataTable();
             dt = opr.SearchClient(info);
@@ -149,6 +157,7 @@ namespace PharmaceuticalMS
 
         private void ClientsForm_Load(object sender, EventArgs e)
         {
+            Informations info = new Informations();
             DataTable dt = new DataTable();
             dt = opr.viewClient(info);
             dgvClient.DataSource = dt;

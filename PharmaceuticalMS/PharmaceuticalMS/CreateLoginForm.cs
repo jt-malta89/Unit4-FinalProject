@@ -14,7 +14,7 @@ namespace PharmaceuticalMS
 {
     public partial class CreateLoginForm : Form
     {
-        public Informations info = new Informations();
+        public Staff Staff = new Staff();
         public Operations opr = new Operations();
 
         public CreateLoginForm()
@@ -40,14 +40,14 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            info.Username = txtUsername.Text;
-            info.Password = txtPassword.Text;
-            info.Type = txtAccessType.Text;
-            int rows = opr.insertLog(info);
+            Staff.Username = txtUsername.Text;
+            Staff.Password = txtPassword.Text;
+            Staff.Type = txtAccessType.Text;
+            int rows = opr.insertLog(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewCreateLogin(info);
+                dt = opr.getLogin();
                 dgvLoginAccount.DataSource = dt;
                 dgvLoginAccount.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Login Account Saved";
@@ -57,14 +57,14 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            info.Username = txtUsername.Text;
-            info.Password = txtPassword.Text;
-            info.Type = txtAccessType.Text;
-            int rows = opr.deleteLog(info);
+            Staff.Username = txtUsername.Text;
+            Staff.Password = txtPassword.Text;
+            Staff.Type = txtAccessType.Text;
+            int rows = opr.deleteLog(Staff);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewCreateLogin(info);
+                dt = opr.getLogin();
                 dgvLoginAccount.DataSource = dt;
                 dgvLoginAccount.Columns[0].Visible = false;
                 this.StripStatusVehicles.Text = "Login Account Deleted";
@@ -86,7 +86,7 @@ namespace PharmaceuticalMS
         private void CreateLoginForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = opr.viewCreateLogin(info);
+            dt = opr.getLogin();
             dgvLoginAccount.DataSource = dt;
             dgvLoginAccount.Columns[0].Visible = false;
         }
