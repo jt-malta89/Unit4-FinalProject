@@ -14,7 +14,6 @@ namespace PharmaceuticalMS
 {
     public partial class ClientsForm : Form
     {
-        //public Informations info = new Informations();
         public Operations opr = new Operations();
 
         public ClientsForm()
@@ -40,40 +39,40 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Informations info = new Informations();
+            Client Client = new Client();
 
-            info.IDCard = txtIDCard.Text;
-            info.Name = txtName.Text;
-            info.Surname = txtSurname.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.Address = txtAddress.Text;
-            int rows = opr.insertClient(info);
+            Client.IDCard = Convert.ToInt32(txtIDCard.Text);
+            Client.Name = txtName.Text;
+            Client.Surname = txtSurname.Text;
+            Client.ContactNo = Convert.ToInt32(txtContactNo.Text);
+            Client.Address = txtAddress.Text;
+            int rows = opr.insertClient(Client);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewClient(info);
+                dt = opr.getClient();
                 dgvClient.DataSource = dt;
-                this.StripStatusVehicles.Text = "Client Data Saved";
+                this.StripStatusDisplay.Text = "Client Data Saved";
                 ClearTextBoxes();
             }
         }
 
         private void lblEdit_Click(object sender, EventArgs e)
         {
-            Informations info = new Informations();
+            Client Client = new Client();
 
-            info.IDCard = txtIDCard.Text;
-            info.Name = txtName.Text;
-            info.Surname = txtSurname.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.Address = txtAddress.Text;
-            int rows = opr.editClient(info);
+            Client.IDCard = Convert.ToInt32(txtIDCard.Text);
+            Client.Name = txtName.Text;
+            Client.Surname = txtSurname.Text;
+            Client.ContactNo = Convert.ToInt32(txtContactNo.Text);
+            Client.Address = txtAddress.Text;
+            int rows = opr.editClient(Client);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewClient(info);
+                dt = opr.getClient();
                 dgvClient.DataSource = dt;
-                this.StripStatusVehicles.Text = "Client Data Changed";
+                this.StripStatusDisplay.Text = "Client Data Changed";
                 ClearTextBoxes();
 
             }
@@ -81,31 +80,31 @@ namespace PharmaceuticalMS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Informations info = new Informations();
+            Client Client = new Client();
 
-            info.IDCard = txtIDCard.Text;
-            info.Name = txtName.Text;
-            info.Surname = txtSurname.Text;
-            info.ContactNo = txtContactNo.Text;
-            info.Address = txtAddress.Text;
-            int rows = opr.deleteClient(info);
+            Client.IDCard = Convert.ToInt32(txtIDCard.Text);
+            Client.Name = txtName.Text;
+            Client.Surname = txtSurname.Text;
+            Client.ContactNo = Convert.ToInt32(txtContactNo.Text);
+            Client.Address = txtAddress.Text;
+            int rows = opr.deleteClient(Client);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewClient(info);
+                dt = opr.getClient();
                 dgvClient.DataSource = dt;
-                this.StripStatusVehicles.Text = "Client Data Deleted";
+                this.StripStatusDisplay.Text = "Client Data Deleted";
                 ClearTextBoxes();
             }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            Informations info = new Informations();
+            Client Client = new Client();
 
-            info.IDCard = txtSearch.Text;
+            Client.IDCard = Convert.ToInt32(txtSearch.Text);
             DataTable dt = new DataTable();
-            dt = opr.SearchClient(info);
+            dt = opr.SearchClient(Client);
             dgvClient.DataSource = dt;
         }
 
@@ -157,9 +156,10 @@ namespace PharmaceuticalMS
 
         private void ClientsForm_Load(object sender, EventArgs e)
         {
-            Informations info = new Informations();
+            Client Client = new Client();
+
             DataTable dt = new DataTable();
-            dt = opr.viewClient(info);
+            dt = opr.getClient();
             dgvClient.DataSource = dt;
         }
     }

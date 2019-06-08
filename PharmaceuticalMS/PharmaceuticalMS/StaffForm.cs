@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,10 +14,7 @@ namespace PharmaceuticalMS
 {
     public partial class StaffForm : Form
     {
-
-        private ArrayList orderProductsList = new ArrayList();
         public Operations opr = new Operations();
-        public Staff Staff = new Staff();
 
         public StaffForm()
         {
@@ -41,6 +37,8 @@ namespace PharmaceuticalMS
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            Staff Staff = new Staff();
+
             Staff.IDCard = Convert.ToInt32(txtSearch.Text);
             DataTable dt = new DataTable();
             dt = opr.SearchStaff(Staff);
@@ -49,6 +47,8 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            Staff Staff = new Staff();
+
             Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
             Staff.Name = txtName.Text;
             Staff.Surname = txtSurname.Text;
@@ -62,15 +62,17 @@ namespace PharmaceuticalMS
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewStaff();
+                dt = opr.getStaff();
                 dgvStaff.DataSource = dt;
-                this.StripStatusVehicles.Text = "Staff Data Saved";
+                this.StripStatusDisplay.Text = "Staff Data Saved";
                 ClearTextBoxes();
             }
         }
 
         private void lblEdit_Click(object sender, EventArgs e)
         {
+            Staff Staff = new Staff();
+
             Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
             Staff.Name = txtName.Text;
             Staff.Surname = txtSurname.Text;
@@ -84,15 +86,17 @@ namespace PharmaceuticalMS
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewStaff();
+                dt = opr.getStaff();
                 dgvStaff.DataSource = dt;
-                this.StripStatusVehicles.Text = "Staff Data Changed";
+                this.StripStatusDisplay.Text = "Staff Data Changed";
                 ClearTextBoxes();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Staff Staff = new Staff();
+
             Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
             Staff.Name = txtName.Text;
             Staff.Surname = txtSurname.Text;
@@ -105,10 +109,10 @@ namespace PharmaceuticalMS
             int rows = opr.deleteStaff(Staff);
             if (rows > 0)
             {
-                DataTable dt = new DataTable();
-                dt = opr.viewStaff();
-                dgvStaff.DataSource = dt;
-                this.StripStatusVehicles.Text = "Staff Data Deleted";
+                DataTable st = new DataTable();
+                st = opr.getStaff();
+                dgvStaff.DataSource = st;
+                this.StripStatusDisplay.Text = "Staff Data Deleted";
                 ClearTextBoxes();
             }
         }
@@ -116,11 +120,12 @@ namespace PharmaceuticalMS
         private void StaffForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = opr.viewStaff();
+            dt = opr.getStaff();
             dgvStaff.DataSource = dt;
             cbJobTitle.Items.Clear();
             this.cbJobTitle.DataSource = new Operations().getJobTitle();
             this.cbJobTitle.DisplayMember = "JobTitle";
+            this.cbVehicle.Refresh();
             this.cbVehicle.DataSource = new Operations().getvehicles();
             this.cbVehicle.DisplayMember = "NumberPlate";
             this.cbVehicle.Refresh();
@@ -144,6 +149,24 @@ namespace PharmaceuticalMS
                 txtVehicleID.Text = dgvRow.Cells[7].Value.ToString();
                 txtLoginAccountID.Text = dgvRow.Cells[8].Value.ToString();
             }
+        }
+
+        private void cbJobTitle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView drv = (DataRowView)this.cbJobTitle.SelectedItem;
+            txtJobTitleID.Text = drv["JobTitleID"].ToString();
+        }
+
+        private void cbVehicle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView drv = (DataRowView)this.cbVehicle.SelectedItem;
+            txtVehicleID.Text = drv["VehicleID"].ToString();
+        }
+
+        private void cbLoginAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView drv = (DataRowView)this.cbLoginAccount.SelectedItem;
+            txtLoginAccountID.Text = drv["LoginID"].ToString();
         }
 
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -193,63 +216,6 @@ namespace PharmaceuticalMS
                 MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Handled = true;
             }
-        }
-
-        private void txtJobTitleID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-            }
-        }
-
-        private void txtVehicleID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-            }
-        }
-
-        private void txtLoginAccountID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Handled = true;
-            }
-        }
-
-        private void cbJobTitle_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView drv = (DataRowView)this.cbJobTitle.SelectedItem;
-            txtJobTitleID.Text = drv["JobTitleID"].ToString();
-        }
-
-        private void cbVehicle_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView drv = (DataRowView)this.cbVehicle.SelectedItem;
-            txtVehicleID.Text = drv["VehicleID"].ToString();
-        }
-
-        private void cbLoginAccount_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView drv = (DataRowView)this.cbLoginAccount.SelectedItem;
-            txtLoginAccountID.Text = drv["LoginID"].ToString();
         }
     }
 }

@@ -14,7 +14,6 @@ namespace PharmaceuticalMS
 {
     public partial class CategoryForm : Form
     {
-        public Informations info = new Informations();
         public Operations opr = new Operations();
 
         public CategoryForm()
@@ -40,30 +39,34 @@ namespace PharmaceuticalMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            info.Category = txtCategory.Text;
-            int rows = opr.insertCat(info);
+            Categories Category = new Categories();
+
+            Category.Category = txtCategory.Text;
+            int rows = opr.insertCat(Category);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewCategory(info);
+                dt = opr.getCategory();
                 dgvCategory.DataSource = dt;
                 dgvCategory.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Category Saved";
+                this.StripStatusDisplay.Text = "Category Saved";
                 ClearTextBoxes();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            info.Category = txtCategory.Text;
-            int rows = opr.deleteCat(info);
+            Categories Category = new Categories();
+
+            Category.Category = txtCategory.Text;
+            int rows = opr.deleteCat(Category);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();
-                dt = opr.viewCategory(info);
+                dt = opr.getCategory();
                 dgvCategory.DataSource = dt;
                 dgvCategory.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Category Deleted";
+                this.StripStatusDisplay.Text = "Category Deleted";
                 ClearTextBoxes();
             }
         }
@@ -79,8 +82,10 @@ namespace PharmaceuticalMS
 
         private void CategoryForm_Load(object sender, EventArgs e)
         {
+            Categories Category = new Categories();
+
             DataTable dt = new DataTable();
-            dt = opr.viewCategory(info);
+            dt = opr.getCategory();
             dgvCategory.DataSource = dt;
             dgvCategory.Columns[0].Visible = false;
         }

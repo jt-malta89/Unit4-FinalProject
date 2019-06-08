@@ -27,7 +27,7 @@ namespace PharmaceuticalMS
             //empty any products in the list when the form loads
             //this.orderProductsList.Clear();
 
-            this.comboPharmacies.DataSource = new Operations().viewStaff();
+            this.comboPharmacies.DataSource = new Operations().getStaff();
             this.comboPharmacies.DisplayMember = "Name";
             this.comboPharmacies.Refresh();
 

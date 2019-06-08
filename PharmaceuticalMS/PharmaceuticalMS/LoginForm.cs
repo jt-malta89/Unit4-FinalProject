@@ -14,7 +14,6 @@ namespace PharmaceuticalMS
 {
     public partial class LoginForm : Form
     {
-        public Informations info = new Informations();
         public Operations opr = new Operations();
         public string utype;
 
@@ -28,9 +27,11 @@ namespace PharmaceuticalMS
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            info.Username = txtUsername.Text;
-            info.Password = txtPassword.Text;
-            dt = opr.login(info);
+            Login Login = new Login();
+
+            Login.Username = txtUsername.Text;
+            Login.Password = txtPassword.Text;
+            dt = opr.login(Login);
 
             if (dt.Rows.Count > 0)
             {

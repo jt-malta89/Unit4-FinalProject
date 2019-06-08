@@ -48,7 +48,7 @@ namespace PharmaceuticalMS
                 dt = opr.getJobTitle();
                 dgvJobTitle.DataSource = dt;
                 dgvJobTitle.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Job Title Saved";
+                this.StripStatusDisplay.Text = "Job Title Saved";
                 ClearTextBoxes();
             }
         }
@@ -63,7 +63,7 @@ namespace PharmaceuticalMS
                 dt = opr.getJobTitle();
                 dgvJobTitle.DataSource = dt;
                 dgvJobTitle.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Job Title Deleted";
+                this.StripStatusDisplay.Text = "Job Title Deleted";
                 ClearTextBoxes();
             }
         }

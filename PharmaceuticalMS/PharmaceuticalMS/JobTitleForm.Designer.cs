@@ -34,7 +34,7 @@
             this.txtJobTitle = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StripStatusVehicles = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StripStatusDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvJobTitle = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobTitle)).BeginInit();
@@ -97,7 +97,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripStatusVehicles});
+            this.StripStatusDisplay});
             this.statusStrip1.Location = new System.Drawing.Point(0, 249);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(584, 22);
@@ -106,8 +106,8 @@
             // 
             // StripStatusVehicles
             // 
-            this.StripStatusVehicles.Name = "StripStatusVehicles";
-            this.StripStatusVehicles.Size = new System.Drawing.Size(0, 17);
+            this.StripStatusDisplay.Name = "StripStatusVehicles";
+            this.StripStatusDisplay.Size = new System.Drawing.Size(0, 17);
             // 
             // dgvJobTitle
             // 
@@ -155,7 +155,7 @@
         private System.Windows.Forms.TextBox txtJobTitle;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel StripStatusVehicles;
+        private System.Windows.Forms.ToolStripStatusLabel StripStatusDisplay;
         private System.Windows.Forms.DataGridView dgvJobTitle;
     }
 }

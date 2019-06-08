@@ -41,7 +41,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StripStatusVehicles = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StripStatusDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
@@ -72,7 +72,7 @@
             this.lblStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblStaff.Location = new System.Drawing.Point(0, 0);
             this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(1035, 60);
+            this.lblStaff.Size = new System.Drawing.Size(940, 60);
             this.lblStaff.TabIndex = 1;
             this.lblStaff.Text = "Staff";
             this.lblStaff.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -81,7 +81,7 @@
             // 
             this.lblVehicle.AutoSize = true;
             this.lblVehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicle.Location = new System.Drawing.Point(300, 210);
+            this.lblVehicle.Location = new System.Drawing.Point(294, 210);
             this.lblVehicle.Name = "lblVehicle";
             this.lblVehicle.Size = new System.Drawing.Size(57, 19);
             this.lblVehicle.TabIndex = 8;
@@ -91,7 +91,7 @@
             // 
             this.lblJobTitle.AutoSize = true;
             this.lblJobTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobTitle.Location = new System.Drawing.Point(12, 210);
+            this.lblJobTitle.Location = new System.Drawing.Point(40, 210);
             this.lblJobTitle.Name = "lblJobTitle";
             this.lblJobTitle.Size = new System.Drawing.Size(66, 19);
             this.lblJobTitle.TabIndex = 9;
@@ -188,23 +188,23 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StripStatusVehicles});
+            this.StripStatusDisplay});
             this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(974, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(939, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // StripStatusVehicles
+            // StripStatusDisplay
             // 
-            this.StripStatusVehicles.Name = "StripStatusVehicles";
-            this.StripStatusVehicles.Size = new System.Drawing.Size(0, 17);
+            this.StripStatusDisplay.Name = "StripStatusDisplay";
+            this.StripStatusDisplay.Size = new System.Drawing.Size(0, 17);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(892, 493);
+            this.btnDelete.Location = new System.Drawing.Point(857, 493);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 10;
@@ -216,7 +216,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(740, 493);
+            this.btnAdd.Location = new System.Drawing.Point(705, 493);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 30);
             this.btnAdd.TabIndex = 9;
@@ -249,7 +249,7 @@
             // 
             this.lblLoginAccount.AutoSize = true;
             this.lblLoginAccount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginAccount.Location = new System.Drawing.Point(591, 217);
+            this.lblLoginAccount.Location = new System.Drawing.Point(547, 210);
             this.lblLoginAccount.Name = "lblLoginAccount";
             this.lblLoginAccount.Size = new System.Drawing.Size(107, 19);
             this.lblLoginAccount.TabIndex = 21;
@@ -268,7 +268,7 @@
             // 
             this.lblEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lblEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdit.Location = new System.Drawing.Point(816, 493);
+            this.lblEdit.Location = new System.Drawing.Point(781, 493);
             this.lblEdit.Name = "lblEdit";
             this.lblEdit.Size = new System.Drawing.Size(70, 30);
             this.lblEdit.TabIndex = 11;
@@ -279,7 +279,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(726, 320);
+            this.txtSearch.Location = new System.Drawing.Point(706, 320);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(221, 23);
             this.txtSearch.TabIndex = 12;
@@ -318,7 +318,7 @@
             // 
             this.lblStaffDetails.AutoSize = true;
             this.lblStaffDetails.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffDetails.Location = new System.Drawing.Point(12, 276);
+            this.lblStaffDetails.Location = new System.Drawing.Point(6, 276);
             this.lblStaffDetails.Name = "lblStaffDetails";
             this.lblStaffDetails.Size = new System.Drawing.Size(91, 19);
             this.lblStaffDetails.TabIndex = 25;
@@ -327,38 +327,38 @@
             // txtJobTitleID
             // 
             this.txtJobTitleID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobTitleID.Location = new System.Drawing.Point(84, 235);
+            this.txtJobTitleID.Location = new System.Drawing.Point(112, 235);
             this.txtJobTitleID.Name = "txtJobTitleID";
             this.txtJobTitleID.ReadOnly = true;
             this.txtJobTitleID.Size = new System.Drawing.Size(130, 23);
             this.txtJobTitleID.TabIndex = 26;
-            this.txtJobTitleID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJobTitleID_KeyPress);
+            this.txtJobTitleID.Visible = false;
             // 
             // txtVehicleID
             // 
             this.txtVehicleID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleID.Location = new System.Drawing.Point(410, 239);
+            this.txtVehicleID.Location = new System.Drawing.Point(357, 235);
             this.txtVehicleID.Name = "txtVehicleID";
             this.txtVehicleID.ReadOnly = true;
             this.txtVehicleID.Size = new System.Drawing.Size(130, 23);
             this.txtVehicleID.TabIndex = 27;
-            this.txtVehicleID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVehicleID_KeyPress);
+            this.txtVehicleID.Visible = false;
             // 
             // txtLoginAccountID
             // 
             this.txtLoginAccountID.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoginAccountID.Location = new System.Drawing.Point(706, 239);
+            this.txtLoginAccountID.Location = new System.Drawing.Point(660, 235);
             this.txtLoginAccountID.Name = "txtLoginAccountID";
             this.txtLoginAccountID.ReadOnly = true;
             this.txtLoginAccountID.Size = new System.Drawing.Size(130, 23);
             this.txtLoginAccountID.TabIndex = 28;
-            this.txtLoginAccountID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoginAccountID_KeyPress);
+            this.txtLoginAccountID.Visible = false;
             // 
             // cbJobTitle
             // 
             this.cbJobTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbJobTitle.FormattingEnabled = true;
-            this.cbJobTitle.Location = new System.Drawing.Point(84, 206);
+            this.cbJobTitle.Location = new System.Drawing.Point(112, 206);
             this.cbJobTitle.Name = "cbJobTitle";
             this.cbJobTitle.Size = new System.Drawing.Size(130, 23);
             this.cbJobTitle.TabIndex = 35;
@@ -368,7 +368,7 @@
             // 
             this.cbVehicle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVehicle.FormattingEnabled = true;
-            this.cbVehicle.Location = new System.Drawing.Point(410, 210);
+            this.cbVehicle.Location = new System.Drawing.Point(357, 206);
             this.cbVehicle.Name = "cbVehicle";
             this.cbVehicle.Size = new System.Drawing.Size(130, 23);
             this.cbVehicle.TabIndex = 36;
@@ -378,7 +378,7 @@
             // 
             this.cbLoginAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoginAccount.FormattingEnabled = true;
-            this.cbLoginAccount.Location = new System.Drawing.Point(706, 213);
+            this.cbLoginAccount.Location = new System.Drawing.Point(660, 206);
             this.cbLoginAccount.Name = "cbLoginAccount";
             this.cbLoginAccount.Size = new System.Drawing.Size(130, 23);
             this.cbLoginAccount.TabIndex = 37;
@@ -399,7 +399,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(974, 561);
+            this.ClientSize = new System.Drawing.Size(939, 561);
             this.Controls.Add(this.lblAddDetails);
             this.Controls.Add(this.cbLoginAccount);
             this.Controls.Add(this.cbVehicle);
@@ -459,7 +459,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel StripStatusVehicles;
+        private System.Windows.Forms.ToolStripStatusLabel StripStatusDisplay;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvStaff;

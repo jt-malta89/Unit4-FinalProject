@@ -14,15 +14,21 @@ namespace BAL
     public class Operations
     {
         public Dbconnection db = new Dbconnection();
-        //public Informations info = new Informations();
-        public Staff Staff = new Staff();
 
-        public int insertVeh(Staff Staff)
+        public int insertVeh(Vehicles vehicle)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Vehicles VALUES ('"+ Staff.NumberPlate+ "','" + Staff.MakeModel + "','" + Staff.VehicleType + "','" + Staff.FuelType + "')";
+            cmd.CommandText = "INSERT INTO Vehicles VALUES ('"+ vehicle.NumberPlate+ "','" + vehicle.MakeModel + "','" + vehicle.VehicleType + "','" + vehicle.FuelType + "')";
             return db.ExeNonQuery(cmd);
+        }
+
+        public DataTable getproduct()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Products";
+            return db.ExeReader(cmd);
         }
 
         public DataTable SearchStaff(Staff Staff)
@@ -33,12 +39,44 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public DataTable viewStaff()
+        public DataTable getStaff()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Staff";
+            cmd.CommandText = "SELECT * FROM Staff";
             return db.ExeReader(cmd);
+        }
+
+        public int insertStore(Store store)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Stores VALUES ('" + store.Name + "','" + store.Address + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public DataTable getStore()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Stores";
+            return db.ExeReader(cmd);
+        }
+
+        public int insertStaff(Products product)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Products VALUES ('" + product.Barcode + "','" + product.ItemName + "','" + product.ItemDescription + "','" + product.Price + "','" + product.Quantity + "','" + product.NotifThre + "','" + product.StoreID + "','" + product.CategoryID + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int deleteStore(Store store)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Stores WHERE Name='" + store.Name + "'";
+            return db.ExeNonQuery(cmd);
         }
 
         public DataTable getItems()
@@ -49,43 +87,83 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public int insertClient(Informations info)
+        public int deleteproduct(Products product)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Clients VALUES ('" + info.IDCard + "','" + info.Name + "','" + info.Surname + "','" + info.ContactNo + "','" + info.Address + "')";
+            cmd.CommandText = "DELETE FROM Products WHERE Barcode='" + product.Barcode + "'";
             return db.ExeNonQuery(cmd);
         }
 
-        public int deleteVeh(Staff Staff)
+        public DataTable getPharmacy()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Vehicles WHERE NumberPlate='"+ Staff.NumberPlate+"'";
+            cmd.CommandText = "SELECT * FROM Pharmacies";
+            return db.ExeReader(cmd);
+        }
+
+        public int editproduct(Products product)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE Products SET Barcode='" + product.Barcode + "', ItemName='" + product.ItemName + "', ItemDescription='" + product.ItemDescription + "', NotifThre='" + product.NotifThre + "', Price='" + product.Price + "', Quantity='" + product.Quantity + "', StoreID='" + product.StoreID + "', CategoryID='" + product.CategoryID + "' WHERE Barcode='" + product.Barcode + "';";
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable viewClient(Informations info)
+        public int insertPharmacy(Pharmacy pharmacy)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Clients";
+            cmd.CommandText = "INSERT INTO Pharmacies VALUES ('" + pharmacy.Name + "','" + pharmacy.Address + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int insertClient(Client Client)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Clients VALUES ('" + Client.IDCard + "','" + Client.Name + "','" + Client.Surname + "','" + Client.ContactNo + "','" + Client.Address + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int deleteVeh(Vehicles vehicle)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Vehicles WHERE NumberPlate='"+ vehicle.NumberPlate+"'";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int deletePharmacy(Pharmacy pharmacy)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Pharmacies WHERE Name='" + pharmacy.Name + "'";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public DataTable getClient()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Clients";
             return db.ExeReader(cmd);
         }
 
-        public DataTable SearchClient(Informations info)
+        public DataTable SearchClient(Client Client)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Clients where IDCard='" + info.IDCard + "'";
+            cmd.CommandText = "SELECT * FROM Clients WHERE IDCard='" + Client.IDCard + "'";
             return db.ExeReader(cmd);
         }
 
-        public int editClient(Informations info)
+        public int editClient(Client Client)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "UPDATE Clients SET IDCard='" + info.IDCard + "', Name='" + info.Name + "', Surname='" + info.Surname + "', ContactNo='" + info.ContactNo + "',  Address='" + info.Address + "' WHERE IDCard='" + info.IDCard + "';";
+            cmd.CommandText = "UPDATE Clients SET IDCard='" + Client.IDCard + "', Name='" + Client.Name + "', Surname='" + Client.Surname + "', ContactNo='" + Client.ContactNo + "',  Address='" + Client.Address + "' WHERE IDCard='" + Client.IDCard + "';";
             return db.ExeNonQuery(cmd);
         }
 
@@ -105,11 +183,11 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public int deleteClient(Informations info)
+        public int deleteClient(Client Client)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Clients WHERE IDCard='" + info.IDCard + "'";
+            cmd.CommandText = "DELETE FROM Clients WHERE IDCard='" + Client.IDCard + "'";
             return db.ExeNonQuery(cmd);
         }
 
@@ -121,7 +199,7 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable viewCategory(Informations info)
+        public DataTable getCategory()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
@@ -153,11 +231,11 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public int insertCat(Informations info)
+        public int insertCat(Categories Category)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO Category VALUES ('" + info.Category + "')";
+            cmd.CommandText = "INSERT INTO Category VALUES ('" + Category.Category + "')";
             return db.ExeNonQuery(cmd);
         }
 
@@ -185,19 +263,19 @@ namespace BAL
             return db.ExeNonQuery(cmd);
         }
 
-        public int deleteCat(Informations info)
+        public int deleteCat(Categories Category)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "DELETE FROM Category WHERE Category='" + info.Category + "'";
+            cmd.CommandText = "DELETE FROM Category WHERE Category='" + Category.Category + "'";
             return db.ExeNonQuery(cmd);
         }
 
-        public DataTable login(Informations info)
+        public DataTable login(Login Login)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Login where Username='"+info.Username+"' and Password='"+info.Password+"'";
+            cmd.CommandText = "SELECT * FROM Login WHERE Username='"+ Login.Username+"' and Password='"+ Login.Password+"'";
             return db.ExeReader(cmd);
         }
 
