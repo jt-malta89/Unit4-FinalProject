@@ -31,11 +31,45 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
+        public Products getproductByBarcode(int barcode)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Products WHERE Barcode=" + barcode;
+            DataTable result = db.ExeReader(cmd);
+            DataRowCollection rows = result.Rows;
+            if (rows.Count > 0)
+            {
+                foreach(DataRow rw in rows)
+                {
+                    Products product = new Products();
+                    product.Barcode = (int)rw["Barcode"];
+                    product.ItemName = (string)rw["ItemName"];
+                    product.ItemDescription = (string)rw["ItemDescription"];
+                    product.NotifThre = (int)rw["NotifThre"];
+                    product.Price = Convert.ToString(rw["Price"]);
+                    product.Quantity = (int)rw["Quantity"];
+                    product.StoreID = (int)rw["StoreID"];
+                    product.CategoryID = (int)rw["CategoryID"];
+                    return product;
+                }
+            }
+            return null;
+        }
+        
+        public int editproduct(Products product)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE Products SET Barcode='" + product.Barcode + "', ItemName='" + product.ItemName + "', ItemDescription='" + product.ItemDescription + "', NotifThre='" + product.NotifThre + "', Price='" + product.Price + "', Quantity='" + product.Quantity + "', StoreID='" + product.StoreID + "', CategoryID='" + product.CategoryID + "' WHERE Barcode='" + product.Barcode + "';";
+            return db.ExeNonQuery(cmd);
+        }
+
         public DataTable SearchStaff(Staff Staff)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Staff where IDCard='"+Staff.IDCard+"'";
+            cmd.CommandText = "SELECT * FROM Staff WHERE IDCard='"+Staff.IDCard+"'";
             return db.ExeReader(cmd);
         }
 
@@ -63,7 +97,7 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public int insertStaff(Products product)
+        public int insertProduct(Products product)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
@@ -83,7 +117,7 @@ namespace BAL
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM Items";
+            cmd.CommandText = "SELECT * FROM Products";
             return db.ExeReader(cmd);
         }
 
@@ -103,15 +137,7 @@ namespace BAL
             return db.ExeReader(cmd);
         }
 
-        public int editproduct(Products product)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "UPDATE Products SET Barcode='" + product.Barcode + "', ItemName='" + product.ItemName + "', ItemDescription='" + product.ItemDescription + "', NotifThre='" + product.NotifThre + "', Price='" + product.Price + "', Quantity='" + product.Quantity + "', StoreID='" + product.StoreID + "', CategoryID='" + product.CategoryID + "' WHERE Barcode='" + product.Barcode + "';";
-            return db.ExeNonQuery(cmd);
-        }
-
-        public int insertPharmacy(Pharmacy pharmacy)
+          public int insertPharmacy(Pharmacy pharmacy)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
@@ -124,6 +150,25 @@ namespace BAL
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "INSERT INTO Clients VALUES ('" + Client.IDCard + "','" + Client.Name + "','" + Client.Surname + "','" + Client.ContactNo + "','" + Client.Address + "')";
+            return db.ExeNonQuery(cmd);
+        }
+
+        public int insertOrder(Order order)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Orders VALUES ('" + order.OrderID + "',@orderDate,'" + order.PharmacyID + "','" + order.StaffIDCard + "')";
+            cmd.Parameters.Add(new SqlParameter("orderDate", order.date));
+            return db.ExeNonQuery(cmd);         
+        }
+
+        public int insertOrderProduct(OrderProduct orderprod)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO OrdersProd(OrderID, Barcode, Quantity) VALUES (" + orderprod.orderId + 
+                                    "," + orderprod.barcode + "," + orderprod.quantity + ")";
+           
             return db.ExeNonQuery(cmd);
         }
 

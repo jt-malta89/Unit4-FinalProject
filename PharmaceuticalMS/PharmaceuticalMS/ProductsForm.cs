@@ -41,6 +41,14 @@ namespace PharmaceuticalMS
             DataTable dt = new DataTable();
             dt = opr.getproduct();
             dgvProducts.DataSource = dt;
+            dgvProducts.Columns["Barcode"].HeaderText = "Barcode";
+            dgvProducts.Columns["ItemName"].HeaderText = "Item Name";
+            dgvProducts.Columns["ItemDescription"].HeaderText = "Item Description";
+            dgvProducts.Columns["NotifThre"].HeaderText = "Quantity Notification";
+            dgvProducts.Columns["Price"].HeaderText = "Price";
+            dgvProducts.Columns["Quantity"].HeaderText = "Quantity";
+            dgvProducts.Columns["StoreID"].HeaderText = "Store";
+            dgvProducts.Columns["CategoryID"].HeaderText = "Category";
             this.cbCategory.DataSource = new Operations().getCategory();
             this.cbCategory.DisplayMember = "Category";
             this.cbCategory.Refresh();
@@ -61,7 +69,7 @@ namespace PharmaceuticalMS
             product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.StoreID = Convert.ToInt32(txtStore.Text);
             product.CategoryID = Convert.ToInt32(txtCategory.Text);
-            int rows = opr.insertStaff(product);
+            int rows = opr.insertProduct(product);
             if (rows > 0)
             {
                 DataTable dt = new DataTable();

@@ -122,6 +122,15 @@ namespace PharmaceuticalMS
             DataTable dt = new DataTable();
             dt = opr.getStaff();
             dgvStaff.DataSource = dt;
+            dgvStaff.Columns["IDCard"].HeaderText = "ID Card";
+            dgvStaff.Columns["Name"].HeaderText = "Name";
+            dgvStaff.Columns["Surname"].HeaderText = "Surname";
+            dgvStaff.Columns["ContactNo"].HeaderText = "Contact No";
+            dgvStaff.Columns["Salary"].HeaderText = "Salary";
+            dgvStaff.Columns["Address"].HeaderText = "Address";
+            dgvStaff.Columns["JobTitleID"].HeaderText = "Job Title";
+            dgvStaff.Columns["VehicleID"].HeaderText = "Vehicle";
+            dgvStaff.Columns["LoginID"].HeaderText = "Login";
             cbJobTitle.Items.Clear();
             this.cbJobTitle.DataSource = new Operations().getJobTitle();
             this.cbJobTitle.DisplayMember = "JobTitle";

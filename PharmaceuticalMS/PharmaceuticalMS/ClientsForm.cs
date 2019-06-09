@@ -156,11 +156,14 @@ namespace PharmaceuticalMS
 
         private void ClientsForm_Load(object sender, EventArgs e)
         {
-            Client Client = new Client();
-
             DataTable dt = new DataTable();
             dt = opr.getClient();
             dgvClient.DataSource = dt;
+            dgvClient.Columns["IDCard"].HeaderText = "ID Card";
+            dgvClient.Columns["Name"].HeaderText = "Name";
+            dgvClient.Columns["Surname"].HeaderText = "Surname";
+            dgvClient.Columns["ContactNo"].HeaderText = "Contact No";
+            dgvClient.Columns["Address"].HeaderText = "Address";
         }
     }
 }
