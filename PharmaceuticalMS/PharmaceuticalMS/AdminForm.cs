@@ -16,7 +16,7 @@ namespace PharmaceuticalMS
         {
             InitializeComponent();
         }
-
+        //Vehicle button that will open vehicle form
         VehiclesForm vf;
         private void btnVehiclesForm_Click(object sender, EventArgs e)
         {
@@ -34,14 +34,14 @@ namespace PharmaceuticalMS
         {
             vf = null;
         }
-
+        //Logoff button that will open login form
         private void btnLogoff_Click(object sender, EventArgs e)
         {
             LoginForm myLoginForm = new LoginForm();
             myLoginForm.Show();
             this.Hide();
         }
-
+        //Job title button that will open job title form
         JobTitleForm jtf;
         private void btnJobTitle_Click(object sender, EventArgs e)
         {
@@ -59,7 +59,7 @@ namespace PharmaceuticalMS
         {
             jtf = null;
         }
-
+        //Category button that will open category form
         CategoryForm cf;
         private void btnCategory_Click(object sender, EventArgs e)
         {
@@ -77,7 +77,7 @@ namespace PharmaceuticalMS
         {
             cf = null;
         }
-
+        //CreateLogin button that will open Create Login form
         CreateLoginForm clf;
         private void btnCreateLogin_Click(object sender, EventArgs e)
         {
@@ -95,12 +95,7 @@ namespace PharmaceuticalMS
         {
             clf = null;
         }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Staff button that will open staff form
         StaffForm sf;
         private void btnStaff_Click(object sender, EventArgs e)
         {
@@ -118,7 +113,7 @@ namespace PharmaceuticalMS
         {
             sf = null;
         }
-
+        //Order button that will open order form
         OrdersForm of;
         private void btnOrders_Click(object sender, EventArgs e)
         {
@@ -136,25 +131,7 @@ namespace PharmaceuticalMS
         {
             of = null;
         }
-
-        PoSForm pos;
-        private void btnPointOfSale_Click(object sender, EventArgs e)
-        {
-            if (pos == null)
-            {
-                pos = new PoSForm();
-                pos.MdiParent = this;
-                pos.FormClosed += new FormClosedEventHandler(pos_FormClosed);
-                pos.Show();
-            }
-            else
-                pos.Activate();
-        }
-        void pos_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            pos = null;
-        }
-
+        //Product button that will open product form
         ProductsForm pf;
         private void btnProducts_Click(object sender, EventArgs e)
         {
@@ -172,7 +149,7 @@ namespace PharmaceuticalMS
         {
             pf = null;
         }
-
+        //Client button that will open Client form
         ClientsForm cl;
         private void btnClients_Click(object sender, EventArgs e)
         {
@@ -190,7 +167,7 @@ namespace PharmaceuticalMS
         {
             cl = null;
         }
-
+        //Store Pharmacies button that will open StorePharmacies form
         StorePharmaciesForm spf;
         private void btnStore_Click(object sender, EventArgs e)
         {
@@ -207,11 +184,6 @@ namespace PharmaceuticalMS
         void spf_FormClosed(object sender, FormClosedEventArgs e)
         {
             spf = null;
-        }
-
-        private void AdminForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

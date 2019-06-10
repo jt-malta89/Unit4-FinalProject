@@ -32,7 +32,6 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
-            this.btnPointOfSale = new System.Windows.Forms.Button();
             this.btnLogoff = new System.Windows.Forms.Button();
             this.btnClients = new System.Windows.Forms.Button();
             this.pLogo = new System.Windows.Forms.PictureBox();
@@ -71,7 +70,7 @@
             this.btnProducts.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(13, 229);
+            this.btnProducts.Location = new System.Drawing.Point(13, 171);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(180, 50);
@@ -79,21 +78,6 @@
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
-            // 
-            // btnPointOfSale
-            // 
-            this.btnPointOfSale.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnPointOfSale.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPointOfSale.Image = ((System.Drawing.Image)(resources.GetObject("btnPointOfSale.Image")));
-            this.btnPointOfSale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPointOfSale.Location = new System.Drawing.Point(13, 171);
-            this.btnPointOfSale.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPointOfSale.Name = "btnPointOfSale";
-            this.btnPointOfSale.Size = new System.Drawing.Size(180, 50);
-            this.btnPointOfSale.TabIndex = 5;
-            this.btnPointOfSale.Text = "Point Of Sale";
-            this.btnPointOfSale.UseVisualStyleBackColor = false;
-            this.btnPointOfSale.Click += new System.EventHandler(this.btnPointOfSale_Click);
             // 
             // btnLogoff
             // 
@@ -114,7 +98,7 @@
             this.btnClients.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClients.Image = ((System.Drawing.Image)(resources.GetObject("btnClients.Image")));
             this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClients.Location = new System.Drawing.Point(13, 287);
+            this.btnClients.Location = new System.Drawing.Point(13, 229);
             this.btnClients.Margin = new System.Windows.Forms.Padding(4);
             this.btnClients.Name = "btnClients";
             this.btnClients.Size = new System.Drawing.Size(180, 50);
@@ -144,7 +128,6 @@
             this.Controls.Add(this.pLogo);
             this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnLogoff);
-            this.Controls.Add(this.btnPointOfSale);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.splitter1);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,7 +146,6 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnProducts;
-        private System.Windows.Forms.Button btnPointOfSale;
         private System.Windows.Forms.Button btnLogoff;
         private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.PictureBox pLogo;

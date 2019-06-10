@@ -33,7 +33,7 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblStor = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblEdit = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtQuantityNotification = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             // 
             this.lblCategor.AutoSize = true;
             this.lblCategor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategor.Location = new System.Drawing.Point(662, 112);
+            this.lblCategor.Location = new System.Drawing.Point(679, 112);
             this.lblCategor.Name = "lblCategor";
             this.lblCategor.Size = new System.Drawing.Size(70, 19);
             this.lblCategor.TabIndex = 8;
@@ -73,7 +73,7 @@
             // 
             this.lblQuantityNotification.AutoSize = true;
             this.lblQuantityNotification.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantityNotification.Location = new System.Drawing.Point(361, 174);
+            this.lblQuantityNotification.Location = new System.Drawing.Point(330, 174);
             this.lblQuantityNotification.Name = "lblQuantityNotification";
             this.lblQuantityNotification.Size = new System.Drawing.Size(153, 19);
             this.lblQuantityNotification.TabIndex = 9;
@@ -83,7 +83,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(363, 141);
+            this.lblQuantity.Location = new System.Drawing.Point(414, 141);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(69, 19);
             this.lblQuantity.TabIndex = 10;
@@ -93,7 +93,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(363, 112);
+            this.lblPrice.Location = new System.Drawing.Point(440, 112);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(43, 19);
             this.lblPrice.TabIndex = 11;
@@ -103,7 +103,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(30, 170);
+            this.lblDescription.Location = new System.Drawing.Point(96, 174);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(86, 19);
             this.lblDescription.TabIndex = 12;
@@ -113,7 +113,7 @@
             // 
             this.lblBarcode.AutoSize = true;
             this.lblBarcode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBarcode.Location = new System.Drawing.Point(30, 112);
+            this.lblBarcode.Location = new System.Drawing.Point(117, 112);
             this.lblBarcode.Name = "lblBarcode";
             this.lblBarcode.Size = new System.Drawing.Size(65, 19);
             this.lblBarcode.TabIndex = 13;
@@ -123,7 +123,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(30, 141);
+            this.lblTitle.Location = new System.Drawing.Point(143, 145);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(39, 19);
             this.lblTitle.TabIndex = 14;
@@ -132,7 +132,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(520, 112);
+            this.txtPrice.Location = new System.Drawing.Point(489, 108);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(130, 23);
             this.txtPrice.TabIndex = 2;
@@ -221,7 +221,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(520, 141);
+            this.txtQuantity.Location = new System.Drawing.Point(489, 137);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(130, 23);
             this.txtQuantity.TabIndex = 3;
@@ -231,7 +231,7 @@
             // 
             this.lblStor.AutoSize = true;
             this.lblStor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStor.Location = new System.Drawing.Point(662, 141);
+            this.lblStor.Location = new System.Drawing.Point(703, 141);
             this.lblStor.Name = "lblStor";
             this.lblStor.Size = new System.Drawing.Size(46, 19);
             this.lblStor.TabIndex = 21;
@@ -247,17 +247,17 @@
             this.txtDescription.TabIndex = 4;
             this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
             // 
-            // lblEdit
+            // btnEdit
             // 
-            this.lblEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.lblEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdit.Location = new System.Drawing.Point(840, 493);
-            this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(70, 30);
-            this.lblEdit.TabIndex = 11;
-            this.lblEdit.Text = "Edit";
-            this.lblEdit.UseVisualStyleBackColor = false;
-            this.lblEdit.Click += new System.EventHandler(this.lblEdit_Click);
+            this.btnEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(840, 493);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(70, 30);
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtSearch
             // 
@@ -266,6 +266,8 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(221, 23);
             this.txtSearch.TabIndex = 12;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // lblSearch
             // 
@@ -280,7 +282,7 @@
             // txtQuantityNotification
             // 
             this.txtQuantityNotification.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantityNotification.Location = new System.Drawing.Point(520, 170);
+            this.txtQuantityNotification.Location = new System.Drawing.Point(489, 170);
             this.txtQuantityNotification.Name = "txtQuantityNotification";
             this.txtQuantityNotification.Size = new System.Drawing.Size(130, 23);
             this.txtQuantityNotification.TabIndex = 23;
@@ -359,7 +361,7 @@
             this.Controls.Add(this.txtQuantityNotification);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.lblEdit);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblStor);
             this.Controls.Add(this.txtQuantity);
@@ -411,7 +413,7 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label lblStor;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Button lblEdit;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtQuantityNotification;

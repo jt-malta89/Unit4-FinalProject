@@ -274,7 +274,7 @@
             this.lblEdit.TabIndex = 11;
             this.lblEdit.Text = "Edit";
             this.lblEdit.UseVisualStyleBackColor = false;
-            this.lblEdit.Click += new System.EventHandler(this.lblEdit_Click);
+            this.lblEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtSearch
             // 
@@ -284,6 +284,7 @@
             this.txtSearch.Size = new System.Drawing.Size(221, 23);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // lblSearch
             // 

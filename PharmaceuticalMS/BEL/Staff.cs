@@ -8,6 +8,7 @@ namespace BEL
 {
     public class Staff
     {
+        //Get and set details found in Staff table
         public int IDCard { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

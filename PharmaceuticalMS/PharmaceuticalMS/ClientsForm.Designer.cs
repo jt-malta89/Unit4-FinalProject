@@ -216,7 +216,7 @@
             this.lblEdit.TabIndex = 11;
             this.lblEdit.Text = "Edit";
             this.lblEdit.UseVisualStyleBackColor = false;
-            this.lblEdit.Click += new System.EventHandler(this.lblEdit_Click);
+            this.lblEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtSearch
             // 

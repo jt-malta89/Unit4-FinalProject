@@ -14,14 +14,14 @@ namespace PharmaceuticalMS
 {
     public partial class ProductsForm : Form
     {
-
+        //Call methods found in operations
         public Operations opr = new Operations();
 
         public ProductsForm()
         {
             InitializeComponent();
         }
-
+        //Clear text fields when ClearTextBoxes is called
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
@@ -35,7 +35,7 @@ namespace PharmaceuticalMS
             };
             func(Controls);
         }
-
+        //Load data in data grid view when form opens
         private void ProductsForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -56,7 +56,7 @@ namespace PharmaceuticalMS
             this.cbStore.DisplayMember = "Name";
             this.cbStore.Refresh();
         }
-
+        //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Products product = new Products();
@@ -64,9 +64,9 @@ namespace PharmaceuticalMS
             product.Barcode = Convert.ToInt32(txtBarcode.Text);
             product.ItemName = txtTitle.Text;
             product.ItemDescription = txtDescription.Text;
+            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.Price = txtPrice.Text;
             product.Quantity = Convert.ToInt32(txtQuantity.Text);
-            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.StoreID = Convert.ToInt32(txtStore.Text);
             product.CategoryID = Convert.ToInt32(txtCategory.Text);
             int rows = opr.insertProduct(product);
@@ -79,7 +79,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Delete button that will delete records from data base
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Products product = new Products();
@@ -87,9 +87,9 @@ namespace PharmaceuticalMS
             product.Barcode = Convert.ToInt32(txtBarcode.Text);
             product.ItemName = txtTitle.Text;
             product.ItemDescription = txtDescription.Text;
+            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.Price = txtPrice.Text;
             product.Quantity = Convert.ToInt32(txtQuantity.Text);
-            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.StoreID = Convert.ToInt32(txtStore.Text);
             product.CategoryID = Convert.ToInt32(txtCategory.Text);
             int rows = opr.deleteproduct(product);
@@ -102,17 +102,17 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
-        private void lblEdit_Click(object sender, EventArgs e)
+        //Edit button will change any details that are found in table
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             Products product = new Products();
 
             product.Barcode = Convert.ToInt32(txtBarcode.Text);
             product.ItemName = txtTitle.Text;
             product.ItemDescription = txtDescription.Text;
+            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.Price = txtPrice.Text;
             product.Quantity = Convert.ToInt32(txtQuantity.Text);
-            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
             product.StoreID = Convert.ToInt32(txtStore.Text);
             product.CategoryID = Convert.ToInt32(txtCategory.Text);
             int rows = opr.editproduct(product);
@@ -125,32 +125,32 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Select text from data view grid 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow dgvRow = dgvProducts.Rows[e.RowIndex];
             txtBarcode.Text = dgvRow.Cells[0].Value.ToString();
             txtTitle.Text = dgvRow.Cells[1].Value.ToString();
             txtDescription.Text = dgvRow.Cells[2].Value.ToString();
-            txtPrice.Text = dgvRow.Cells[3].Value.ToString();
-            txtQuantity.Text = dgvRow.Cells[4].Value.ToString();
-            txtQuantityNotification.Text = dgvRow.Cells[5].Value.ToString();
+            txtQuantityNotification.Text = dgvRow.Cells[3].Value.ToString();
+            txtPrice.Text = dgvRow.Cells[4].Value.ToString();
+            txtQuantity.Text = dgvRow.Cells[5].Value.ToString();
             txtStore.Text = dgvRow.Cells[6].Value.ToString();
             txtCategory.Text = dgvRow.Cells[7].Value.ToString();
         }
-
+        //Fill combo box with details from table
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)this.cbCategory.SelectedItem;
             txtCategory.Text = drv["CategoryID"].ToString();
         }
-
+        //Fill combo box with details from table
         private void cbStore_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)this.cbStore.SelectedItem;
             txtStore.Text = drv["StoreID"].ToString();
         }
-
+        //The text box only accept number
         private void txtBarcode_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -163,17 +163,17 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //The text box only accept text
         private void txtTitle_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
-
+        //The text box only accept text
         private void txtDescription_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
-
+        //The text box only accept number
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -186,7 +186,7 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //The text box only accept number
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -199,8 +199,31 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //The text box only accept number
         private void txtQuantityNotification_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                e.Handled = true;
+            }
+        }
+        //Search data by primary key from table
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Products product = new Products();
+
+            product.Barcode = Convert.ToInt32(txtSearch.Text);
+            DataTable dt = new DataTable();
+            dt = opr.SearchProduct(product);
+            dgvProducts.DataSource = dt;
+        }
+        //The text box only accept number
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
             {

@@ -8,6 +8,7 @@ namespace BEL
 {
     public class Products
     {
+        //Get and set details found in Products table
         public int Barcode { get; set; }
         public string ItemName { get; set; }
         public string ItemDescription { get; set; }

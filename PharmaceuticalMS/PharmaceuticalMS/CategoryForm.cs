@@ -14,13 +14,14 @@ namespace PharmaceuticalMS
 {
     public partial class CategoryForm : Form
     {
+        //Call methods found in operations
         public Operations opr = new Operations();
 
         public CategoryForm()
         {
             InitializeComponent();
         }
-
+        //Clear text fields when ClearTextBoxes is called
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
@@ -36,7 +37,7 @@ namespace PharmaceuticalMS
 
             func(Controls);
         }
-
+        //Add button will store details found in txtCategory 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Categories Category = new Categories();
@@ -53,7 +54,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Delete button that will delete records from data base 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Categories Category = new Categories();
@@ -70,7 +71,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Select text from data view grid 
         private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -79,7 +80,7 @@ namespace PharmaceuticalMS
                 txtCategory.Text = dgvRow.Cells[1].Value.ToString();
             }
         }
-
+        //Load data in data grid view when from opens
         private void CategoryForm_Load(object sender, EventArgs e)
         {
             Categories Category = new Categories();
@@ -89,7 +90,7 @@ namespace PharmaceuticalMS
             dgvCategory.DataSource = dt;
             dgvCategory.Columns[0].Visible = false;
         }
-
+        //The category text box only accept text
         private void txtCategory_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);

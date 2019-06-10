@@ -14,6 +14,7 @@ namespace PharmaceuticalMS
 {
     public partial class LoginForm : Form
     {
+        //Call methods found in operations
         public Operations opr = new Operations();
         public string utype;
 
@@ -24,7 +25,7 @@ namespace PharmaceuticalMS
             InitializeComponent();
         }
 
-        
+        //Login account button to check username and pssword, to check what type of privilage the account got
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Login Login = new Login();
@@ -54,7 +55,7 @@ namespace PharmaceuticalMS
                 MessageBox.Show("Invalid Username or Password");
             }
         }
-
+        //The username text box only accept text
         private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);

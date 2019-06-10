@@ -16,7 +16,7 @@ namespace PharmaceuticalMS
         {
             InitializeComponent();
         }
-
+        //Vehicle button that will open vehicle form
         VehiclesForm vf;
         private void btnVehiclesForm_Click(object sender, EventArgs e)
         {
@@ -34,14 +34,14 @@ namespace PharmaceuticalMS
         {
             vf = null;
         }
-
+        //Logoff button that will open login form
         private void btnLogoff_Click(object sender, EventArgs e)
         {
             LoginForm myLoginForm = new LoginForm();
             myLoginForm.Show();
             this.Hide();
         }
-
+        //Orders button that will open Orders form
         OrdersForm of;
         private void btnOrders_Click(object sender, EventArgs e)
         {
@@ -59,25 +59,7 @@ namespace PharmaceuticalMS
         {
             of = null;
         }
-
-        PoSForm pos;
-        private void btnPointOfSale_Click(object sender, EventArgs e)
-        {
-            if (pos == null)
-            {
-                pos = new PoSForm();
-                pos.MdiParent = this;
-                pos.FormClosed += new FormClosedEventHandler(pos_FormClosed);
-                pos.Show();
-            }
-            else
-                pos.Activate();
-        }
-        void pos_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            pos = null;
-        }
-
+        //Products button that will open Products form
         ProductsForm pf;
         private void btnProducts_Click(object sender, EventArgs e)
         {
@@ -95,7 +77,7 @@ namespace PharmaceuticalMS
         {
             pf = null;
         }
-
+        //Clients button that will open Clients form
         ClientsForm cl;
         private void btnClients_Click(object sender, EventArgs e)
         {

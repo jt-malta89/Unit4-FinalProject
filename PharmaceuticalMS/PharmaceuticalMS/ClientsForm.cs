@@ -14,13 +14,14 @@ namespace PharmaceuticalMS
 {
     public partial class ClientsForm : Form
     {
+        //Call methods found in operations
         public Operations opr = new Operations();
 
         public ClientsForm()
         {
             InitializeComponent();
         }
-
+        //Clear text fields when ClearTextBoxes is called
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
@@ -36,7 +37,7 @@ namespace PharmaceuticalMS
 
             func(Controls);
         }
-
+        //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Client Client = new Client();
@@ -56,8 +57,8 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
-        private void lblEdit_Click(object sender, EventArgs e)
+        //Edit button will change any details that are found in table
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             Client Client = new Client();
 
@@ -77,7 +78,7 @@ namespace PharmaceuticalMS
 
             }
         }
-
+        //Delete button that will delete records from data base
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Client Client = new Client();
@@ -97,7 +98,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Search data by primary key from table
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             Client Client = new Client();
@@ -107,7 +108,7 @@ namespace PharmaceuticalMS
             dt = opr.SearchClient(Client);
             dgvClient.DataSource = dt;
         }
-
+        //The text box only accept number
         private void txtIDCard_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -120,17 +121,17 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //The text box only accept text
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
-
+        //The text box only accept text
         private void txtSurname_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
-
+        //The text box only accept number
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -143,7 +144,7 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //Select text from data view grid 
         private void dgvClient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow dgvRow = dgvClient.Rows[e.RowIndex];
@@ -153,7 +154,7 @@ namespace PharmaceuticalMS
             txtContactNo.Text = dgvRow.Cells[3].Value.ToString();
             txtAddress.Text = dgvRow.Cells[4].Value.ToString();
         }
-
+        //Load data in data grid view when form opens
         private void ClientsForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();

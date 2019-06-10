@@ -8,6 +8,7 @@ namespace BEL
 {
     public class Client
     {
+        //Get and set details found in Clients table
         public int IDCard { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

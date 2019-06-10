@@ -15,13 +15,14 @@ namespace PharmaceuticalMS
     public partial class JobTitleForm : Form
     {
         public Staff Staff = new Staff();
+        //Call methods found in operations
         public Operations opr = new Operations();
 
         public JobTitleForm()
         {
             InitializeComponent();
         }
-
+        //Clear text fields when ClearTextBoxes is called
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
@@ -37,7 +38,7 @@ namespace PharmaceuticalMS
 
             func(Controls);
         }
-
+        //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Staff.JobTitle = txtJobTitle.Text;
@@ -52,7 +53,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Delete button that will delete records from data base
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Staff.JobTitle = txtJobTitle.Text;
@@ -67,7 +68,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Select text from data view grid 
         private void dgvJobTitle_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -76,7 +77,7 @@ namespace PharmaceuticalMS
                 txtJobTitle.Text = dgvRow.Cells[1].Value.ToString();
             }
         }
-
+        //Load data in data grid view when form opens
         private void JobTitleForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -84,7 +85,7 @@ namespace PharmaceuticalMS
             dgvJobTitle.DataSource = dt;
             dgvJobTitle.Columns[0].Visible = false;
         }
-
+        //The text box only accept text
         private void txtJobTitle_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);

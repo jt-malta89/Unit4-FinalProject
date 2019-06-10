@@ -8,6 +8,7 @@ namespace BEL
 {
     public class OrderProduct
     {
+        //Get and set details found in OrderProd table
         public int orderId { get; set; }
         public int barcode { get; set; }
         public string productName { get; set; }

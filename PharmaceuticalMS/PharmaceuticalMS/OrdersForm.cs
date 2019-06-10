@@ -10,22 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BAL;
 using BEL;
+using DGVPrinterHelper;
 
 namespace PharmaceuticalMS
 {
     public partial class OrdersForm : Form
     {
         private ArrayList orderProductsList = new ArrayList();
+        //Call methods found in operations
+        public Operations opr = new Operations();
 
         public OrdersForm()
         {
             InitializeComponent();
         }
-
+        //Load data in data grid view & get combo box details when form opens 
         private void OrdersForm_Load(object sender, EventArgs e)
         {
-            //empty any products in the list when the form loads
-            //this.orderProductsList.Clear();
+            DataTable dt = new DataTable();
+            dt = opr.getOrders();
+            dgvOrders.DataSource = dt;
 
             this.comboPharmacies.DataSource = new Operations().getPharmacy();
             this.comboPharmacies.DisplayMember = "Name";
@@ -44,10 +48,8 @@ namespace PharmaceuticalMS
             numericUpDownQuantity.Maximum = Convert.ToInt32(drv["Quantity"].ToString());
             numericUpDownQuantity.Value = Convert.ToInt32(drv["Quantity"].ToString());
             txtProductDescription.Text = drv["ItemDescription"].ToString();
-
-            //MessageBox.Show(new Operations().getproductByBarcode(Convert.ToInt32(this.txtProductBarcode.Text)).ItemDescription);
         }
-
+        //Add button will add products to the data grid view
         private void btnAdd_Click(object sender, EventArgs e)
         {
             OrderProduct orderProduct = new OrderProduct();
@@ -64,8 +66,6 @@ namespace PharmaceuticalMS
                     found = true;
                 }
             }
-
-
             if (found)
             {
                 MessageBox.Show("Item already in order. Please modify quantity if required"); 
@@ -76,28 +76,26 @@ namespace PharmaceuticalMS
                 updateProductsInOrderView();
             }  
         }
-
+        //Method to update products data grid view
         private void updateProductsInOrderView()
         {
             this.dataGridOrderProducts.DataSource = null;
             this.dataGridOrderProducts.DataSource = orderProductsList;
             this.dataGridOrderProducts.Update();
             this.dataGridOrderProducts.Refresh();
-
         }
-
+        //Save order button that save items selected in the data grid view also print document
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
             if (this.orderProductsList.Count == 0)
             {
-                MessageBox.Show("Please select some products to create an order");                
+                MessageBox.Show("Please select some products to create an order");
             }
             else
             {
                 Order order = new Order();
-                order.OrderID = new Random().Next(30000000);
+                order.OrderID = Convert.ToInt32(txtOrderID.Text);
                 order.PharmacyID = (int)((DataRowView)(this.comboPharmacies.SelectedItem))["PharmacyID"];
-                order.StaffIDCard = 1234;
                 order.date = DateTime.Now;
 
                 Operations dbOperations = new Operations();
@@ -112,20 +110,30 @@ namespace PharmaceuticalMS
                     Products productToUpdate = dbOperations.getproductByBarcode(op.barcode);
                     productToUpdate.Quantity = productToUpdate.Quantity - op.quantity;
                     dbOperations.editproduct(productToUpdate);
-                    
                 }
-                
-                MessageBox.Show("Order with ID " + order.OrderID + " inserted");
+                this.StripStatusDisplay.Text = "Order ID " + order.OrderID + " created";
                 updateProductsInOrderView();
 
+                DGVPrinter printer = new DGVPrinter();
+                printer.Title = "\r\n\r\n\r\n Mother Earth Pharmacy Ltd.";
+                printer.SubTitle = "Telephone: 21186949";
+                printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = false;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.PrintDataGridView(dataGridOrderProducts);
+           
+                DataTable dt = new DataTable();
+                dt = opr.getOrders();
+                dgvOrders.DataSource = dt;
                 //clear the list and refresh the dataGrid so user can start a new order
                 this.orderProductsList.Clear();
                 updateProductsInOrderView();
-               
             }
             
         }
-
+        //Delete products from the data grid view
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedRows 
@@ -147,30 +155,25 @@ namespace PharmaceuticalMS
                             break;
                         }
                     }
-
                     if (toRemove != null)
                     {
                         this.orderProductsList.Remove(toRemove);
                     }
-                    
                 }
-
                 updateProductsInOrderView();
-
             }
             else
             {
                 if (this.orderProductsList.Count > 0)
                 {
-                    MessageBox.Show("Select a whole row to delete product from your order");
+                    MessageBox.Show("Select row to delete product from order");
                 }
             }
 
         }
-
+        //The numeric up down will change the product quantity in data grid view
         private void numericUpDownQuantity_ValueChanged(object sender, EventArgs e)
         {
-            
             foreach (OrderProduct op in this.orderProductsList)
             {
                 if (Convert.ToString(op.barcode) == this.txtProductBarcode.Text.Trim())
@@ -178,18 +181,21 @@ namespace PharmaceuticalMS
                     op.quantity = (int)this.numericUpDownQuantity.Value; 
                 }
             }
-
             this.dataGridOrderProducts.Update();
             this.dataGridOrderProducts.Refresh();
-
-
-           // updateProductsInOrderView(); 
-            
         }
-
-        private void dataGridOrderProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //The text box only accept number
+        private void txtOrderID_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                e.Handled = true;
+            }
         }
     }
 }

@@ -14,13 +14,14 @@ namespace PharmaceuticalMS
 {
     public partial class StaffForm : Form
     {
+        //Call methods found in operations
         public Operations opr = new Operations();
 
         public StaffForm()
         {
             InitializeComponent();
         }
-
+        //Clear text fields when ClearTextBoxes is called
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
@@ -34,7 +35,7 @@ namespace PharmaceuticalMS
             };
             func(Controls);
         }
-
+        //Search data by primary key from table
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             Staff Staff = new Staff();
@@ -44,7 +45,7 @@ namespace PharmaceuticalMS
             dt = opr.SearchStaff(Staff);
             dgvStaff.DataSource = dt;
         }
-
+        //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Staff Staff = new Staff();
@@ -68,8 +69,8 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
-        private void lblEdit_Click(object sender, EventArgs e)
+        //Edit button will change any details that are found in table
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             Staff Staff = new Staff();
 
@@ -92,7 +93,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Delete button that will delete records from data base
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Staff Staff = new Staff();
@@ -116,7 +117,7 @@ namespace PharmaceuticalMS
                 ClearTextBoxes();
             }
         }
-
+        //Load data in data grid view when form opens
         private void StaffForm_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -142,7 +143,7 @@ namespace PharmaceuticalMS
             this.cbLoginAccount.DisplayMember = "Username";
             this.cbLoginAccount.Refresh();
         }
-
+        //Select text from data view grid
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -159,25 +160,25 @@ namespace PharmaceuticalMS
                 txtLoginAccountID.Text = dgvRow.Cells[8].Value.ToString();
             }
         }
-
+        //Combo box select details from table 
         private void cbJobTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)this.cbJobTitle.SelectedItem;
             txtJobTitleID.Text = drv["JobTitleID"].ToString();
         }
-
+        //Combo box select details from table
         private void cbVehicle_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)this.cbVehicle.SelectedItem;
             txtVehicleID.Text = drv["VehicleID"].ToString();
         }
-
+        //Combo box select details from table
         private void cbLoginAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)this.cbLoginAccount.SelectedItem;
             txtLoginAccountID.Text = drv["LoginID"].ToString();
         }
-
+        //The text box only accept number
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -190,12 +191,12 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //The text box only accept text
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space); 
         }
-
+        //The text box only accept number
         private void txtIDCard_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
@@ -208,13 +209,26 @@ namespace PharmaceuticalMS
                 e.Handled = true;
             }
         }
-
+        //The text box only accept text
         private void txtSurname_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
-
+        //The text box only accept number
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                MessageBox.Show("Please Enter only Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                e.Handled = true;
+            }
+        }
+        //The text box only accept number
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
             {

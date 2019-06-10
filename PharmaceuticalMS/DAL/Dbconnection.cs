@@ -5,6 +5,7 @@ namespace DAL
 {
     public class Dbconnection
     {
+        //The connect link to SQL Server database
         public SqlConnection con = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = PharmaceuticalDB; Integrated Security = True; MultipleActiveResultSets = True; Application Name = EntityFramework");
         public SqlConnection getcon()
         {
@@ -14,7 +15,7 @@ namespace DAL
             }
             return con;
         }
-
+        //Perform insert, update and delete function
         public int ExeNonQuery(SqlCommand cmd)
         {
             cmd.Connection = getcon();
@@ -23,7 +24,7 @@ namespace DAL
             con.Close();
             return rowsaffected;
         }
-
+        //Retrieve single value from data base or query
         public object ExeScalar(SqlCommand cmd)
         {
             cmd.Connection = getcon();
@@ -32,7 +33,7 @@ namespace DAL
             con.Close();
             return obj;
         }
-
+        //Perform select query 
         public DataTable ExeReader(SqlCommand cmd)
         {
             cmd.Connection = getcon();
