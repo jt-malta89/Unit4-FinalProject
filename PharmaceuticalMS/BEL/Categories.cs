@@ -8,7 +8,7 @@ namespace BEL
 {
     public class Categories
     {
-        //Get and set details found in Category table
+        //Get and set details found in Category table test
         public int CategoryID { get; set; }
         public string Category { get; set; }
     }
