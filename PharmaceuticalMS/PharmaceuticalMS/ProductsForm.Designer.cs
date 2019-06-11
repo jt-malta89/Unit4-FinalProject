@@ -186,7 +186,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(764, 493);
+            this.btnDelete.Location = new System.Drawing.Point(840, 493);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 10;
@@ -214,7 +214,7 @@
             this.dgvProducts.Location = new System.Drawing.Point(16, 298);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.Size = new System.Drawing.Size(659, 225);
+            this.dgvProducts.Size = new System.Drawing.Size(660, 225);
             this.dgvProducts.TabIndex = 19;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
@@ -251,7 +251,7 @@
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(840, 493);
+            this.btnEdit.Location = new System.Drawing.Point(764, 493);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(70, 30);
             this.btnEdit.TabIndex = 11;

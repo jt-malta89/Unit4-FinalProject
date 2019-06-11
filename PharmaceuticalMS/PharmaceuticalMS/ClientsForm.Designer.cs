@@ -44,7 +44,7 @@
             this.lblClient.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblClient.Location = new System.Drawing.Point(0, 0);
             this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(1035, 60);
+            this.lblClient.Size = new System.Drawing.Size(834, 60);
             this.lblClient.TabIndex = 1;
             this.lblClient.Text = "Client";
             this.lblClient.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -141,22 +141,22 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StripStatusDisplay});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 505);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 509);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(830, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(834, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // StripStatusVehicles
+            // StripStatusDisplay
             // 
-            this.StripStatusDisplay.Name = "StripStatusVehicles";
+            this.StripStatusDisplay.Name = "StripStatusDisplay";
             this.StripStatusDisplay.Size = new System.Drawing.Size(0, 17);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(750, 466);
+            this.btnDelete.Location = new System.Drawing.Point(750, 469);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 30);
             this.btnDelete.TabIndex = 10;
@@ -168,7 +168,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(598, 466);
+            this.btnAdd.Location = new System.Drawing.Point(598, 469);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 30);
             this.btnAdd.TabIndex = 9;
@@ -184,7 +184,7 @@
             this.dgvClient.Location = new System.Drawing.Point(310, 113);
             this.dgvClient.Name = "dgvClient";
             this.dgvClient.ReadOnly = true;
-            this.dgvClient.Size = new System.Drawing.Size(510, 347);
+            this.dgvClient.Size = new System.Drawing.Size(510, 350);
             this.dgvClient.TabIndex = 19;
             this.dgvClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellClick);
             // 
@@ -210,7 +210,7 @@
             // 
             this.lblEdit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lblEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdit.Location = new System.Drawing.Point(674, 466);
+            this.lblEdit.Location = new System.Drawing.Point(674, 469);
             this.lblEdit.Name = "lblEdit";
             this.lblEdit.Size = new System.Drawing.Size(70, 30);
             this.lblEdit.TabIndex = 11;
@@ -242,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(830, 527);
+            this.ClientSize = new System.Drawing.Size(834, 531);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblEdit);
