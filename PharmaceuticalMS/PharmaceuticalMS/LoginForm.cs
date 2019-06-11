@@ -28,31 +28,37 @@ namespace PharmaceuticalMS
         //Login account button to check username and pssword, to check what type of privilage the account got
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login Login = new Login();
-
-            Login.Username = txtUsername.Text;
-            Login.Password = txtPassword.Text;
-            dt = opr.login(Login);
-
-            if (dt.Rows.Count > 0)
+            if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                utype = dt.Rows[0][3].ToString().Trim();
-                if (utype == "Admin")
-                {
-                    this.Hide();
-                    AdminForm mda = new AdminForm();
-                    mda.Show();
-                }
-                else
-                {
-                    this.Hide();
-                    UserForm mde = new UserForm();
-                    mde.Show();
-                }
+                MessageBox.Show("Don't Leave the Fields Empty");
             }
             else
             {
-                MessageBox.Show("Invalid Username or Password");
+                Login Login = new Login();
+                Login.Username = txtUsername.Text;
+                Login.Password = txtPassword.Text;
+                dt = opr.login(Login);
+
+                if (dt.Rows.Count > 0)
+                {
+                    utype = dt.Rows[0][3].ToString().Trim();
+                    if (utype == "Admin")
+                    {
+                        this.Hide();
+                        AdminForm mda = new AdminForm();
+                        mda.Show();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        UserForm mde = new UserForm();
+                        mde.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password");
+                }
             }
         }
         //The username text box only accept text

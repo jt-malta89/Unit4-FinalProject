@@ -39,26 +39,31 @@ namespace PharmaceuticalMS
         //Add button will store details found in text boxes
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            Store Store = new Store();
-
-            Store.Name = txtStorName.Text;
-            Store.Address = txtStorAddress.Text;
-            int rows = opr.insertStore(Store);
-            if (rows > 0)
+            if (txtStorName.Text == "" || txtStorAddress.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getStore();
-                dgvStore.DataSource = dt;
-                dgvStore.Columns[0].Visible = false;
-                this.StripStatusDisplay.Text = "Store Data Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Store Store = new Store();
+                Store.Name = txtStorName.Text;
+                Store.Address = txtStorAddress.Text;
+                int rows = opr.insertStore(Store);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getStore();
+                    dgvStore.DataSource = dt;
+                    dgvStore.Columns[0].Visible = false;
+                    this.StripStatusDisplay.Text = "Store Data Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Delete button that will delete records from data base
         private void btnDeleteStore_Click(object sender, EventArgs e)
         {
             Store Store = new Store();
-
             Store.Name = txtStorName.Text;
             Store.Address = txtStorAddress.Text;
             int rows = opr.deleteStore(Store);
@@ -75,26 +80,31 @@ namespace PharmaceuticalMS
         //Edit button will change any details that are found in table
         private void btnAddPhar_Click(object sender, EventArgs e)
         {
-            Pharmacy Pharmacy = new Pharmacy();
-
-            Pharmacy.Name = txtPharName.Text;
-            Pharmacy.Address = txtPharAddress.Text;
-            int rows = opr.insertPharmacy(Pharmacy);
-            if (rows > 0)
+            if (txtPharName.Text == "" || txtPharAddress.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getPharmacy();
-                dgvPharmacy.DataSource = dt;
-                dgvPharmacy.Columns[0].Visible = false;
-                this.StripStatusDisplay.Text = "Pharmacy Data Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Pharmacy Pharmacy = new Pharmacy();
+                Pharmacy.Name = txtPharName.Text;
+                Pharmacy.Address = txtPharAddress.Text;
+                int rows = opr.insertPharmacy(Pharmacy);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getPharmacy();
+                    dgvPharmacy.DataSource = dt;
+                    dgvPharmacy.Columns[0].Visible = false;
+                    this.StripStatusDisplay.Text = "Pharmacy Data Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Delete button that will delete records from data base
         private void btnDeletePhar_Click(object sender, EventArgs e)
         {
             Pharmacy Pharmacy = new Pharmacy();
-
             Pharmacy.Name = txtPharName.Text;
             Pharmacy.Address = txtPharAddress.Text;
             int rows = opr.deletePharmacy(Pharmacy);

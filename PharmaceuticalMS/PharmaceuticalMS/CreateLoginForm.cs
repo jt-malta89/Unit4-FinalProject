@@ -14,7 +14,6 @@ namespace PharmaceuticalMS
 {
     public partial class CreateLoginForm : Form
     {
-        public Staff Staff = new Staff();
         //Call methods found in operations
         public Operations opr = new Operations();
 
@@ -41,23 +40,32 @@ namespace PharmaceuticalMS
         //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Staff.Username = txtUsername.Text;
-            Staff.Password = txtPassword.Text;
-            Staff.Type = txtAccessType.Text;
-            int rows = opr.insertLog(Staff);
-            if (rows > 0)
+            if (txtUsername.Text == "" || txtPassword.Text == "" || txtAccessType.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getLogin();
-                dgvLoginAccount.DataSource = dt;
-                dgvLoginAccount.Columns[0].Visible = false;
-                this.StripStatusVehicles.Text = "Login Account Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Staff Staff = new Staff();
+                Staff.Username = txtUsername.Text;
+                Staff.Password = txtPassword.Text;
+                Staff.Type = txtAccessType.Text;
+                int rows = opr.insertLog(Staff);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getLogin();
+                    dgvLoginAccount.DataSource = dt;
+                    dgvLoginAccount.Columns[0].Visible = false;
+                    this.StripStatusVehicles.Text = "Login Account Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Delete button that will delete records from data base
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Staff Staff = new Staff();
             Staff.Username = txtUsername.Text;
             Staff.Password = txtPassword.Text;
             Staff.Type = txtAccessType.Text;

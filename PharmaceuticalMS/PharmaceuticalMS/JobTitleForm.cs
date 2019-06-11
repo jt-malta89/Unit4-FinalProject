@@ -14,7 +14,6 @@ namespace PharmaceuticalMS
 {
     public partial class JobTitleForm : Form
     {
-        public Staff Staff = new Staff();
         //Call methods found in operations
         public Operations opr = new Operations();
 
@@ -41,21 +40,30 @@ namespace PharmaceuticalMS
         //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Staff.JobTitle = txtJobTitle.Text;
-            int rows = opr.insertJobTitle(Staff);
-            if (rows > 0)
+            if (txtJobTitle.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getJobTitle();
-                dgvJobTitle.DataSource = dt;
-                dgvJobTitle.Columns[0].Visible = false;
-                this.StripStatusDisplay.Text = "Job Title Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Staff Staff = new Staff();
+                Staff.JobTitle = txtJobTitle.Text;
+                int rows = opr.insertJobTitle(Staff);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getJobTitle();
+                    dgvJobTitle.DataSource = dt;
+                    dgvJobTitle.Columns[0].Visible = false;
+                    this.StripStatusDisplay.Text = "Job Title Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Delete button that will delete records from data base
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Staff Staff = new Staff();
             Staff.JobTitle = txtJobTitle.Text;
             int rows = opr.deleteJobTitle(Staff);
             if (rows > 0)

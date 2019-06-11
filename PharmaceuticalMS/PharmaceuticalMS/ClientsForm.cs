@@ -40,28 +40,33 @@ namespace PharmaceuticalMS
         //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Client Client = new Client();
-
-            Client.IDCard = Convert.ToInt32(txtIDCard.Text);
-            Client.Name = txtName.Text;
-            Client.Surname = txtSurname.Text;
-            Client.ContactNo = Convert.ToInt32(txtContactNo.Text);
-            Client.Address = txtAddress.Text;
-            int rows = opr.insertClient(Client);
-            if (rows > 0)
+            if (txtIDCard.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getClient();
-                dgvClient.DataSource = dt;
-                this.StripStatusDisplay.Text = "Client Data Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave ID Card Field Empty");
+            }
+            else
+            {
+                Client Client = new Client();
+                Client.IDCard = Convert.ToInt32(txtIDCard.Text);
+                Client.Name = txtName.Text;
+                Client.Surname = txtSurname.Text;
+                Client.ContactNo = Convert.ToInt32(txtContactNo.Text);
+                Client.Address = txtAddress.Text;
+                int rows = opr.insertClient(Client);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getClient();
+                    dgvClient.DataSource = dt;
+                    this.StripStatusDisplay.Text = "Client Data Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Edit button will change any details that are found in table
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Client Client = new Client();
-
             Client.IDCard = Convert.ToInt32(txtIDCard.Text);
             Client.Name = txtName.Text;
             Client.Surname = txtSurname.Text;
@@ -82,7 +87,6 @@ namespace PharmaceuticalMS
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Client Client = new Client();
-
             Client.IDCard = Convert.ToInt32(txtIDCard.Text);
             Client.Name = txtName.Text;
             Client.Surname = txtSurname.Text;

@@ -59,24 +59,30 @@ namespace PharmaceuticalMS
         //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Products product = new Products();
-
-            product.Barcode = Convert.ToInt32(txtBarcode.Text);
-            product.ItemName = txtTitle.Text;
-            product.ItemDescription = txtDescription.Text;
-            product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
-            product.Price = txtPrice.Text;
-            product.Quantity = Convert.ToInt32(txtQuantity.Text);
-            product.StoreID = Convert.ToInt32(txtStore.Text);
-            product.CategoryID = Convert.ToInt32(txtCategory.Text);
-            int rows = opr.insertProduct(product);
-            if (rows > 0)
+            if (txtBarcode.Text == "" || txtTitle.Text == "" || txtDescription.Text == "" || txtQuantityNotification.Text == "" || txtPrice.Text == "" || txtQuantity.Text == "" || txtStore.Text == "" || txtCategory.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getproduct();
-                dgvProducts.DataSource = dt;
-                this.StripStatusDisplay.Text = "Product Data Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Products product = new Products();
+                product.Barcode = Convert.ToInt32(txtBarcode.Text);
+                product.ItemName = txtTitle.Text;
+                product.ItemDescription = txtDescription.Text;
+                product.NotifThre = Convert.ToInt32(txtQuantityNotification.Text);
+                product.Price = txtPrice.Text;
+                product.Quantity = Convert.ToInt32(txtQuantity.Text);
+                product.StoreID = Convert.ToInt32(txtStore.Text);
+                product.CategoryID = Convert.ToInt32(txtCategory.Text);
+                int rows = opr.insertProduct(product);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getproduct();
+                    dgvProducts.DataSource = dt;
+                    this.StripStatusDisplay.Text = "Product Data Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Delete button that will delete records from data base
@@ -106,7 +112,6 @@ namespace PharmaceuticalMS
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Products product = new Products();
-
             product.Barcode = Convert.ToInt32(txtBarcode.Text);
             product.ItemName = txtTitle.Text;
             product.ItemDescription = txtDescription.Text;
@@ -215,12 +220,18 @@ namespace PharmaceuticalMS
         //Search data by primary key from table
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            Products product = new Products();
-
-            product.Barcode = Convert.ToInt32(txtSearch.Text);
-            DataTable dt = new DataTable();
-            dt = opr.SearchProduct(product);
-            dgvProducts.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Place Barcode");
+            }
+            else
+            {
+                Products product = new Products();
+                product.Barcode = Convert.ToInt32(txtSearch.Text);
+                DataTable dt = new DataTable();
+                dt = opr.SearchProduct(product);
+                dgvProducts.DataSource = dt;
+            }
         }
         //The text box only accept number
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)

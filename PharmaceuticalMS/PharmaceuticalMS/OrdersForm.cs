@@ -87,51 +87,57 @@ namespace PharmaceuticalMS
         //Save order button that save items selected in the data grid view also print document
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            if (this.orderProductsList.Count == 0)
+            if (txtOrderID.Text == "")
             {
-                MessageBox.Show("Please select some products to create an order");
+                MessageBox.Show("Don't Leave Order ID Empty");
             }
             else
             {
-                Order order = new Order();
-                order.OrderID = Convert.ToInt32(txtOrderID.Text);
-                order.PharmacyID = (int)((DataRowView)(this.comboPharmacies.SelectedItem))["PharmacyID"];
-                order.date = DateTime.Now;
-
-                Operations dbOperations = new Operations();
-
-                dbOperations.insertOrder(order);
-
-                foreach(OrderProduct op in this.orderProductsList)
+                if (this.orderProductsList.Count == 0)
                 {
-                    op.orderId = order.OrderID;
-                    dbOperations.insertOrderProduct(op);
-
-                    Products productToUpdate = dbOperations.getproductByBarcode(op.barcode);
-                    productToUpdate.Quantity = productToUpdate.Quantity - op.quantity;
-                    dbOperations.editproduct(productToUpdate);
+                    MessageBox.Show("Please select some products to create an order");
                 }
-                this.StripStatusDisplay.Text = "Order ID " + order.OrderID + " created";
-                updateProductsInOrderView();
+                else
+                {
+                    Order order = new Order();
+                    order.OrderID = Convert.ToInt32(txtOrderID.Text);
+                    order.PharmacyID = (int)((DataRowView)(this.comboPharmacies.SelectedItem))["PharmacyID"];
+                    order.date = DateTime.Now;
 
-                DGVPrinter printer = new DGVPrinter();
-                printer.Title = "\r\n\r\n\r\n Mother Earth Pharmacy Ltd.";
-                printer.SubTitle = "Telephone: 21186949";
-                printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-                printer.PageNumbers = true;
-                printer.PageNumberInHeader = false;
-                printer.PorportionalColumns = true;
-                printer.HeaderCellAlignment = StringAlignment.Near;
-                printer.PrintDataGridView(dataGridOrderProducts);
-           
-                DataTable dt = new DataTable();
-                dt = opr.getOrders();
-                dgvOrders.DataSource = dt;
-                //clear the list and refresh the dataGrid so user can start a new order
-                this.orderProductsList.Clear();
-                updateProductsInOrderView();
-            }
-            
+                    Operations dbOperations = new Operations();
+
+                    dbOperations.insertOrder(order);
+
+                    foreach (OrderProduct op in this.orderProductsList)
+                    {
+                        op.orderId = order.OrderID;
+                        dbOperations.insertOrderProduct(op);
+
+                        Products productToUpdate = dbOperations.getproductByBarcode(op.barcode);
+                        productToUpdate.Quantity = productToUpdate.Quantity - op.quantity;
+                        dbOperations.editproduct(productToUpdate);
+                    }
+                    this.StripStatusDisplay.Text = "Order ID " + order.OrderID + " created";
+                    updateProductsInOrderView();
+
+                    DGVPrinter printer = new DGVPrinter();
+                    printer.Title = "\r\n\r\n\r\n Mother Earth Pharmacy Ltd.";
+                    printer.SubTitle = "Telephone: 21186949";
+                    printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                    printer.PageNumbers = true;
+                    printer.PageNumberInHeader = false;
+                    printer.PorportionalColumns = true;
+                    printer.HeaderCellAlignment = StringAlignment.Near;
+                    printer.PrintDataGridView(dataGridOrderProducts);
+
+                    DataTable dt = new DataTable();
+                    dt = opr.getOrders();
+                    dgvOrders.DataSource = dt;
+                    //clear the list and refresh the dataGrid so user can start a new order
+                    this.orderProductsList.Clear();
+                    updateProductsInOrderView();
+                }
+            }     
         }
         //Delete products from the data grid view
         private void btnDelete_Click(object sender, EventArgs e)

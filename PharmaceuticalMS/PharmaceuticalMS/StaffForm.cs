@@ -38,35 +38,47 @@ namespace PharmaceuticalMS
         //Search data by primary key from table
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            Staff Staff = new Staff();
-
-            Staff.IDCard = Convert.ToInt32(txtSearch.Text);
-            DataTable dt = new DataTable();
-            dt = opr.SearchStaff(Staff);
-            dgvStaff.DataSource = dt;
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Place ID Card");
+            }
+            else
+            {
+                Staff Staff = new Staff();
+                Staff.IDCard = Convert.ToInt32(txtSearch.Text);
+                DataTable dt = new DataTable();
+                dt = opr.SearchStaff(Staff);
+                dgvStaff.DataSource = dt;
+            }
         }
         //Add button will store details found in text boxes
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Staff Staff = new Staff();
-
-            Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
-            Staff.Name = txtName.Text;
-            Staff.Surname = txtSurname.Text;
-            Staff.ContactNo = Convert.ToInt32(txtContactNo.Text);
-            Staff.Salary = Convert.ToInt32(txtSalary.Text);
-            Staff.Address = txtAddress.Text;
-            Staff.JobTitleID = Convert.ToInt32(txtJobTitleID.Text);
-            Staff.VehicleID = Convert.ToInt32(txtVehicleID.Text);
-            Staff.LoginID = Convert.ToInt32(txtLoginAccountID.Text);
-            int rows = opr.insertStaff(Staff);
-            if (rows > 0)
+            if (txtIDCard.Text == "" || txtName.Text == "" || txtSurname.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getStaff();
-                dgvStaff.DataSource = dt;
-                this.StripStatusDisplay.Text = "Staff Data Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Staff Staff = new Staff();
+                Staff.IDCard = Convert.ToInt32(txtIDCard.Text);
+                Staff.Name = txtName.Text;
+                Staff.Surname = txtSurname.Text;
+                Staff.ContactNo = Convert.ToInt32(txtContactNo.Text);
+                Staff.Salary = Convert.ToInt32(txtSalary.Text);
+                Staff.Address = txtAddress.Text;
+                Staff.JobTitleID = Convert.ToInt32(txtJobTitleID.Text);
+                Staff.VehicleID = Convert.ToInt32(txtVehicleID.Text);
+                Staff.LoginID = Convert.ToInt32(txtLoginAccountID.Text);
+                int rows = opr.insertStaff(Staff);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getStaff();
+                    dgvStaff.DataSource = dt;
+                    this.StripStatusDisplay.Text = "Staff Data Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Edit button will change any details that are found in table

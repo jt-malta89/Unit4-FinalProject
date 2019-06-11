@@ -40,18 +40,24 @@ namespace PharmaceuticalMS
         //Add button will store details found in txtCategory 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Categories Category = new Categories();
-
-            Category.Category = txtCategory.Text;
-            int rows = opr.insertCat(Category);
-            if (rows > 0)
+            if (txtCategory.Text == "")
             {
-                DataTable dt = new DataTable();
-                dt = opr.getCategory();
-                dgvCategory.DataSource = dt;
-                dgvCategory.Columns[0].Visible = false;
-                this.StripStatusDisplay.Text = "Category Saved";
-                ClearTextBoxes();
+                MessageBox.Show("Don't Leave the Fields Empty");
+            }
+            else
+            {
+                Categories Category = new Categories();
+                Category.Category = txtCategory.Text;
+                int rows = opr.insertCat(Category);
+                if (rows > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = opr.getCategory();
+                    dgvCategory.DataSource = dt;
+                    dgvCategory.Columns[0].Visible = false;
+                    this.StripStatusDisplay.Text = "Category Saved";
+                    ClearTextBoxes();
+                }
             }
         }
         //Delete button that will delete records from data base 

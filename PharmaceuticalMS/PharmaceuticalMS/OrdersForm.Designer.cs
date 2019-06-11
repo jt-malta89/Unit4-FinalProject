@@ -30,7 +30,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtProductBarcode = new System.Windows.Forms.TextBox();
             this.txtProductDescription = new System.Windows.Forms.TextBox();
-            this.lblProductDescription = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.lblProductQuantity = new System.Windows.Forms.Label();
             this.comboPharmacies = new System.Windows.Forms.ComboBox();
             this.comboProducts = new System.Windows.Forms.ComboBox();
@@ -214,15 +214,15 @@
             this.txtProductDescription.Size = new System.Drawing.Size(130, 23);
             this.txtProductDescription.TabIndex = 34;
             // 
-            // lblProductDescription
+            // lblDescription
             // 
-            this.lblProductDescription.AutoSize = true;
-            this.lblProductDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDescription.Location = new System.Drawing.Point(323, 99);
-            this.lblProductDescription.Name = "lblProductDescription";
-            this.lblProductDescription.Size = new System.Drawing.Size(98, 19);
-            this.lblProductDescription.TabIndex = 37;
-            this.lblProductDescription.Text = "Product Title";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(335, 99);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(86, 19);
+            this.lblDescription.TabIndex = 37;
+            this.lblDescription.Text = "Description";
             // 
             // lblProductQuantity
             // 
@@ -295,7 +295,7 @@
             this.Controls.Add(this.comboProducts);
             this.Controls.Add(this.comboPharmacies);
             this.Controls.Add(this.lblProductQuantity);
-            this.Controls.Add(this.lblProductDescription);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtProductDescription);
             this.Controls.Add(this.txtProductBarcode);
             this.Controls.Add(this.label3);
@@ -343,7 +343,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtProductBarcode;
         private System.Windows.Forms.TextBox txtProductDescription;
-        private System.Windows.Forms.Label lblProductDescription;
+        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblProductQuantity;
         private System.Windows.Forms.ComboBox comboPharmacies;
         private System.Windows.Forms.ComboBox comboProducts;
